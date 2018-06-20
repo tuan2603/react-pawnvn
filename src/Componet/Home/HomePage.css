@@ -1,0 +1,19 @@
+body {
+  background-color: #595959;
+}
+
+.stylish-color-organ {
+  background-color: #d46c2e  !important; }
+.stylish-color-drak {
+  background-color: #595959  !important; }
+
+.home-container,
+.home-container h3,
+.home-container span,
+.home-container p{
+  color: white!important;
+}
+.container,
+span {
+  color: white!important;
+}
