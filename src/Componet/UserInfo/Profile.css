@@ -13,7 +13,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #fff2f521;
+    background-color: #1581c13b;
     line-height: 1.5em;
 }
 
@@ -29,9 +29,18 @@
     line-height: 1.5em;
 }
 
+.form-signin {
+    color: #157bc1 !important;
+}
+
 .profile-doccument {
     font-weight: 300;
     padding-top: 2em;
+    color: #157bc1;
+}
+
+.profile-title {
+    color: #157bc1;
 }
 
 .profile-title .warning {
@@ -68,11 +77,11 @@
 
 input[type="file" i] {
     align-items: baseline;
-    color: inherit;
+    color: #157bc1;
     text-align: start !important;
 }
 
-.container .list {
+.form-signin .list {
     display: flex;
     margin: 1em 0;
     padding-left: 20px;
@@ -88,12 +97,12 @@ input[type="file" i] {
 
 .react-datepicker-wrapper {
     width: 100%;
-    color: white;
+    color: #157bc1;
 }
 
 .react-datepicker__input-container {
     width: 100%;
-    color: white;
+    color: #157bc1;
     text-align: left;
 }
 
@@ -105,20 +114,21 @@ input[type="file" i] {
 
 .react-datepicker__input-container input {
     width: 99% !important;
-    color: white;
+    color: #157bc1;
     text-align: left;
 }
 
 .profile-title {
     margin-top: 16px;
 }
+
 .indentily-number p {
     margin-bottom: 0px;
     margin-top: 1em;
 }
 
 .indentily-number .card-number {
-   color: white!important;
+    color: #157bc1 !important;
 }
 
 .indentily-number input {
@@ -135,4 +145,113 @@ input[type="file" i] {
     margin-top: 16px;
     width: 100%;
     background: #d46c2e;
+}
+
+.list-item {
+    color: #157bc1;
+}
+
+.form-upload {
+    color: #157bc1;
+}
+
+.main-signup {
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+.main-signup {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 900px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-label-xau {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-xau button {
+    width: 100%;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group input {
+    margin-left: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input
+button, input {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 620px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin select {
+    width: 100%;
+    border: none;
+    display: block !important;
+    height: 2.1rem;
+    font-size: 1rem;
+    transition: all 0.3s;
+    color: #157bc1;
+}
+
+.form-label-group {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 5px;
+}
+
+#telphone {
+    border: none !important;
+    margin-right: -84px;
+}
+
+.form-label-group input {
+    border: none !important;
+}
+
+.collapse p {
+    color: red;
 }

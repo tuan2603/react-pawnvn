@@ -9,7 +9,7 @@ import SlideTop from './SlideHome';
 class HomePageMain extends React.Component {
     render() {
         return (
-            <div style={{marginTop: "4em"}}>
+            <div >
                 <SlideTop/>
                 <Container className="home-container">
                     <Row>

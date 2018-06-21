@@ -3,7 +3,7 @@ import {
     Redirect
 } from "react-router-dom";
 import './SingUp.css';
-import {Button, Collapse} from 'mdbreact';
+import { Collapse} from 'mdbreact';
 import {ToastContainer, toast} from 'react-toastify';
 import IntlTelInput from 'react-intl-tel-input';
 import libphonenumber from '../../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
@@ -15,8 +15,6 @@ import Api from '../../utils/api';
 import {setInSession} from '../../utils/sessionStorage';
 
 import passwordValidator from 'password-validator';
-import mainLogo from '../../img/1024.png';
-
 const checkPass = new passwordValidator();
 // Add properties to it
 checkPass
@@ -33,22 +31,14 @@ class SimpleSelect extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            city: '',
             fullname: '',
             phone: '',
             countryData: '',
             email: '',
             password: '',
-            typeDrive: 0,
-            referral: '0',
-            referralCode: '',
-            arrayTypeDrive: [],
-            arrayTypeReferral: [],
             fullnameValid: false,
             phoneValid: false,
             emailValid: false,
-            typeDriveValid: false,
-            referralValid: false,
             passwordValid: false,
             isDisabled: true,
             isRegister: false,
@@ -56,50 +46,16 @@ class SimpleSelect extends React.Component {
 
         this.expiredCallback = this.expiredCallback.bind(this);
         this.verifyCallback = this.verifyCallback.bind(this);
-        this.handleChangeCity = this.handleChangeCity.bind(this);
-        this.handleChangeType = this.handleChangeType.bind(this);
         this.handleChangeFullname = this.handleChangeFullname.bind(this);
         this.handleChangePhone = this.handleChangePhone.bind(this);
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePassword = this.handleChangePassword.bind(this);
-        this.handleChangeReferral = this.handleChangeReferral.bind(this);
-        this.handleChangeReferralCode = this.handleChangeReferralCode.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkValid = this.checkValid.bind(this);
     }
 
-    async componentWillMount() {
-        await Axios.get(Api.TYPEDRIVE)
-            .then(response => {
-                if (response.status === 200) {
-                    this.setState({arrayTypeDrive: response.data});
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-
-        await Axios.get(Api.REFERRAL)
-            .then(response => {
-                if (response.status === 200) {
-                    this.setState({arrayTypeReferral: response.data});
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
-
     handleChangePassword(event) {
         this.setState({password: event.target.value});
-    }
-
-    handleChangeReferralCode(event) {
-        this.setState({referralCode: event.target.value});
-    }
-
-    handleChangeReferral(event) {
-        this.setState({referral: event.target.value});
     }
 
     handleChangeEmail(event) {
@@ -119,16 +75,6 @@ class SimpleSelect extends React.Component {
         }
         console.log(this.state.phone);
     };
-
-    handleChangeCity(event) {
-        this.setState({city: event.target.value});
-    }
-
-    handleChangeType(event) {
-
-        this.setState({typeDrive: event.target.value});
-    }
-
 
     // specifying your onload callback function
     expiredCallback() {
@@ -157,8 +103,6 @@ class SimpleSelect extends React.Component {
             phone,
             email,
             password,
-            typeDrive,
-            referral
         } = this.state;
 
         if (!checkPass.validate(password)) {
@@ -189,42 +133,25 @@ class SimpleSelect extends React.Component {
             }
         }
 
-        if (typeDrive === null || typeDrive.length < 1) {
-            this.setState({typeDriveValid: true});
-        } else {
-            this.setState({typeDriveValid: false});
-        }
-
-        if (referral === null || referral.length < 2) {
-            this.setState({referralValid: true});
-        } else {
-            this.setState({referralValid: false});
-        }
     }
 
     async handleSubmit() {
         await this.checkValid();
-        const {countryData, password, city, fullname, phone, email, typeDrive, referral, referralCode, fullnameValid, phoneValid, emailValid, typeDriveValid, referralValid, isDisabled, passwordValid} = await this.state;
-        if (passwordValid || fullnameValid || phoneValid || emailValid || typeDriveValid || referralValid || isDisabled) {
+        const {countryData, password, fullname, phone, email, fullnameValid, phoneValid, emailValid, isDisabled, passwordValid} = await this.state;
+        if (passwordValid || fullnameValid || phoneValid || emailValid || isDisabled) {
             toast.warn('Vui lòng kiểm tra giá trị nhập');
         } else {
             const headers = new Headers();
             headers.append('Content-Type', 'application/json');
-
-
             const config = {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify({
                     fullName: fullname,
-                    cityDrive: city,
                     email: email,
                     password: password,
                     countryCode: countryData,
                     phone: parseInt(phone, 10),
-                    typeDrive: typeDrive,
-                    referral: referral,
-                    referralCode: referralCode,
                 }),
             };
             fetch(Api.REGISTER, config)
@@ -267,9 +194,8 @@ class SimpleSelect extends React.Component {
         return (
             <div className="main-signup">
                 <div className="form-signin">
+                    {this.state.isRegister ? <Redirect to="/verify" /> : ""}
                     <div className="text-center mb-4">
-                        <img className="mb-4" src={mainLogo} alt=""
-                             width="72" height="72"/>
                         <h1 className="h3 mb-3 font-weight-normal">Đăng ký PawnVN ngay!</h1>
                         <p>
                             Vui lòng điền thông tin đầy đủ và chính xác để PawnVN có thể liên hệ bạn
@@ -350,9 +276,9 @@ class SimpleSelect extends React.Component {
                         <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                 disabled={this.state.isDisabled}
                                 onClick={this.handleSubmit}
-                        >ĐĂNG KÝ</button>
+                        >ĐĂNG KÝ
+                        </button>
                     </div>
-                    <p className="mt-5 mb-3 text-muted text-center"> &copy; {(new Date().getFullYear())} Copyright: </p>
                 </div>
                 <ToastContainer
                     hideProgressBar={true}

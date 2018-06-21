@@ -3,6 +3,7 @@ import {Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLin
 import mainLogo from '../../img/logo.jpg';
 import {getFromStorage} from '../../utils/storage';
 import Config from "../../utils/config";
+import './Navbar.css';
 
 class HomeMenu extends Component {
     constructor(props) {
@@ -50,9 +51,9 @@ class HomeMenu extends Component {
 
     render() {
         return (
-            <Navbar className="nav-main" expand="md" fixed="top" scrolling>
+            <Navbar className="nav-main" expand="md" fixed="top" scrolling color="#afafaf" >
                 <NavbarBrand href="/">
-                    <img src={mainLogo} alt="or-trans" height="48"/>
+                    <img src={mainLogo} alt="or-trans" height="48" />
                 </NavbarBrand>
                 <NavbarToggler onClick={this.handleTogglerClick}/>
                 <Collapse isOpen={this.state.collapsed} navbar>

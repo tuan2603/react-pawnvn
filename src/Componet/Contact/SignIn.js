@@ -6,9 +6,9 @@ import IntlTelInput from 'react-intl-tel-input';
 import libphonenumber from '../../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
 import '../../../node_modules/react-intl-tel-input/dist/main.css';
 import './SingIn.css';
-import {Button, Card, CardBody, CardTitle, Row, Col, Container, Collapse} from 'mdbreact';
+import {Collapse} from 'mdbreact';
 import {ToastContainer, toast} from 'react-toastify';
-import mainLogo from '../../img/logo.jpg';
+
 import ReCAPTCHA from 'react-grecaptcha';
 import Axios from 'axios';
 import Api from "../../utils/api";
@@ -48,7 +48,7 @@ class SimpleSelect extends React.Component {
     }
 
     componentDidMount() {
-        if (this.state.phone!=="") {
+        if (this.state.phone !== "") {
             this.setState({isSignin: true});
         }
     }
@@ -100,14 +100,14 @@ class SimpleSelect extends React.Component {
                 headers: headers,
                 body: JSON.stringify({
                     phone: parseInt(phone, 10),
-                    password:password,
+                    password: password,
                 }),
             };
             fetch(Api.SIGNIN, config)
                 .then((response) => response.json())
                 .then((responseJson) => {
-                    let{ value, activeType, message, id } = responseJson;
-                    console.log(value, activeType, message, id );
+                    let {value, activeType, message, id} = responseJson;
+                    console.log(value, activeType, message, id);
                     if (value === 0) {
                         //thông tin đăng nhập
                         setInStorage(Config.USER, {
@@ -117,13 +117,13 @@ class SimpleSelect extends React.Component {
                         });
                         //save thong tin nguoi dung
                         this.saveInfoUser(message, id);
-                    } else  if (value === 1) {
+                    } else if (value === 1) {
                         setInSession("phone", parseInt(phone, 10));
                         toast.warn('Tài khoản chưa được xác thực');
                         setTimeout(function () {
                             this.setState({isVerify: true});
                         }.bind(this), 2000);
-                    } else  if (value === 2) {
+                    } else if (value === 2) {
                         toast.warn('Tài khoản không tồn tại, vui lòng đăng ký!');
                         setTimeout(function () {
                             this.setState({isRefesh: true});
@@ -158,7 +158,7 @@ class SimpleSelect extends React.Component {
     //specifying verify callback function
     //secret: '6LfPfVwUAAAAAFs896v-B4rzTILIYqhtSy_wjfbb',
     verifyCallback(token) {
-        Axios.post('http://localhost/api/captcha', {
+        Axios.post(Api.CAPTCHA, {
             token: token
         })
             .then(response => {
@@ -175,67 +175,58 @@ class SimpleSelect extends React.Component {
     render() {
         return (
 
-            <div className="main-background">
-                {this.state.isSignin ? <Redirect to="/contact" /> : ""}
-                {this.state.isRefesh ? <Redirect to="/signin" /> : ""}
-                {this.state.isVerify ? <Redirect to="/verify" /> : ""}
-                <Container style={{marginTop: "4em"}}>
-                    <Row className="d-flex align-items-center" style={{minHeight: '30rem'}}>
-                        <Col md="7" lg="7">
-                        </Col>
-                        <Col md="5" lg="5" className="ml-lg-0 align-top">
-                            <div className="text-center text-md-right signin-padding">
-                                <Card style={{maxWidth: '340px'}}>
-                                    <CardBody className="text-center">
-                                        <img className="signin-padding" src={mainLogo} alt="sign in" height="96"/>
-                                        <div className='signin-line'>
+            <div className="main-signup">
+                {this.state.isSignin ? <Redirect to="/contact"/> : ""}
+                {this.state.isRefesh ? <Redirect to="/signin"/> : ""}
+                {this.state.isVerify ? <Redirect to="/verify"/> : ""}
+                <div className="form-signin">
+                    <div className="text-center mb-4">
+                        <h1 className="h3 mb-3 font-weight-normal">Đăng Nhập!</h1>
+                    </div>
 
-                                        </div>
-                                        <CardTitle>Sign In</CardTitle>
-                                        <div className="text-left"
-                                             style={{border: '1px solid #D0D0D0', borderRadius: '5px'}}>
-                                            <IntlTelInput
-                                                onPhoneNumberChange={this.onChangeHandler}
-                                                onPhoneNumberBlur={this.onChangeHandler}
-                                                preferredCountries={['vn']}
-                                                onlyCountries={['vn', 'us']}
-                                                onSelectFlag={null}
-                                                nationalMode={false}
-                                                separateDialCode={true}
-                                                fieldId={'telphone'}
-                                                style={{borderBottom: '0px'}}
-                                                utilsScript={libphonenumber}/>
-                                        </div>
-                                        <div className="d-flex margin_top_16">
-                                            <input type="password" value={this.state.password}
-                                                   placeholder="password" name="password"
-                                                   onChange={this.handleChangePassword}
-                                            />
-                                        </div>
-                                        <Collapse isOpen={this.state.passwordValid}>
-                                            <p> nhập mật khẩu không đúng </p>
-                                        </Collapse>
-                                        <ReCAPTCHA
-                                            sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
-                                            callback={this.verifyCallback}
-                                            expiredCallback={this.expiredCallback}
-                                            locale="en"
-                                            className="signin-captcha"
-                                        />
-                                        <Button className="signin-padding btn-verify" id="mySubmit"
-                                                disabled={this.state.isDisabled} onClick={this.onSubmit}
-                                        >send code verify</Button>
-                                    </CardBody>
-                                </Card>
-                            </div>
-                        </Col>
-                    </Row>
-                    <ToastContainer
-                        hideProgressBar={true}
-                        newestOnTop={true}
-                        autoClose={5000}
-                    />
-                </Container>
+                    <div className="form-label-group">
+                        <IntlTelInput
+                            onPhoneNumberChange={this.onChangeHandler}
+                            onPhoneNumberBlur={this.onChangeHandler}
+                            preferredCountries={['vn']}
+                            onlyCountries={['vn', 'us']}
+                            onSelectFlag={null}
+                            nationalMode={false}
+                            separateDialCode={true}
+                            fieldId={'telphone'}
+                            style={{borderBottom: '0px'}}
+                            utilsScript={libphonenumber}/>
+                    </div>
+                    <div className="form-label-group">
+                        <input type="password" value={this.state.password}
+                               placeholder="password" name="password"
+                               onChange={this.handleChangePassword}
+                        />
+                    </div>
+                    <Collapse isOpen={this.state.passwordValid}>
+                        <p> nhập mật khẩu không đúng </p>
+                    </Collapse>
+                    <div className="form-label-xau">
+                        <ReCAPTCHA
+                            sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
+                            callback={this.verifyCallback}
+                            expiredCallback={this.expiredCallback}
+                            locale="en"
+                            className="signin-captcha"
+                        />
+                    </div>
+                    <div className="form-label-xau">
+                        <button className="btn btn-lg btn-primary btn-block" id="mySubmit"
+                                disabled={this.state.isDisabled} onClick={this.onSubmit}
+                        >Đăng nhập
+                        </button>
+                    </div>
+                </div>
+                <ToastContainer
+                    hideProgressBar={true}
+                    newestOnTop={true}
+                    autoClose={5000}
+                />
             </div>
         );
     }

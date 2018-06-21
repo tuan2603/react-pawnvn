@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Redirect
 } from "react-router-dom";
-import {Container, Button, Collapse} from 'mdbreact';
+import {Collapse} from 'mdbreact';
 import {ToastContainer, toast} from 'react-toastify';
 
 import Api from '../../utils/api';
@@ -27,18 +27,21 @@ class IndentilyCard extends React.Component {
                 activeType: '',
             },
             user: {
+                accept: '',
                 phone: '',
                 identityCardFront: '',
                 identityCardBehind: '',
                 identityCardNumber: '',
-                identityCardDateIssued: '',
+                sex:'',
+                birthday: moment(),
+                identityCardDateIssued: moment(),
             },
-            startDate: moment(),
             isDisabled: true,
             CardNumberValid: false,
             isRedirect: false,
             isRefesh: false,
-            identityCardNumber: '',
+            isChange: false,
+            redirect: false,
         };
 
         this.handleIdentityCardFront = this.handleIdentityCardFront.bind(this);
@@ -46,6 +49,8 @@ class IndentilyCard extends React.Component {
         this.handleIdentityCardNumber = this.handleIdentityCardNumber.bind(this);
         this.handleChangeDate = this.handleChangeDate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChangeSex = this.handleChangeSex.bind(this);
+        this.handleChangeBirthday = this.handleChangeBirthday.bind(this);
 
     }
 
@@ -62,18 +67,23 @@ class IndentilyCard extends React.Component {
     }
 
     componentDidMount() {
-        let {identityCardDateIssued, identityCardNumber} = this.state.user;
-        if (identityCardDateIssued !== undefined && identityCardNumber !== undefined) {
-            this.setState({startDate: moment(identityCardDateIssued), isDisabled:false ,identityCardNumber:identityCardNumber});
+        let {identityCardDateIssued, identityCardNumber, birthday } = this.state.user;
+        if (identityCardDateIssued !== undefined && identityCardNumber !== undefined && birthday !== undefined) {
+            this.setState({
+                isDisabled:false,
+            });
         }
     }
 
     handleIdentityCardNumber(event) {
-        if (event.target.value.toString().length === 9) {
+        let { user } = this.state;
+        user.identityCardNumber = event.target.value;
+        this.setState({user});
+        if (event.target.value.toString().length === 9 && event.target.value.match(/^[0-9]+$/) != null) {
             this.setState({
-                identityCardNumber: event.target.value,
                 CardNumberValid: false,
                 isDisabled: false,
+                isChange:true,
             });
         } else {
             this.setState({
@@ -83,68 +93,101 @@ class IndentilyCard extends React.Component {
         }
     }
 
-    handleSubmit() {
-        const {isDisabled, startDate, identityCardNumber} = this.state;
-        const {id} = this.state.useraccount;
-        if (isDisabled || !startDate.isValid() || identityCardNumber.toString().length !== 9) {
-            console.log(isDisabled, startDate.isValid(), identityCardNumber)
-            if (!startDate.isValid()) {
-                toast.warn('Vui lòng chọn ngày đúng');
-            }
-            if (identityCardNumber.toString().length !== 9) {
-                this.setState({
-                    CardNumberValid: true,
-                    isDisabled: true,
-                });
-            }
-        } else {
-
-            const headers = new Headers();
-            headers.append('Authorization', 'Bearer ' + this.state.useraccount.token);
-            headers.append('Content-Type', 'application/json');
-
-
-            const config = {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify({
-                    'identityCardNumber': identityCardNumber,
-                    'identityCardDateIssued': startDate,
-                    'id': id,
-                }),
-            };
-            fetch(Api.PROFILE_DOC, config)
-                .then((response) => response.json())
-                .then((responseJson) => {
-                    if (responseJson.value === true) {
-                        setInStorage(Config.USERINFO, responseJson.response);
-                        toast.success('Cập nhật thành công');
-                        setTimeout(function () {
-                            this.setState({user: responseJson.response, isRedirect:true});
-                        }.bind(this),2000);
-
-                    } else {
-                        toast.success('Cập nhật thất bại vui lòng kiểm tra giá trị nhập');
-                        this.setState({isRefesh:true})
-                    }
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        }
+    handleChangeSex(event) {
+        let { user } = this.state;
+        user.sex = event.target.value;
+        this.setState({
+            user,
+            isChange:true,
+            isDisabled: false,
+        });
     }
 
-    async handleChangeDate(date) {
+    handleChangeDate(date) {
+        let {user } = this.state;
+        user.identityCardDateIssued = date;
         if (date !== undefined) {
-            await this.setState({
-                startDate: date
+            this.setState({
+                user,
+                isChange:true,
+                isDisabled: false,
             });
         }
     }
 
+    handleChangeBirthday(date) {
+        let {user } = this.state;
+        user.birthday = date;
+        if (date !== undefined) {
+            this.setState({
+                user,
+                isChange:true,
+                isDisabled: false,
+            });
+        }
+    }
+
+    handleSubmit() {
+        const {isDisabled, isChange} = this.state;
+        const {id} = this.state.useraccount;
+        const {sex,  identityCardNumber, identityCardDateIssued,  birthday} = this.state.user;
+        if (isChange) {
+            if (isDisabled || !moment(birthday).isValid() ||
+                !moment(identityCardDateIssued).isValid() ||
+                identityCardNumber.toString().length !== 9) {
+                if ( !moment(birthday).isValid()  || !moment(identityCardDateIssued).isValid()) {
+                    toast.warn('Vui lòng chọn ngày đúng');
+                }
+                if (identityCardNumber.toString().length !== 9) {
+                    this.setState({
+                        CardNumberValid: true,
+                        isDisabled: true,
+                    });
+                }
+            } else {
+                console.log(id, sex,  identityCardNumber, identityCardDateIssued,  birthday);
+                const headers = new Headers();
+                headers.append('Authorization', 'Bearer ' + this.state.useraccount.token);
+                headers.append('Content-Type', 'application/json');
+                const config = {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify({
+                        'identityCardNumber': identityCardNumber,
+                        'identityCardDateIssued': identityCardDateIssued,
+                        'sex': sex,
+                        'birthday': birthday,
+                        'id': id,
+                    }),
+                };
+                fetch(Api.PROFILE_DOC, config)
+                    .then((response) => response.json())
+                    .then((responseJson) => {
+                        if (responseJson.value === true) {
+                            setInStorage(Config.USERINFO, responseJson.response);
+                            toast.success('Cập nhật thành công');
+                            setTimeout(function () {
+                                this.setState({user: responseJson.response, isRedirect:true});
+                            }.bind(this),2000);
+
+                        } else {
+                            toast.warn('Cập nhật thất bại vui lòng kiểm tra giá trị nhập');
+                            this.setState({isRefesh:true})
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
+        } else {
+            this.setState({ redirect: true });
+        }
+
+    }
+
+
     handleIdentityCardFront(ev) {
         ev.preventDefault();
-
         if (this.state.useraccount.id === undefined
             || this.state.useraccount.id === ''
             || this.state.user.phone === undefined
@@ -180,7 +223,6 @@ class IndentilyCard extends React.Component {
                     console.error(error);
                 });
         }
-
     }
 
     handleIdentityCardBehind(ev) {
@@ -220,12 +262,19 @@ class IndentilyCard extends React.Component {
 
 
     render() {
+        const { redirect, user, isRefesh } = this.state;
+        if (redirect) {
+            return <Redirect to='/update-user-acount'/>;
+        }
+        if ( isRefesh) {
+            // setTimeout(()=>{
+            //     window.location.reload();
+            // },5000)
+        }
         return (
             <div>
-                {this.state.isRedirect ? (<Redirect to="/update-user-acount" />) : ""}
-                {this.state.isRefesh ? (<Redirect to="/doccuments/identily-card" />) : ""}
-                <div style={{marginTop: "4em"}} className="profile-doccument">
-                    <Container>
+                <div className="profile-doccument">
+                    <div className="form-signin">
                         <div className="profile-title">
                             <h2>Chứng Minh Nhân Dân(Mặt trước)<span className="warning">*</span></h2>
                         </div>
@@ -235,18 +284,19 @@ class IndentilyCard extends React.Component {
                                 <input ref={(ref) => {
                                     this.uploadInputFront = ref;
                                 }} type="file" onChange={this.handleIdentityCardFront} name="file"
-                                       accept="image/*;capture=camera"/>
+                                       accept="image/*;capture=camera" disabled={this.state.accept}/>
+                                {/*nếu accept = true có nghĩa là đã xác thực, không được phép chỉnh sữa */}
                             </div>
 
                             <div className="sample_doc">
                                 {
-                                    this.state.user.identityCardFront !== undefined &&
+                                    user.identityCardFront !== undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}}
-                                         src={Api.AVATAR + this.state.user.phone + '/' + this.state.user.identityCardFront}
+                                         src={Api.AVATAR + user.phone + '/' + user.identityCardFront}
                                          alt="avatar"/>
                                 }
                                 {
-                                    this.state.user.identityCardFront === undefined &&
+                                    user.identityCardFront === undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}} src={picture} alt="avatar"/>
                                 }
 
@@ -263,18 +313,19 @@ class IndentilyCard extends React.Component {
                                 <input ref={(ref) => {
                                     this.uploadInputBehind = ref;
                                 }} type="file" onChange={this.handleIdentityCardBehind} name="file"
-                                       accept="image/*;capture=camera"/>
+                                       accept="image/*;capture=camera" disabled={this.state.accept}/>
+                                {/*nếu accept = true có nghĩa là đã xác thực, không được phép chỉnh sữa */}
                             </div>
 
                             <div className="sample_doc">
                                 {
-                                    this.state.user.identityCardBehind !== undefined &&
+                                   user.identityCardBehind !== undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}}
-                                         src={Api.AVATAR + this.state.user.phone + '/' + this.state.user.identityCardBehind}
+                                         src={Api.AVATAR + user.phone + '/' + user.identityCardBehind}
                                          alt="avatar"/>
                                 }
                                 {
-                                    this.state.user.identityCardBehind === undefined &&
+                                   user.identityCardBehind === undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}} src={picture} alt="avatar"/>
                                 }
 
@@ -298,17 +349,43 @@ class IndentilyCard extends React.Component {
                         </div>
                         <div className="indentily-number">
                             <p>Số chứng minh nhân <span className="warning">*</span></p>
-                            <input type="number" value={this.state.user.identityCardNumber} onChange={this.handleIdentityCardNumber} className="card-number"
+                            <div className="form-label-group">
+                            <input type="text" value={user.identityCardNumber}  onChange={this.handleIdentityCardNumber} className="card-number"
                                    name="CardNumber"/>
+                            </div>
                         </div>
                         <Collapse isOpen={this.state.CardNumberValid}>
                             <p> Không được rỗng, phải là 9 số </p>
                         </Collapse>
+
                         <div className="indentily-number">
-                            <p>Ngày cấp <span className="warning">*</span></p>
-                            <div>
+                            <p>Sinh ngày: <span className="warning">*</span></p>
+                            <div className="form-label-group">
                                 <DatePicker
-                                    selected={this.state.startDate}
+                                    selected={moment(user.birthday)}
+                                    onChange={this.handleChangeBirthday}
+                                    peekNextMonth
+                                    showMonthDropdown
+                                    showYearDropdown
+                                    dateFormat="DD/MM/YYYY"
+                                />
+                            </div>
+                        </div>
+                        <div className="indentily-number">
+                            <p>Giới tính: <span className="warning">*</span></p>
+                            <div className="form-label-group">
+                                <select name="city" value={user.sex} onChange={this.handleChangeSex}>
+                                    <option value="male">Nam</option>
+                                    <option value="female">Nữ</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="indentily-number">
+                            <p>Ngày cấp: <span className="warning">*</span></p>
+                            <div className="form-label-group">
+                                <DatePicker
+                                    selected={moment(user.identityCardDateIssued)}
                                     onChange={this.handleChangeDate}
                                     peekNextMonth
                                     showMonthDropdown
@@ -318,12 +395,12 @@ class IndentilyCard extends React.Component {
                             </div>
                         </div>
                         <div className="indentily-submit">
-                            <Button className="submit" id="mySubmit" type="submit"
+                            <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                     disabled={this.state.isDisabled} onClick={this.handleSubmit}
-                            >Tiếp tục</Button>
+                            >Tiếp tục</button>
                         </div>
 
-                    </Container>
+                    </div>
                     <ToastContainer
                         hideProgressBar={true}
                         newestOnTop={true}

@@ -1,22 +1,61 @@
 import React from 'react';
 import {
-    NavLink
+    NavLink,  Redirect
 } from "react-router-dom";
 import {Container, Row, Col, Jumbotron, Fa} from 'mdbreact';
 import "./Doccument.css"
+import Config from "../../utils/config";
+import {getFromStorage} from "../../utils/storage";
 
 class DocumentPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: {
+                phone: '',
+                accept: false,
+            },
+            title:"Bạn cần điền thông tin vào mẫu này để trở thành thành viên của PawnVN.",
+            redirect:false,
+        };
+
+    }
+
+    componentWillMount() {
+        let b = getFromStorage(Config.USERINFO);
+        if (b) {
+            this.setState({user: b});
+        }
+    }
+
+    componentDidMount() {
+        let {phone, accept} = this.state.user;
+        if (phone === ""){
+            this.setState({ redirect: true });
+        }
+        if (accept){
+            this.setState({ title:"Thông tin đã được xác thực!" });
+        }
+    }
+
+
+
     render() {
+        const { redirect,title } = this.state;
+        if (redirect) {
+            return <Redirect to='/signin'/>;
+        }
         return (
             <div>
-                <div style={{marginTop: "4em"}} className="main-doccument">
+                <div className="main-doccument">
                     <Container>
                         <Row>
                             <Col md="8" className="mt-3 mx-auto">
                                 <Jumbotron>
                                     {/*<h1><Fa icon="cubes" className="grey-text"/> Components</h1>*/}
                                     <ul className="list-unstyled example-components-list">
-                                        <h6 className="mt-3 grey-text"> Bạn cần điền thông tin vào mẫu này để trở thành thành viên của OR-STRAN.  </h6>
+                                        <h6 className="mt-3 grey-text"> {title}  </h6>
                                         <li>
                                             <NavLink to="/documents/profile-pictrue">Chụp ảnh chân dung <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
                                         </li>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Routes from './Routes';
 import NavbarCus from './Componet/Navbar/Navbar';
-//import FooterMain from './Componet/Footer/Footer';
+import FooterMain from './Componet/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './css/mdb.css';
@@ -23,6 +23,7 @@ class App extends Component {
                     <main style={{marginTop:"4em"}} >
                         <Routes onChangeLogin={this.onChangeLogin} />
                     </main>
+                    <FooterMain/>
                 </div>
             </Router>
         );

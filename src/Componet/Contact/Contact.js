@@ -5,7 +5,6 @@ import Config from '../../utils/config';
 import {
     Redirect
 } from "react-router-dom";
-import {Container, Row, Col, Button} from 'mdbreact';
 import './Contact.css';
 
 class Contact extends Component {
@@ -58,29 +57,24 @@ class Contact extends Component {
     render() {
         return (
 
-            <div style={{marginTop: "4em"}}>
-                <Container className="contact-container">
+            <div className="main-signup">
+                <div className="form-signin">
                     {this.state.isLogout ? (<Redirect to="/signin"/>) : ""}
-                    <Row>
-                        <Col md="10" className="mx-auto mt-4">
-                            <h2>Phone: {this.state.user.phone}</h2>
-                        </Col>
-                    </Row>
+                    <div className="text-center mb-4">
+                        <h1 className="h3 mb-3 font-weight-normal">Phone: {this.state.user.phone}</h1>
+                    </div>
 
-                    <Row className="d-flex">
-                        <Col md="10" className="mx-auto mt-4">
+                    <div className="text-center mb-4">
                             <p> Bấm vào <a href="/update-user-acount" className="btn-verify"> đây </a> Cập nhật biểu mẫu
-                                để chính thức trở thành thành viên OR-TRANS </p>
-                        </Col>
-                    </Row>
-                    <Row className="d-flex">
-                        <Col md="5" className="mx-auto mt-5">
-                            <Button className="btn-verify" id="mySubmit" type="submit"
+                                để chính thức trở thành thành viên PawnVN </p>
+                    </div>
+
+                    <div className="form-label-xau">
+                        <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                     onClick={this.submitLogout}
-                            >Logout</Button>
-                        </Col>
-                    </Row>
-                </Container>
+                        >Đăng xuất</button>
+                    </div>
+                </div>
             </div>
 
         );

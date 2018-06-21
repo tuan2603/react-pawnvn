@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {
     Redirect
 } from "react-router-dom";
-import {Container, Row, Col, Button} from 'mdbreact';
 import "./verify.css";
 import {getFromSession} from '../../utils/sessionStorage';
 import Api from '../../utils/api';
@@ -75,7 +74,7 @@ class Verify extends Component {
                     if (response.status === 200) {
                         let {activeType, value} = response.data;
                         if (activeType === 2 && value === 0) {
-                            toast.success('Xác nhận không thành công, đăng nhập và cập nhật thông tin để sớm trở thành thành viên OR-TRANS',{
+                            toast.success('Xác nhận không thành công, đăng nhập và cập nhật thông tin để sớm trở thành thành viên OR-TRANS', {
                                 position: toast.POSITION.BOTTOM_CENTER
                             });
                             setTimeout(function () {
@@ -102,66 +101,58 @@ class Verify extends Component {
 
     render() {
         return (
-            <div>
-                <div style={{marginTop: "4em"}}>
-                    <Container className="home-container verify-container">
-                        {this.state.isSignIn ? (<Redirect to="/signin"/>) : ""}
-                        {this.state.isRefesh ? (<Redirect to="/verify"/>) : ""}
-                        <Row>
-                            <Col md="10" className="mx-auto mt-4">
-                                <p>Vui lòng xác thực số điện thoại bằng cách nhập Mã xác thực (OTP) đã gửi qua SMS đến
-                                    bạn </p>
-                                    <p> {this.state.phone.length > 4 && " ******" + this.state.phone.substring(this.state.phone.length - 4, this.state.phone.length)} </p>
-                            </Col>
-                        </Row>
-                        <Row className="d-flex">
-                            <Col md="4" className="mx-auto mt-4">
-                                <p>Số điện thoại</p>
-                                <input className="text-center" type="tel"
-                                       placeholder="" name="phone"
-                                       onChange={this.verifyPhone}
-                                />
-                            </Col>
-                        </Row>
-                        <Row className="d-flex">
-                            <Col md="4" className="mx-auto mt-4">
-                                <p>Mã xác thực</p>
-                                <input className="text-center" type="password" value={this.state.verify}
-                                       placeholder="" name="verify"
-                                       onChange={this.verifyChange}
-                                />
-                            </Col>
-                        </Row>
-                        <Row className="d-flex">
-                            <Col md="5" className="mx-auto mt-5">
-                                <Button className="btn-verify" id="mySubmit" type="submit"
-                                        onClick={this.handleSubmit}
-                                >Gửi</Button>
-                            </Col>
-                        </Row>
-                        <Row className="d-flex">
-                            <Col md="10" className="mx-auto mt-4">
-                                <p>Bấm vào <a style={{color: "blue"}} onClick={this.submitSendSMS}> đây </a> để hệ thống
-                                    gửi
-                                    lại mã xác thực qua SMS(nếu như bạn chưa nhận được tin nhăn sau 5 phút) </p>
-                            </Col>
-                        </Row>
-
-                        {/*<Row className="d-flex">*/}
-                            {/*<Col md="10" className="mx-auto mt-4">*/}
-                                {/*<p>Bấm vào <a style={{color: "blue"}} href="/signin"> đây </a> để đăng nhập (nếu như bạn*/}
-                                    {/*đã*/}
-                                    {/*có tài khoản ) </p>*/}
-                            {/*</Col>*/}
-                        {/*</Row>*/}
-                        <ToastContainer
-                            hideProgressBar={true}
-                            newestOnTop={true}
-                            autoClose={5000}
+            <div className="main-signup">
+                <div className="form-signin">
+                    {this.state.isSignIn ? (<Redirect to="/signin"/>) : ""}
+                    {this.state.isRefesh ? (<Redirect to="/verify"/>) : ""}
+                    <div className="text-center mb-4">
+                        <p>Vui lòng xác thực số điện thoại bằng cách nhập Mã xác thực (OTP) đã gửi qua SMS đến
+                            bạn </p>
+                        <p> {this.state.phone.length > 4 && " ******" + this.state.phone.substring(this.state.phone.length - 4, this.state.phone.length)} </p>
+                    </div>
+                    <div className="form-label-xau">
+                        <p>Số điện thoại</p>
+                    </div>
+                    <div className="form-label-group">
+                    <input className="text-center" type="tel"
+                               placeholder="" name="phone"
+                               onChange={this.verifyPhone}
                         />
-                    </Container>
+                    </div>
+                    <div className="form-label-xau">
+                        <p>Mã xác thực</p>
+                    </div>
+                    <div className="form-label-group">
+                        <input className="text-center" type="password" value={this.state.verify}
+                               placeholder="" name="verify"
+                               onChange={this.verifyChange}
+                        />
+                    </div>
+                    <div className="form-label-xau">
+                        <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
+                                onClick={this.handleSubmit}
+                        >Gửi</button>
+                    </div>
+                    <div className="form-label-xau">
+                        <p>Bấm vào <a style={{color: "blue"}} onClick={this.submitSendSMS}> đây </a> để hệ thống
+                            gửi
+                            lại mã xác thực qua SMS(nếu như bạn chưa nhận được tin nhăn sau 5 phút) </p>
+                    </div>
+                    {/*<Row className="d-flex">*/}
+                    {/*<Col md="10" className="mx-auto mt-4">*/}
+                    {/*<p>Bấm vào <a style={{color: "blue"}} href="/signin"> đây </a> để đăng nhập (nếu như bạn*/}
+                    {/*đã*/}
+                    {/*có tài khoản ) </p>*/}
+                    {/*</Col>*/}
+                    {/*</Row>*/}
+                    <ToastContainer
+                        hideProgressBar={true}
+                        newestOnTop={true}
+                        autoClose={5000}
+                    />
                 </div>
             </div>
+
         );
     }
 }
