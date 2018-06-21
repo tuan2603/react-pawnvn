@@ -57,9 +57,6 @@ class ProfilePicture extends React.Component {
             const data = new FormData();
             data.append('avatar', this.uploadInput.files[0]);
             data.append('id', this.state.useraccount.id);
-
-            console.log(this.state.useraccount.id, this.state.useraccount.token);
-
             const headers = new Headers();
             headers.append('Authorization', 'Bearer ' + this.state.useraccount.token);
 
