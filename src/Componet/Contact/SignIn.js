@@ -6,7 +6,7 @@ import IntlTelInput from 'react-intl-tel-input';
 import libphonenumber from '../../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
 import '../../../node_modules/react-intl-tel-input/dist/main.css';
 import './SingIn.css';
-import {Collapse} from 'mdbreact';
+import {Collapse,Jumbotron} from 'mdbreact';
 import {ToastContainer, toast} from 'react-toastify';
 
 import ReCAPTCHA from 'react-grecaptcha';
@@ -41,6 +41,7 @@ class SimpleSelect extends React.Component {
     }
 
     componentWillMount() {
+
         let b = getFromStorage(Config.USERINFO);
         if (b) {
             this.setState({phone: b.phone});
@@ -173,54 +174,65 @@ class SimpleSelect extends React.Component {
 
 
     render() {
+        let {isSignin, isRefesh, isVerify} = this.state;
+        if (isSignin) {
+            return (<Redirect to="/contact"/>);
+        }
+        if (isRefesh) {
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000)
+        }
+        if (isVerify) {
+            return (<Redirect to="/verify"/>);
+        }
         return (
-
-            <div className="main-signup">
-                {this.state.isSignin ? <Redirect to="/contact"/> : ""}
-                {this.state.isRefesh ? <Redirect to="/signin"/> : ""}
-                {this.state.isVerify ? <Redirect to="/verify"/> : ""}
+            <div className="main-signin">
                 <div className="form-signin">
-                    <div className="text-center mb-4">
-                        <h1 className="h3 mb-3 font-weight-normal">Đăng Nhập!</h1>
-                    </div>
+                    <Jumbotron>
+                        <div className="text-center mb-4">
+                            <h1 className="h3 mb-3 font-weight-normal">Đăng Nhập!</h1>
+                        </div>
 
-                    <div className="form-label-group">
-                        <IntlTelInput
-                            onPhoneNumberChange={this.onChangeHandler}
-                            onPhoneNumberBlur={this.onChangeHandler}
-                            preferredCountries={['vn']}
-                            onlyCountries={['vn', 'us']}
-                            onSelectFlag={null}
-                            nationalMode={false}
-                            separateDialCode={true}
-                            fieldId={'telphone'}
-                            style={{borderBottom: '0px'}}
-                            utilsScript={libphonenumber}/>
-                    </div>
-                    <div className="form-label-group">
-                        <input type="password" value={this.state.password}
-                               placeholder="password" name="password"
-                               onChange={this.handleChangePassword}
-                        />
-                    </div>
-                    <Collapse isOpen={this.state.passwordValid}>
-                        <p> nhập mật khẩu không đúng </p>
-                    </Collapse>
-                    <div className="form-label-xau">
-                        <ReCAPTCHA
-                            sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
-                            callback={this.verifyCallback}
-                            expiredCallback={this.expiredCallback}
-                            locale="en"
-                            className="signin-captcha"
-                        />
-                    </div>
-                    <div className="form-label-xau">
-                        <button className="btn btn-lg btn-primary btn-block" id="mySubmit"
-                                disabled={this.state.isDisabled} onClick={this.onSubmit}
-                        >Đăng nhập
-                        </button>
-                    </div>
+                        <div className="form-label-group">
+                            <IntlTelInput
+                                onPhoneNumberChange={this.onChangeHandler}
+                                onPhoneNumberBlur={this.onChangeHandler}
+                                preferredCountries={['vn']}
+                                onlyCountries={['vn', 'us']}
+                                onSelectFlag={null}
+                                nationalMode={false}
+                                separateDialCode={true}
+                                fieldId={'telphone'}
+                                style={{borderBottom: '0px'}}
+                                utilsScript={libphonenumber}/>
+                        </div>
+                        <div className="form-label-group">
+                            <input type="password" value={this.state.password}
+                                   placeholder="password" name="password"
+                                   onChange={this.handleChangePassword}
+                            />
+                        </div>
+                        <Collapse isOpen={this.state.passwordValid}>
+                            <p> nhập mật khẩu không đúng </p>
+                        </Collapse>
+                        <div className="form-label-xau">
+                            <ReCAPTCHA
+                                sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
+                                callback={this.verifyCallback}
+                                expiredCallback={this.expiredCallback}
+                                locale="en"
+                                className="signin-captcha"
+                            />
+                        </div>
+                        <div className="form-label-xau">
+                            <button className="btn btn-lg btn-primary btn-block" id="mySubmit"
+                                    disabled={this.state.isDisabled} onClick={this.onSubmit}
+                            >Đăng nhập
+                            </button>
+                        </div>
+                    </Jumbotron>
+
                 </div>
                 <ToastContainer
                     hideProgressBar={true}

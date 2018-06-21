@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Redirect
 } from "react-router-dom";
+import {Jumbotron} from 'mdbreact';
 import Api from '../../utils/api';
 import {getFromStorage, setInStorage} from "../../utils/storage";
 import Config from "../../utils/config";
@@ -25,15 +26,15 @@ class ProfilePicture extends React.Component {
                 avatarLink: '',
                 accept: false,
             },
-            redirect:false,
+            redirect: false,
         };
 
         this.handleUploadImage = this.handleUploadImage.bind(this);
         this.handleNext = this.handleNext.bind(this);
     }
 
-    handleNext(){
-        this.setState({ redirect: true });
+    handleNext() {
+        this.setState({redirect: true});
     }
 
     componentWillMount() {
@@ -84,66 +85,70 @@ class ProfilePicture extends React.Component {
     }
 
     render() {
-        const { redirect } = this.state;
+        const {redirect} = this.state;
         if (redirect) {
             return <Redirect to='/update-user-acount'/>;
         }
         return (
-        <div>
+            <div>
                 <div className="profile-doccument">
-                    <div className="form-signin">
-                        <div className="profile-title">
-                            <h2>Chụp Ảnh Chân Dung <span className="warning">*</span></h2>
-                        </div>
-                        <div className="form-upload">
+                    <div className="form-indentily">
+                        <Jumbotron>
+                            <div className="profile-title">
+                                <h2>Chụp Ảnh Chân Dung <span className="warning">*</span></h2>
+                            </div>
+                            <div className="form-upload">
 
-                            <div className="upload-container">
-                                <input ref={(ref) => {
-                                    this.uploadInput = ref;
-                                }} type="file" onChange={this.handleUploadImage} name="file"
-                                       accept="image/*;capture=camera" disabled={this.state.accept}/>
-                            </div>
+                                <div className="upload-container">
+                                    <input ref={(ref) => {
+                                        this.uploadInput = ref;
+                                    }} type="file" onChange={this.handleUploadImage} name="file"
+                                           accept="image/*;capture=camera" disabled={this.state.accept}/>
+                                </div>
 
-                            <div className="sample_doc">
-                                {
-                                    this.state.user.avatarLink !== undefined &&
-                                    <img className="img-fluid" style={{maxHeight: "200px"}}
-                                         src={Api.AVATAR + this.state.user.phone + '/' + this.state.user.avatarLink}
-                                         alt="avatar"/>
-                                }
-                                {
-                                    this.state.user.avatarLink === undefined &&
-                                    <img className="img-fluid" style={{maxHeight: "200px"}} src={boy} alt="avatar"/>
-                                }
+                                <div className="sample_doc">
+                                    {
+                                        this.state.user.avatarLink !== undefined &&
+                                        <img className="img-fluid" style={{maxHeight: "200px"}}
+                                             src={Api.AVATAR + this.state.user.phone + '/' + this.state.user.avatarLink}
+                                             alt="avatar"/>
+                                    }
+                                    {
+                                        this.state.user.avatarLink === undefined &&
+                                        <img className="img-fluid" style={{maxHeight: "200px"}} src={boy} alt="avatar"/>
+                                    }
 
-                                <p> Bấm để chọn ảnh khác</p>
-                            </div>
+                                    <p> Bấm để chọn ảnh khác</p>
+                                </div>
 
-                        </div>
-                        <div>
-                            <div className="list">
-                                <div className="icon icon-tick"></div>
-                                <div className="list-item">Hình chụp thẳng trực diện.</div>
                             </div>
-                            <div className="list">
-                                <div className="icon icon-tick"></div>
-                                <div className="list-item">Không đội nón, kính râm.</div>
+                            <div>
+                                <div className="list">
+                                    <div className="icon icon-tick"></div>
+                                    <div className="list-item">Hình chụp thẳng trực diện.</div>
+                                </div>
+                                <div className="list">
+                                    <div className="icon icon-tick"></div>
+                                    <div className="list-item">Không đội nón, kính râm.</div>
+                                </div>
+                                <div className="list">
+                                    <div className="icon icon-tick"></div>
+                                    <div className="list-item">Ảnh rõ nét, không bị mờ.</div>
+                                </div>
+                                <div className="list">
+                                    <div className="icon icon-tick"></div>
+                                    <div className="list-item">Nền trơn, màu trắng hoặc xanh dương.</div>
+                                </div>
                             </div>
-                            <div className="list">
-                                <div className="icon icon-tick"></div>
-                                <div className="list-item">Ảnh rõ nét, không bị mờ.</div>
+                            <div className="indentily-submit">
+                                <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
+                                        onClick={this.handleNext}
+                                >Tiếp tục
+                                </button>
                             </div>
-                            <div className="list">
-                                <div className="icon icon-tick"></div>
-                                <div className="list-item">Nền trơn, màu trắng hoặc xanh dương.</div>
-                            </div>
-                        </div>
-                        <div className="indentily-submit">
-                            <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
-                                  onClick={this.handleNext}
-                            >Tiếp tục</button>
-                        </div>
+                        </Jumbotron>
                     </div>
+
                 </div>
                 <ToastContainer
                     hideProgressBar={true}

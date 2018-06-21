@@ -3,7 +3,7 @@ import {
     Redirect
 } from "react-router-dom";
 import './SingUp.css';
-import { Collapse} from 'mdbreact';
+import {Collapse,Jumbotron} from 'mdbreact';
 import {ToastContainer, toast} from 'react-toastify';
 import IntlTelInput from 'react-intl-tel-input';
 import libphonenumber from '../../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
@@ -15,6 +15,7 @@ import Api from '../../utils/api';
 import {setInSession} from '../../utils/sessionStorage';
 
 import passwordValidator from 'password-validator';
+
 const checkPass = new passwordValidator();
 // Add properties to it
 checkPass
@@ -191,94 +192,101 @@ class SimpleSelect extends React.Component {
 
 
     render() {
+        let {isRegister} = this.state;
+        if (isRegister) {
+            return (<Redirect to="/verify"/>);
+        }
         return (
             <div className="main-signup">
                 <div className="form-signin">
-                    {this.state.isRegister ? <Redirect to="/verify" /> : ""}
-                    <div className="text-center mb-4">
-                        <h1 className="h3 mb-3 font-weight-normal">Đăng ký PawnVN ngay!</h1>
-                        <p>
-                            Vui lòng điền thông tin đầy đủ và chính xác để PawnVN có thể liên hệ bạn
-                            sớm nhất.
-                        </p>
-                    </div>
-                    <div className="form-label-group">
-                        <input type="text" value={this.state.fullname} placeholder="Họ và Tên"
-                               name="fullname"
-                               onChange={this.handleChangeFullname}
-                        />
-                    </div>
-                    <Collapse isOpen={this.state.fullnameValid}>
-                        <p>Vui lòng nhập đầy đủ họ tên</p>
-                    </Collapse>
-                    <div className="form-label-xau">
-                        <IntlTelInput
-                            onPhoneNumberChange={this.handleChangePhone}
-                            onPhoneNumberBlur={this.handleChangePhone}
-                            preferredCountries={['vn']}
-                            onlyCountries={['vn', 'us']}
-                            onSelectFlag={null}
-                            nationalMode={false}
-                            separateDialCode={true}
-                            fieldId={'telphone'}
-                            style={{
-                                width: "100%",
-                                border: '1px solid #D0D0D0',
-                                borderRadius: "5px"
-                            }}
-                            utilsScript={libphonenumber}/>
-                    </div>
+                    <Jumbotron>
+                        <div className="text-center mb-4">
+                            <h1 className="h3 mb-3 font-weight-normal">Đăng ký PawnVN ngay!</h1>
+                            <p>
+                                Vui lòng điền thông tin đầy đủ và chính xác để PawnVN có thể liên hệ bạn
+                                sớm nhất.
+                            </p>
+                        </div>
+                        <div className="form-label-group">
+                            <input type="text" value={this.state.fullname} placeholder="Họ và Tên"
+                                   name="fullname"
+                                   onChange={this.handleChangeFullname}
+                            />
+                        </div>
+                        <Collapse isOpen={this.state.fullnameValid}>
+                            <p>Vui lòng nhập đầy đủ họ tên</p>
+                        </Collapse>
+                        <div className="form-label-xau">
+                            <IntlTelInput
+                                onPhoneNumberChange={this.handleChangePhone}
+                                onPhoneNumberBlur={this.handleChangePhone}
+                                preferredCountries={['vn']}
+                                onlyCountries={['vn', 'us']}
+                                onSelectFlag={null}
+                                nationalMode={false}
+                                separateDialCode={true}
+                                fieldId={'telphone'}
+                                style={{
+                                    width: "100%",
+                                    border: '1px solid #D0D0D0',
+                                    borderRadius: "5px"
+                                }}
+                                utilsScript={libphonenumber}/>
+                        </div>
 
-                    <Collapse isOpen={this.state.phoneValid}>
-                        <p>Vui lòng nhập số điện thoại </p>
-                    </Collapse>
+                        <Collapse isOpen={this.state.phoneValid}>
+                            <p>Vui lòng nhập số điện thoại </p>
+                        </Collapse>
 
-                    <div className="form-label-group">
-                        <input type="email" id="inputemail"
-                               placeholder="Địa chỉ email(Gmail)" name="email"
-                               onChange={this.handleChangeEmail}
-                               value={this.state.email}
-                        />
-                    </div>
-                    <Collapse isOpen={this.state.emailValid}>
-                        <p>Vui lòng nhập đúng tài khoản gmail</p>
-                    </Collapse>
-
-
-                    <div className="form-label-group">
-                        <input type="password" value={this.state.password}
-                               placeholder="Mật khẩu" name="password"
-                               onChange={this.handleChangePassword}
-                        />
-                    </div>
-                    <Collapse isOpen={this.state.passwordValid}>
-                        <p>Vui lòng nhập Mật khẩu phải có ít nhất 8 ký tự, có
-                            số, chữ hoa, chữ thường, ký tự đặc biệt</p>
-                    </Collapse>
+                        <div className="form-label-group">
+                            <input type="email" id="inputemail"
+                                   placeholder="Địa chỉ email(Gmail)" name="email"
+                                   onChange={this.handleChangeEmail}
+                                   value={this.state.email}
+                            />
+                        </div>
+                        <Collapse isOpen={this.state.emailValid}>
+                            <p>Vui lòng nhập đúng tài khoản gmail</p>
+                        </Collapse>
 
 
-                    <div className="form-label-xau">
-                        <ReCAPTCHA
-                            sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
-                            callback={this.verifyCallback}
-                            expiredCallback={this.expiredCallback}
-                            locale="en"
-                        />
-                    </div>
+                        <div className="form-label-group">
+                            <input type="password" value={this.state.password}
+                                   placeholder="Mật khẩu" name="password"
+                                   onChange={this.handleChangePassword}
+                            />
+                        </div>
+                        <Collapse isOpen={this.state.passwordValid}>
+                            <p>Vui lòng nhập Mật khẩu phải có ít nhất 8 ký tự, có
+                                số, chữ hoa, chữ thường, ký tự đặc biệt</p>
+                        </Collapse>
 
-                    <div className="form-label-xau">
-                        <p>Khi tiếp tục, tôi đồng ý PawnVN được phép thu thập, sử dụng và tiết lộ
-                            thông tin được tôi cung cấp theo <a
-                                href="/privacy"> Chính sách Bảo mật </a>mà tôi đã
-                            đọc và hiểu.</p>
-                    </div>
-                    <div className="form-label-xau">
-                        <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
-                                disabled={this.state.isDisabled}
-                                onClick={this.handleSubmit}
-                        >ĐĂNG KÝ
-                        </button>
-                    </div>
+
+                        <div className="form-label-xau">
+                            <ReCAPTCHA
+                                sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
+                                callback={this.verifyCallback}
+                                expiredCallback={this.expiredCallback}
+                                locale="en"
+                            />
+                        </div>
+
+                        <div className="form-label-xau">
+                            <p>Khi tiếp tục, tôi đồng ý PawnVN được phép thu thập, sử dụng và tiết lộ
+                                thông tin được tôi cung cấp theo <a
+                                    href="/privacy"> Chính sách Bảo mật </a>mà tôi đã
+                                đọc và hiểu.</p>
+                        </div>
+                        <div className="form-label-xau">
+                            <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
+                                    disabled={this.state.isDisabled}
+                                    onClick={this.handleSubmit}
+                            >ĐĂNG KÝ
+                            </button>
+                        </div>
+                    </Jumbotron>
+
+
                 </div>
                 <ToastContainer
                     hideProgressBar={true}

@@ -52,6 +52,7 @@ import StudentCardClearance from "./Componet/UserInfo/StudentCardClearance";
 import RegistrationBookClearance from "./Componet/UserInfo/RegistrationBookClearance";
 import CVClearance from "./Componet/UserInfo/CVClearance";
 import EmergencyContact from "./Componet/UserInfo/EmergencyContact";
+import BusinessRegistration from "./Componet/UserInfo/BusinessRegistration";
 
 
 
@@ -78,6 +79,7 @@ const Routes = () => (
         <Route path='/documents/registration-book-clearance' component={RegistrationBookClearance}/>
         <Route path='/documents/cv-clearance' component={CVClearance}/>
         <Route path='/documents/emergency-contact' component={EmergencyContact}/>
+        <Route path='/documents/business-registration' component={BusinessRegistration}/>
 
         <Route exact path='/css' component={CSSPage} />
         <Route exact path='/css/table' component={TablePage} />

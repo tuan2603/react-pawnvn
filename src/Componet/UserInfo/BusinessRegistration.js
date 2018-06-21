@@ -16,7 +16,7 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-class IndentilyCard extends React.Component {
+class BusinessRegistration extends React.Component {
     constructor(props) {
         super(props);
 
@@ -29,27 +29,31 @@ class IndentilyCard extends React.Component {
             user: {
                 accept: '',
                 phone: '',
-                identityCardFront: '',
-                identityCardBehind: '',
-                identityCardNumber: '',
-                sex: 'male',
-                birthday: moment(),
-                identityCardDateIssued: moment(),
+                city: '', // tỉnh thành phố
+                companyName: '', // Tên công ty, doanh nghiệp
+                address: '', // địa chỉ công ty
+                businessNumber: '',//số đăng ký doanh nghiệp
+                businessDate: moment(), //ngày cấp
+                licensee: '', // nơi cấp
+                licenseeImageFront: '', // ảnh giấy phép kinh doanh mặt trước
+                licenseeImageBehind: '', //ảnh giấy phép kinh doanh mặt sau
+                representativeName: '', //tên người đại diện
+                title: '',// chức danh
             },
             isDisabled: true,
-            CardNumberValid: false,
+            businessNumberValid: false,
             isRedirect: false,
             isRefesh: false,
             isChange: false,
         };
 
-        this.handleIdentityCardFront = this.handleIdentityCardFront.bind(this);
-        this.handleIdentityCardBehind = this.handleIdentityCardBehind.bind(this);
-        this.handleIdentityCardNumber = this.handleIdentityCardNumber.bind(this);
+        this.handlelicenseeImageFront = this.handlelicenseeImageFront.bind(this);
+        this.handlelicenseeImageBehind = this.handlelicenseeImageBehind.bind(this);
+        this.handleIdentitybusinessNumber = this.handleIdentitybusinessNumber.bind(this);
         this.handleChangeDate = this.handleChangeDate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChangeSex = this.handleChangeSex.bind(this);
-        this.handleChangeBirthday = this.handleChangeBirthday.bind(this);
+        this.handleChangecity = this.handleChangecity.bind(this);
+        this.handleChangebusinessDate = this.handleChangebusinessDate.bind(this);
 
     }
 
@@ -66,21 +70,21 @@ class IndentilyCard extends React.Component {
     }
 
     componentDidMount() {
-        let {identityCardDateIssued, identityCardNumber, birthday, sex} = this.state.user;
-        if (identityCardDateIssued !== undefined && identityCardNumber !== undefined && birthday !== undefined && sex !== undefined) {
+        let {identityCardDateIssued, identitybusinessNumber, birthday, sex} = this.state.user;
+        if (identityCardDateIssued !== undefined && identitybusinessNumber !== undefined && birthday !== undefined && sex !== undefined) {
             this.setState({
                 isDisabled: false,
             });
         }
     }
 
-    handleIdentityCardNumber(event) {
+    handleIdentitybusinessNumber(event) {
         let {user} = this.state;
-        user.identityCardNumber = event.target.value;
+        user.identitybusinessNumber = event.target.value;
         this.setState({user});
         if (event.target.value.toString().length === 9 && event.target.value.match(/^[0-9]+$/) != null ) {
             this.setState({
-                CardNumberValid: false,
+                businessNumberValid: false,
                 isChange: true,
             });
             if (user.identityCardDateIssued && user.birthday && user.sex) {
@@ -90,13 +94,13 @@ class IndentilyCard extends React.Component {
             }
         } else {
             this.setState({
-                CardNumberValid: true,
+                businessNumberValid: true,
                 isDisabled: true,
             });
         }
     }
 
-    handleChangeSex(event) {
+    handleChangecity(event) {
         let {user} = this.state;
         user.sex = event.target.value;
         if (user.sex) {
@@ -104,7 +108,7 @@ class IndentilyCard extends React.Component {
                 user,
                 isChange: true,
             });
-            if (user.identityCardDateIssued && user.birthday && user.identityCardNumber) {
+            if (user.identityCardDateIssued && user.birthday && user.identitybusinessNumber) {
                 this.setState({
                     isDisabled: false,
                 });
@@ -124,7 +128,7 @@ class IndentilyCard extends React.Component {
                 user,
                 isChange: true,
             });
-            if (user.sex && user.birthday && user.identityCardNumber) {
+            if (user.sex && user.birthday && user.identitybusinessNumber) {
                 this.setState({
                     isDisabled: false,
                 });
@@ -136,7 +140,7 @@ class IndentilyCard extends React.Component {
         }
     }
 
-    handleChangeBirthday(date) {
+    handleChangebusinessDate(date) {
         let {user} = this.state;
         user.birthday = date;
         if (date !== undefined) {
@@ -144,7 +148,7 @@ class IndentilyCard extends React.Component {
                 user,
                 isChange: true,
             });
-            if (user.sex && user.identityCardDateIssued && user.identityCardNumber) {
+            if (user.sex && user.identityCardDateIssued && user.identitybusinessNumber) {
                 this.setState({
                     isDisabled: false,
                 });
@@ -159,23 +163,23 @@ class IndentilyCard extends React.Component {
     handleSubmit() {
         const {isDisabled, isChange} = this.state;
         const {id} = this.state.useraccount;
-        const {sex, identityCardNumber, identityCardDateIssued, birthday} = this.state.user;
+        const {sex, identitybusinessNumber, identityCardDateIssued, birthday} = this.state.user;
         if (isChange) {
-            if (isDisabled || !moment(birthday).isValid() || (sex + "").toString().length < 4 || !moment(identityCardDateIssued).isValid() || identityCardNumber.toString().length !== 9) {
+            if (isDisabled || !moment(birthday).isValid() || (sex + "").toString().length < 4 || !moment(identityCardDateIssued).isValid() || identitybusinessNumber.toString().length !== 9) {
                 if (!moment(birthday).isValid() || !moment(identityCardDateIssued).isValid()) {
                     toast.warn('Vui lòng chọn ngày đúng');
                 }
                 if ((sex + "").length < 4) {
                     toast.warn('Vui lòng chọn giới tính');
                 }
-                if (identityCardNumber.toString().length !== 9) {
+                if (identitybusinessNumber.toString().length !== 9) {
                     this.setState({
-                        CardNumberValid: true,
+                        businessNumberValid: true,
                         isDisabled: true,
                     });
                 }
             } else {
-                console.log(id, sex, identityCardNumber, identityCardDateIssued, birthday);
+                console.log(id, sex, identitybusinessNumber, identityCardDateIssued, birthday);
                 const headers = new Headers();
                 headers.append('Authorization', 'Bearer ' + this.state.useraccount.token);
                 headers.append('Content-Type', 'application/json');
@@ -183,7 +187,7 @@ class IndentilyCard extends React.Component {
                     method: 'POST',
                     headers: headers,
                     body: JSON.stringify({
-                        'identityCardNumber': identityCardNumber,
+                        'identitybusinessNumber': identitybusinessNumber,
                         'identityCardDateIssued': moment(identityCardDateIssued).valueOf(),
                         'sex': sex,
                         'birthday': moment(birthday).valueOf(),
@@ -217,7 +221,7 @@ class IndentilyCard extends React.Component {
     }
 
 
-    handleIdentityCardFront(ev) {
+    handlelicenseeImageFront(ev) {
         ev.preventDefault();
         if (this.state.useraccount.id === undefined
             || this.state.useraccount.id === ''
@@ -256,7 +260,7 @@ class IndentilyCard extends React.Component {
         }
     }
 
-    handleIdentityCardBehind(ev) {
+    handlelicenseeImageBehind(ev) {
         ev.preventDefault();
         if (this.state.useraccount.id === undefined
             || this.state.useraccount.id === ''
@@ -316,7 +320,7 @@ class IndentilyCard extends React.Component {
                             <div className="upload-container">
                                 <input ref={(ref) => {
                                     this.uploadInputFront = ref;
-                                }} type="file" onChange={this.handleIdentityCardFront} name="file"
+                                }} type="file" onChange={this.handlelicenseeImageFront} name="file"
                                        accept="image/*;capture=camera" disabled={this.state.accept}/>
                                 {/*nếu accept = true có nghĩa là đã xác thực, không được phép chỉnh sữa */}
                             </div>
@@ -345,7 +349,7 @@ class IndentilyCard extends React.Component {
                             <div className="upload-container">
                                 <input ref={(ref) => {
                                     this.uploadInputBehind = ref;
-                                }} type="file" onChange={this.handleIdentityCardBehind} name="file"
+                                }} type="file" onChange={this.handlelicenseeImageBehind} name="file"
                                        accept="image/*;capture=camera" disabled={this.state.accept}/>
                                 {/*nếu accept = true có nghĩa là đã xác thực, không được phép chỉnh sữa */}
                             </div>
@@ -383,12 +387,12 @@ class IndentilyCard extends React.Component {
                         <div className="indentily-number">
                             <p>Số chứng minh nhân <span className="warning">*</span></p>
                             <div className="form-label-group">
-                                <input type="text" value={user.identityCardNumber}
-                                       onChange={this.handleIdentityCardNumber} className="card-number"
-                                       name="CardNumber"/>
+                                <input type="text" value={user.identitybusinessNumber}
+                                       onChange={this.handleIdentitybusinessNumber} className="card-number"
+                                       name="businessNumber"/>
                             </div>
                         </div>
-                        <Collapse isOpen={this.state.CardNumberValid}>
+                        <Collapse isOpen={this.state.businessNumberValid}>
                             <p> Không được rỗng, phải là 9 số </p>
                         </Collapse>
 
@@ -397,7 +401,7 @@ class IndentilyCard extends React.Component {
                             <div className="form-label-group">
                                 <DatePicker
                                     selected={moment(user.birthday)}
-                                    onChange={this.handleChangeBirthday}
+                                    onChange={this.handleChangebusinessDate}
                                     peekNextMonth
                                     showMonthDropdown
                                     showYearDropdown
@@ -408,7 +412,7 @@ class IndentilyCard extends React.Component {
                         <div className="indentily-number">
                             <p>Giới tính: <span className="warning">*</span></p>
                             <div className="form-label-group">
-                                <select name="city" value={user.sex} onChange={this.handleChangeSex}>
+                                <select name="city" value={user.sex} onChange={this.handleChangecity}>
                                     <option value="">Chọn</option>
                                     <option value="male">Nam</option>
                                     <option value="female">Nữ</option>
@@ -448,4 +452,4 @@ class IndentilyCard extends React.Component {
     }
 }
 
-export default IndentilyCard;
+export default BusinessRegistration;

@@ -5,13 +5,20 @@ import {
 import {Container, Row, Col, Jumbotron, Fa} from 'mdbreact';
 import "./Doccument.css"
 import Config from "../../utils/config";
-import {getFromStorage} from "../../utils/storage";
+import {getFromStorage, setInStorage} from "../../utils/storage";
+import Axios from "axios/index";
+import Api from "../../utils/api";
 
 class DocumentPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            useraccount: {
+                id: '',
+                token: '',
+                activeType: '',
+            },
             user: {
                 phone: '',
                 accept: false,
@@ -19,14 +26,38 @@ class DocumentPage extends React.Component {
             title:"Bạn cần điền thông tin vào mẫu này để trở thành thành viên của PawnVN.",
             redirect:false,
         };
-
+        this.saveInfoUser = this.saveInfoUser.bind(this);
     }
 
+    saveInfoUser(token, id){
+        Axios({
+            method: 'GET', //you can set what request you want to be
+            url: Api.USERACCOUNT + id,
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        }).then(response => {
+            if (response.status === 200) {
+                setInStorage(Config.USERINFO, response.data.response);
+            }
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+
     componentWillMount() {
+        let a = getFromStorage(Config.USER);
+        if (a) {
+            this.setState({useraccount: a});
+            this.saveInfoUser(a.token,a.id);
+        }
         let b = getFromStorage(Config.USERINFO);
         if (b) {
             this.setState({user: b});
         }
+
     }
 
     componentDidMount() {
@@ -63,33 +94,8 @@ class DocumentPage extends React.Component {
                                             <NavLink to="/documents/identily-card">Chứng minh nhân dân <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to="/documents/vehicle-image">Hình xe <b style={{color:"red"}}>*</b> <Fa
+                                            <NavLink to="/documents/business-registration"> Giấy đăng ký Kinh doanh <b style={{color:"red"}}>*</b> <Fa
                                                 icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/vehicle-log">Giấy đăng ký xe <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/vehicle-license">Giấy phép lái xe <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/vehicle-insurance">Bảo hiểm xe <b style={{color:"red"}}>*</b> <Fa
-                                                icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/device-information">Thiết bị điện thoại <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/student-card-clearance">Thẻ sinh viên(chỉ áp dụng nếu bạn là sinh viên) <Fa icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/registration-book-clearance">Sổ hộ khẩu( chỉ áp dụng nếu bạn không phải là sinh viên) <Fa icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/cv-clearance">Sơ yếu lý lịch <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/documents/emergency-contact">Thông tiên liên hệ khẩn cấp <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
                                         </li>
                                     </ul>
                                 </Jumbotron>
