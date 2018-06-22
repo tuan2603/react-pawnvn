@@ -54,6 +54,10 @@ class SimpleSelect extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+       this.isVerify =false;
+    }
+
     handleChangePassword(event) {
         this.setState({password: event.target.value});
     }

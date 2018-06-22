@@ -12,7 +12,7 @@ import './Profile.css';
 import picture from '../../img/picture.svg';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-
+import Axios from "axios";
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -44,20 +44,31 @@ class BusinessRegistration extends React.Component {
             businessNumberValid: false,
             isRedirect: false,
             isRefesh: false,
+            companyNameValid: false,
+            representativeNameValid: false,
+            licenseeValid: false,
+            addressValid: false,
+            titleValid: false,
             isChange: false,
+            arrayCities: [],
         };
 
         this.handlelicenseeImageFront = this.handlelicenseeImageFront.bind(this);
         this.handlelicenseeImageBehind = this.handlelicenseeImageBehind.bind(this);
-        this.handleIdentitybusinessNumber = this.handleIdentitybusinessNumber.bind(this);
-        this.handleChangeDate = this.handleChangeDate.bind(this);
+        this.handlebusinessNumber = this.handlebusinessNumber.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangecity = this.handleChangecity.bind(this);
         this.handleChangebusinessDate = this.handleChangebusinessDate.bind(this);
+        this.handlecompanyName = this.handlecompanyName.bind(this);
+        this.handlerepresentativeName = this.handlerepresentativeName.bind(this);
+        this.handletitle = this.handletitle.bind(this);
+        this.handlelicensee = this.handlelicensee.bind(this);
+        this.handleaddress = this.handleaddress.bind(this);
 
     }
 
     componentWillMount() {
+
         let a = getFromStorage(Config.USER);
         if (a) {
             this.setState({useraccount: a});
@@ -70,24 +81,193 @@ class BusinessRegistration extends React.Component {
     }
 
     componentDidMount() {
-        let {identityCardDateIssued, identitybusinessNumber, birthday, sex} = this.state.user;
-        if (identityCardDateIssued !== undefined && identitybusinessNumber !== undefined && birthday !== undefined && sex !== undefined) {
+        let {city, companyName, address, businessNumber, businessDate, licensee, representativeName, title} = this.state.user;
+        let {user} = this.state;
+        if (city !== undefined && companyName !== undefined && address !== undefined &&
+            businessNumber !== undefined && businessDate !== undefined &&
+            licensee !== undefined && representativeName !== undefined && title !== undefined) {
             this.setState({
                 isDisabled: false,
+            });
+        } else {
+            user.businessDate = Date.now();
+            this.setState({
+                user,
+            });
+        }
+        Axios.get(Api.CITIES)
+            .then(response => {
+                if (response.status === 200) {
+                    this.setState({arrayCities: response.data.value});
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    handlecompanyName(event) {
+        event.preventDefault();
+        let {user} = this.state;
+        user.companyName = event.target.value;
+        this.setState({user});
+        if (event.target.value) {
+            this.setState({
+                companyNameValid: false,
+                isChange: true,
+            });
+            if (user.city &&
+                user.address &&
+                user.businessNumber &&
+                user.businessDate &&
+                user.licensee &&
+                user.representativeName &&
+                user.title) {
+                this.setState({
+                    isDisabled: false,
+                });
+            }
+        } else {
+            this.setState({
+                companyNameValid: true,
+                isDisabled: true,
             });
         }
     }
 
-    handleIdentitybusinessNumber(event) {
+    handlerepresentativeName(event) {
+        event.preventDefault();
         let {user} = this.state;
-        user.identitybusinessNumber = event.target.value;
+        user.representativeName = event.target.value;
         this.setState({user});
-        if (event.target.value.toString().length === 9 && event.target.value.match(/^[0-9]+$/) != null ) {
+        if (event.target.value) {
+            this.setState({
+                representativeNameValid: false,
+                isChange: true,
+            });
+            if (user.city &&
+                user.companyName &&
+                user.address &&
+                user.businessNumber &&
+                user.businessDate &&
+                user.licensee &&
+                user.title) {
+                this.setState({
+                    isDisabled: false,
+                });
+            }
+        } else {
+            this.setState({
+                representativeNameValid: true,
+                isDisabled: true,
+            });
+        }
+    }
+
+    handletitle(event) {
+        event.preventDefault();
+        let {user} = this.state;
+        user.title = event.target.value;
+        this.setState({user});
+        if (event.target.value) {
+            this.setState({
+                titleValid: false,
+                isChange: true,
+            });
+            if (user.city &&
+                user.companyName &&
+                user.address &&
+                user.businessNumber &&
+                user.businessDate &&
+                user.licensee &&
+                user.representativeName) {
+                this.setState({
+                    isDisabled: false,
+                });
+            }
+        } else {
+            this.setState({
+                titleValid: true,
+                isDisabled: true,
+            });
+        }
+    }
+
+    handlelicensee(event) {
+        event.preventDefault();
+        let {user} = this.state;
+        user.licensee = event.target.value;
+        this.setState({user});
+        if (event.target.value) {
+            this.setState({
+                licenseeValid: false,
+                isChange: true,
+            });
+            if (user.city &&
+                user.companyName &&
+                user.address &&
+                user.businessNumber &&
+                user.businessDate &&
+                user.representativeName &&
+                user.title) {
+                this.setState({
+                    isDisabled: false,
+                });
+            }
+        } else {
+            this.setState({
+                licenseeValid: true,
+                isDisabled: true,
+            });
+        }
+    }
+
+    handleaddress(event) {
+        event.preventDefault();
+        let {user} = this.state;
+        user.address = event.target.value;
+        this.setState({user});
+        if (event.target.value) {
+            this.setState({
+                addressValid: false,
+                isChange: true,
+            });
+            if (user.city &&
+                user.companyName &&
+                user.businessNumber &&
+                user.businessDate &&
+                user.licensee &&
+                user.representativeName &&
+                user.title) {
+                this.setState({
+                    isDisabled: false,
+                });
+            }
+        } else {
+            this.setState({
+                addressValid: true,
+                isDisabled: true,
+            });
+        }
+    }
+
+    handlebusinessNumber(event) {
+        event.preventDefault();
+        let {user} = this.state;
+        user.businessNumber = event.target.value;
+        this.setState({user});
+        if (event.target.value) {
             this.setState({
                 businessNumberValid: false,
                 isChange: true,
             });
-            if (user.identityCardDateIssued && user.birthday && user.sex) {
+            if (user.city &&
+                user.companyName &&
+                user.address &&
+                user.businessDate &&
+                user.licensee &&
+                user.representativeName &&
+                user.title) {
                 this.setState({
                     isDisabled: false,
                 });
@@ -101,34 +281,22 @@ class BusinessRegistration extends React.Component {
     }
 
     handleChangecity(event) {
+        event.preventDefault();
         let {user} = this.state;
-        user.sex = event.target.value;
-        if (user.sex) {
+        user.city = event.target.value;
+        this.setState({user});
+        if (event.target.value) {
             this.setState({
-                user,
                 isChange: true,
             });
-            if (user.identityCardDateIssued && user.birthday && user.identitybusinessNumber) {
-                this.setState({
-                    isDisabled: false,
-                });
-            }
-        } else {
-            this.setState({
-                isDisabled: true,
-            });
-        }
-    }
-
-    handleChangeDate(date) {
-        let {user} = this.state;
-        user.identityCardDateIssued = date;
-        if (date !== undefined) {
-            this.setState({
-                user,
-                isChange: true,
-            });
-            if (user.sex && user.birthday && user.identitybusinessNumber) {
+            if (
+                user.companyName &&
+                user.address &&
+                user.businessNumber &&
+                user.businessDate &&
+                user.licensee &&
+                user.representativeName &&
+                user.title) {
                 this.setState({
                     isDisabled: false,
                 });
@@ -142,13 +310,19 @@ class BusinessRegistration extends React.Component {
 
     handleChangebusinessDate(date) {
         let {user} = this.state;
-        user.birthday = date;
-        if (date !== undefined) {
+        user.businessDate = date;
+        this.setState({user});
+        if (moment(date).isValid()) {
             this.setState({
-                user,
                 isChange: true,
             });
-            if (user.sex && user.identityCardDateIssued && user.identitybusinessNumber) {
+            if (user.city &&
+                user.companyName &&
+                user.address &&
+                user.businessNumber &&
+                user.licensee &&
+                user.representativeName &&
+                user.title) {
                 this.setState({
                     isDisabled: false,
                 });
@@ -162,35 +336,29 @@ class BusinessRegistration extends React.Component {
 
     handleSubmit() {
         const {isDisabled, isChange} = this.state;
-        const {id} = this.state.useraccount;
-        const {sex, identitybusinessNumber, identityCardDateIssued, birthday} = this.state.user;
+        const {id, token} = this.state.useraccount;
+        const {city, companyName, address, businessNumber, businessDate, licensee, representativeName, title} = this.state.user;
         if (isChange) {
-            if (isDisabled || !moment(birthday).isValid() || (sex + "").toString().length < 4 || !moment(identityCardDateIssued).isValid() || identitybusinessNumber.toString().length !== 9) {
-                if (!moment(birthday).isValid() || !moment(identityCardDateIssued).isValid()) {
-                    toast.warn('Vui lòng chọn ngày đúng');
-                }
-                if ((sex + "").length < 4) {
-                    toast.warn('Vui lòng chọn giới tính');
-                }
-                if (identitybusinessNumber.toString().length !== 9) {
-                    this.setState({
-                        businessNumberValid: true,
-                        isDisabled: true,
-                    });
-                }
+            if (isDisabled || !id || !token ||
+                !moment(businessDate).isValid() || !representativeName || !title ||
+                !city || !companyName || !address || !licensee) {
+                toast.warn('Vui lòng kiểm tra giá trị nhập');
             } else {
-                console.log(id, sex, identitybusinessNumber, identityCardDateIssued, birthday);
                 const headers = new Headers();
-                headers.append('Authorization', 'Bearer ' + this.state.useraccount.token);
+                headers.append('Authorization', 'Bearer ' + token);
                 headers.append('Content-Type', 'application/json');
                 const config = {
                     method: 'POST',
                     headers: headers,
                     body: JSON.stringify({
-                        'identitybusinessNumber': identitybusinessNumber,
-                        'identityCardDateIssued': moment(identityCardDateIssued).valueOf(),
-                        'sex': sex,
-                        'birthday': moment(birthday).valueOf(),
+                        'city': city,
+                        'companyName': companyName,
+                        'address': address,
+                        'businessNumber': businessNumber,
+                        'businessDate': moment(businessDate).valueOf(),
+                        'licensee': licensee,
+                        'representativeName': representativeName,
+                        'title': title,
                         'id': id,
                     }),
                 };
@@ -207,11 +375,11 @@ class BusinessRegistration extends React.Component {
                         } else {
                             toast.warn('Cập nhật thất bại vui lòng kiểm tra giá trị nhập');
                             console.log(responseJson.response);
-                            this.setState({isRefesh: true})
                         }
                     })
                     .catch((error) => {
-                        console.error(error);
+                        toast.warn('Kiểm tra kết nối mạng');
+                        console.log(error);
                     });
             }
         } else {
@@ -234,7 +402,7 @@ class BusinessRegistration extends React.Component {
             data.append('avatar', this.uploadInputFront.files[0]);
             data.append('id', this.state.useraccount.id);
             data.append('folder', this.state.user.phone);
-            data.append('expression', 'identityCardFront');
+            data.append('expression', 'licenseeImageFront');
 
             const headers = new Headers();
             headers.append('Authorization', 'Bearer ' + this.state.useraccount.token);
@@ -272,7 +440,7 @@ class BusinessRegistration extends React.Component {
             const data = new FormData();
             data.append('avatar', this.uploadInputBehind.files[0]);
             data.append('id', this.state.useraccount.id);
-            data.append('expression', 'identityCardBehind');
+            data.append('expression', 'licenseeImageBehind');
             data.append('folder', this.state.user.phone);
 
             const headers = new Headers();
@@ -298,9 +466,9 @@ class BusinessRegistration extends React.Component {
 
 
     render() {
-        const {isRedirect, user, isRefesh} = this.state;
+        const {isRedirect, user, isRefesh, arrayCities} = this.state;
         if (isRedirect) {
-            return (<Redirect to='/update-user-acount'/>);
+            return (<Redirect to='/contact'/>);
         }
         if (isRefesh) {
             setTimeout(() => {
@@ -313,27 +481,27 @@ class BusinessRegistration extends React.Component {
                 <div className="form-indentily">
                     <Jumbotron>
                         <div className="profile-title">
-                            <h2>Chứng Minh Nhân Dân(Mặt trước)<span className="warning">*</span></h2>
+                            <h2>Giấy phép kinh doanh(Mặt trước)<span className="warning">*</span></h2>
                         </div>
                         <div className="form-upload">
 
                             <div className="upload-container">
                                 <input ref={(ref) => {
                                     this.uploadInputFront = ref;
-                                }} type="file" onChange={this.handlelicenseeImageFront} name="file"
+                                }} type="file" onChange={this.handlelicenseeImageFront} name="file1"
                                        accept="image/*;capture=camera" disabled={this.state.accept}/>
                                 {/*nếu accept = true có nghĩa là đã xác thực, không được phép chỉnh sữa */}
                             </div>
 
                             <div className="sample_doc">
                                 {
-                                    user.identityCardFront !== undefined &&
+                                    user.licenseeImageFront !== undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}}
-                                         src={Api.AVATAR + user.phone + '/' + user.identityCardFront}
+                                         src={Api.AVATAR + user.phone + '/' + user.licenseeImageFront}
                                          alt="avatar"/>
                                 }
                                 {
-                                    user.identityCardFront === undefined &&
+                                    user.licenseeImageFront === undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}} src={picture} alt="avatar"/>
                                 }
 
@@ -342,27 +510,27 @@ class BusinessRegistration extends React.Component {
 
                         </div>
                         <div className="profile-title">
-                            <h2>Chứng Minh Nhân Dân(Mặt sau)<span className="warning">*</span></h2>
+                            <h2>Giấy phép kinh doanh(Mặt sau)<span className="warning">*</span></h2>
                         </div>
                         <div className="form-upload">
 
                             <div className="upload-container">
                                 <input ref={(ref) => {
                                     this.uploadInputBehind = ref;
-                                }} type="file" onChange={this.handlelicenseeImageBehind} name="file"
+                                }} type="file" onChange={this.handlelicenseeImageBehind} name="file2"
                                        accept="image/*;capture=camera" disabled={this.state.accept}/>
                                 {/*nếu accept = true có nghĩa là đã xác thực, không được phép chỉnh sữa */}
                             </div>
 
                             <div className="sample_doc">
                                 {
-                                    user.identityCardBehind !== undefined &&
+                                    user.licenseeImageBehind !== undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}}
-                                         src={Api.AVATAR + user.phone + '/' + user.identityCardBehind}
+                                         src={Api.AVATAR + user.phone + '/' + user.licenseeImageBehind}
                                          alt="avatar"/>
                                 }
                                 {
-                                    user.identityCardBehind === undefined &&
+                                    user.licenseeImageBehind === undefined &&
                                     <img className="img-fluid" style={{maxHeight: "200px"}} src={picture} alt="avatar"/>
                                 }
 
@@ -373,7 +541,7 @@ class BusinessRegistration extends React.Component {
                         <div>
                             <div className="list">
                                 <div className="icon icon-tick"></div>
-                                <div className="list-item">CMND, chưa hết hạn.</div>
+                                <div className="list-item">GPKD còn hiệu lực.</div>
                             </div>
                             <div className="list">
                                 <div className="icon icon-tick"></div>
@@ -385,22 +553,58 @@ class BusinessRegistration extends React.Component {
                             </div>
                         </div>
                         <div className="indentily-number">
-                            <p>Số chứng minh nhân <span className="warning">*</span></p>
+                            <p>Tên công ty, doanh nghiệp<span className="warning">*</span></p>
                             <div className="form-label-group">
-                                <input type="text" value={user.identitybusinessNumber}
-                                       onChange={this.handleIdentitybusinessNumber} className="card-number"
+                                <input type="text" value={user.companyName}
+                                       onChange={this.handlecompanyName} className="card-number"
+                                       name="companyName"/>
+                            </div>
+                        </div>
+                        <Collapse isOpen={this.state.companyNameValid}>
+                            <p> Không được rỗng, phải là 5 số </p>
+                        </Collapse>
+                        <div className="indentily-number">
+                            <p>Số đăng ký doanh nghiệp <span className="warning">*</span></p>
+                            <div className="form-label-group">
+                                <input type="text" value={user.businessNumber}
+                                       onChange={this.handlebusinessNumber} className="card-number"
                                        name="businessNumber"/>
                             </div>
                         </div>
                         <Collapse isOpen={this.state.businessNumberValid}>
-                            <p> Không được rỗng, phải là 9 số </p>
+                            <p> Không được rỗng, số ĐKDN phải 10 số </p>
                         </Collapse>
 
                         <div className="indentily-number">
-                            <p>Sinh ngày: <span className="warning">*</span></p>
+                            <p>Tên người đại diện <span className="warning">*</span></p>
+                            <div className="form-label-group">
+                                <input type="text" value={user.representativeName}
+                                       onChange={this.handlerepresentativeName} className="card-number"
+                                       name="representativeName"/>
+                            </div>
+                        </div>
+                        <Collapse isOpen={this.state.representativeNameValid}>
+                            <p> Không được rỗng, có ít nhất 5 ký tự </p>
+                        </Collapse>
+
+                        <div className="indentily-number">
+                            <p>Chức danh <span className="warning">*</span></p>
+                            <div className="form-label-group">
+                                <input type="text" value={user.title}
+                                       onChange={this.handletitle} className="card-number"
+                                       name="title"/>
+                            </div>
+                        </div>
+
+                        <Collapse isOpen={this.state.titleValid}>
+                            <p> Không được rỗng, có ít nhất 5 ký tự </p>
+                        </Collapse>
+
+                        <div className="indentily-number">
+                            <p>Ngày cấp: <span className="warning">*</span></p>
                             <div className="form-label-group">
                                 <DatePicker
-                                    selected={moment(user.birthday)}
+                                    selected={moment(user.businessDate)}
                                     onChange={this.handleChangebusinessDate}
                                     peekNextMonth
                                     showMonthDropdown
@@ -410,29 +614,45 @@ class BusinessRegistration extends React.Component {
                             </div>
                         </div>
                         <div className="indentily-number">
-                            <p>Giới tính: <span className="warning">*</span></p>
+                            <p>Nơi cấp <span className="warning">*</span></p>
                             <div className="form-label-group">
-                                <select name="city" value={user.sex} onChange={this.handleChangecity}>
+                                <input type="text" value={user.licensee}
+                                       onChange={this.handlelicensee} className="card-number"
+                                       name="licensee"/>
+                            </div>
+                        </div>
+                        <Collapse isOpen={this.state.licenseeValid}>
+                            <p> Không được rỗng, có ít nhất 5 ký tự </p>
+                        </Collapse>
+
+                        <div className="indentily-number">
+                            <p>Địa chỉ công ty/doanh nghiệp <span className="warning">*</span></p>
+                            <div className="form-label-group">
+                                <input type="text" value={user.address}
+                                       onChange={this.handleaddress} className="card-number"
+                                       name="address"/>
+                            </div>
+                        </div>
+                        <Collapse isOpen={this.state.addressValid}>
+                            <p> Không được rỗng, có ít nhất 5 ký tự </p>
+                        </Collapse>
+                        <div className="indentily-number">
+                            <p>Tỉnh/Thành phố: <span className="warning">*</span></p>
+                            <div className="form-label-group">
+                                <select name="city" value={user.city} onChange={this.handleChangecity}>
                                     <option value="">Chọn</option>
-                                    <option value="male">Nam</option>
-                                    <option value="female">Nữ</option>
-                                    <option value="other">Khác</option>
+                                    {
+                                        arrayCities.map((item) => {
+                                            return (
+                                                <option key={item.ID}
+                                                        value={item.Title}>{item.Title}</option>
+                                            )
+                                        })
+                                    }
                                 </select>
                             </div>
                         </div>
-                        <div className="indentily-number">
-                            <p>Ngày cấp: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <DatePicker
-                                    selected={moment(user.identityCardDateIssued)}
-                                    onChange={this.handleChangeDate}
-                                    peekNextMonth
-                                    showMonthDropdown
-                                    showYearDropdown
-                                    dateFormat="DD/MM/YYYY"
-                                />
-                            </div>
-                        </div>
+
                         <div className="indentily-submit">
                             <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                     disabled={this.state.isDisabled} onClick={this.handleSubmit}

@@ -43,6 +43,10 @@
     color: #157bc1;
 }
 
+.profile-title h2 {
+    font-size: 1.3rem;
+}
+
 .profile-title .warning {
     color: red !important;
 }
@@ -253,4 +257,14 @@ button, input, optgroup, select, textarea {
 
 .collapse p {
     color: red;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none!important;
+    border: none!important;
+    -webkit-box-shadow: none!important;
 }

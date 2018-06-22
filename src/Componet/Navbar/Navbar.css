@@ -1,10 +1,7 @@
 .nav-main {
-    background-color: #157bc1;
+    background-color: #f8f9fa;
 }
 .navbar .nav-item .nav-link {
-    color: white;
-}
-.navbar-brand {
-    background-color: white;
+    color: #157bc1;
 }
 

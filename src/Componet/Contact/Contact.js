@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {getFromStorage, removeStorage} from '../../utils/storage';
 import {removeSession} from '../../utils/sessionStorage';
 import Config from '../../utils/config';
+import DocumentPage from '../../Componet/UserInfo/DocumentPage';
 import {
     Redirect
 } from "react-router-dom";
@@ -32,7 +33,7 @@ class Contact extends Component {
         removeStorage(Config.USERINFO);
         removeSession(Config.PHONE);
         window.location.reload();
-           }
+    }
 
     componentWillMount() {
         let useraccount = getFromStorage(Config.USER);
@@ -45,8 +46,9 @@ class Contact extends Component {
             this.setState({user});
         }
     }
+
     componentDidMount() {
-        if (this.state.user.phone ==="") {
+        if (this.state.user.phone === "") {
             setTimeout(function () {
                 this.setState({isLogout: true})
             }.bind(this), 1000);
@@ -55,28 +57,28 @@ class Contact extends Component {
 
 
     render() {
+        const {isLogout} = this.state;
+        if (isLogout) {
+            return (<Redirect to="/signin"/>);
+        }
         return (
+            <div>
+                    <DocumentPage/>
+                    <div className="main-contact">
+                        <div className="form-signin">
+                            {/*<div className="text-center mb-4">*/}
+                            {/*<h1 className="h3 mb-3 font-weight-normal">Phone: {this.state.user.phone}</h1>*/}
+                            {/*</div>*/}
 
-            <div className="main-signup">
-                <div className="form-signin">
-                    {this.state.isLogout ? (<Redirect to="/signin"/>) : ""}
-                    <div className="text-center mb-4">
-                        <h1 className="h3 mb-3 font-weight-normal">Phone: {this.state.user.phone}</h1>
+                            <div className="form-label-xau">
+                                <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
+                                        onClick={this.submitLogout}
+                                >Đăng xuất
+                                </button>
+                            </div>
+                        </div>
                     </div>
-
-                    <div className="text-center mb-4">
-                            <p> Bấm vào <a href="/update-user-acount" className="btn-verify"> đây </a> Cập nhật biểu mẫu
-                                để chính thức trở thành thành viên PawnVN </p>
-                    </div>
-
-                    <div className="form-label-xau">
-                        <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
-                                    onClick={this.submitLogout}
-                        >Đăng xuất</button>
-                    </div>
-                </div>
             </div>
-
         );
     }
 }

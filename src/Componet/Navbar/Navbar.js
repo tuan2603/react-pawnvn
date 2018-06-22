@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink} from 'mdbreact';
-import mainLogo from '../../img/logo.jpg';
+import mainLogo from '../../img/logo.png';
 import {getFromStorage} from '../../utils/storage';
 import Config from "../../utils/config";
 import './Navbar.css';
@@ -53,7 +53,7 @@ class HomeMenu extends Component {
         return (
             <Navbar className="nav-main" expand="md" fixed="top" scrolling color="#afafaf" >
                 <NavbarBrand href="/">
-                    <img src={mainLogo} alt="or-trans" height="48" />
+                    <img src={mainLogo} alt="or-trans" height="32" />
                 </NavbarBrand>
                 <NavbarToggler onClick={this.handleTogglerClick}/>
                 <Collapse isOpen={this.state.collapsed} navbar>

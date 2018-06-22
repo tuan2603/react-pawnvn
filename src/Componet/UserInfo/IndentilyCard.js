@@ -67,9 +67,16 @@ class IndentilyCard extends React.Component {
 
     componentDidMount() {
         let {identityCardDateIssued, identityCardNumber, birthday, sex} = this.state.user;
+        let {user} = this.state;
         if (identityCardDateIssued !== undefined && identityCardNumber !== undefined && birthday !== undefined && sex !== undefined) {
             this.setState({
                 isDisabled: false,
+            });
+        } else {
+            user.birthday = Date.now();
+            user.identityCardDateIssued = Date.now();
+            this.setState({
+                user,
             });
         }
     }
@@ -296,7 +303,7 @@ class IndentilyCard extends React.Component {
     render() {
         const {isRedirect, user, isRefesh} = this.state;
         if (isRedirect) {
-            return (<Redirect to='/update-user-acount'/>);
+            return (<Redirect to='/contact'/>);
         }
         if (isRefesh) {
             setTimeout(() => {

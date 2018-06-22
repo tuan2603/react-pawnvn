@@ -84,7 +84,7 @@ class ProfilePicture extends React.Component {
     render() {
         const {redirect} = this.state;
         if (redirect) {
-            return <Redirect to='/update-user-acount'/>;
+            return <Redirect to='/contact'/>;
         }
         return (
             <div>
