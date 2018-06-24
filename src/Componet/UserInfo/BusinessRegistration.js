@@ -557,7 +557,7 @@ class BusinessRegistration extends React.Component {
                             <div className="form-label-group">
                                 <input type="text" value={user.companyName}
                                        onChange={this.handlecompanyName} className="card-number"
-                                       name="companyName"/>
+                                       name="companyName" />
                             </div>
                         </div>
                         <Collapse isOpen={this.state.companyNameValid}>
