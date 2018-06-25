@@ -16,7 +16,8 @@
     "react-intl-tel-input": "^5.0.5",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
-    "react-validation": "^3.0.7"
+    "react-validation": "^3.0.7",
+    "socket.io-client": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
