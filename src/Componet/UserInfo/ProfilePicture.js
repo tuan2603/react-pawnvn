@@ -9,6 +9,8 @@ import Config from "../../utils/config";
 import './Profile.css';
 import boy from '../../img/boy.svg';
 import {ToastContainer, toast} from 'react-toastify';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 class ProfilePicture extends React.Component {
     constructor(props) {
@@ -27,10 +29,21 @@ class ProfilePicture extends React.Component {
                 accept: false,
             },
             redirect: false,
+            selectedOption: '',
         };
 
         this.handleUploadImage = this.handleUploadImage.bind(this);
         this.handleNext = this.handleNext.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(selectedOption){
+        this.setState({ selectedOption });
+        // selectedOption can be null when the `x` (close) button is clicked
+        if (selectedOption) {
+            console.log(selectedOption);
+            console.log(this.state.selectedOption);
+        }
     }
 
     handleNext() {
@@ -82,7 +95,7 @@ class ProfilePicture extends React.Component {
     }
 
     render() {
-        const {redirect} = this.state;
+        const {redirect, selectedOption } = this.state;
         if (redirect) {
             return <Redirect to='/contact'/>;
         }
@@ -137,6 +150,19 @@ class ProfilePicture extends React.Component {
                                     <div className="list-item">Nền trơn, màu trắng hoặc xanh dương.</div>
                                 </div>
                             </div>
+                            <div className="indentily-number">
+                                <p>Danh mục cầm đồ: <span className="warning">*</span></p>
+                            </div>
+                            <Select
+                                name="form-field-name"
+                                value={selectedOption}
+                                multi={true}
+                                onChange={this.handleChange}
+                                options={[
+                                    { value: 'one', label: 'One' },
+                                    { value: 'two', label: 'Two' },
+                                ]}
+                            />
                             <div className="indentily-submit">
                                 <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                         onClick={this.handleNext}
