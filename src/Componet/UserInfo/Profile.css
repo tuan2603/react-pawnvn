@@ -236,6 +236,10 @@ button, input, optgroup, select, textarea {
     color: #157bc1;
 }
 
+.Select--multi .Select-multi-value-wrapper span {
+    color: #157bc1!important;
+}
+
 .form-label-group {
     display: block;
     width: 100%;

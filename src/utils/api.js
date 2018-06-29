@@ -15,4 +15,5 @@ module.exports = {
   PROFILE_CARD:SERVER+"/api/auth/card",
   PROFILE_DOC:SERVER+"/api/auth/doccument",
   CITIES:SERVER+"/api/city",
-}
+  CATEGORY:SERVER+"/api/category",
+};

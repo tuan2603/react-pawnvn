@@ -11,6 +11,12 @@ import boy from '../../img/boy.svg';
 import {ToastContainer, toast} from 'react-toastify';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import Axios from "axios/index";
+import ComponentWrapper from "../GoogleMap/ComponentWrapper";
+
+const json = [
+    {value: 'smartphone', label: 'SmartPhones'},
+    {value: 'tablet', label: 'Tablet'}];
 
 class ProfilePicture extends React.Component {
     constructor(props) {
@@ -29,7 +35,8 @@ class ProfilePicture extends React.Component {
                 accept: false,
             },
             redirect: false,
-            selectedOption: '',
+            selectedOption: [],
+            category: [],
         };
 
         this.handleUploadImage = this.handleUploadImage.bind(this);
@@ -37,20 +44,21 @@ class ProfilePicture extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(selectedOption){
-        this.setState({ selectedOption });
-        // selectedOption can be null when the `x` (close) button is clicked
-        if (selectedOption) {
-            console.log(selectedOption);
-            console.log(this.state.selectedOption);
-        }
-    }
-
-    handleNext() {
-        this.setState({redirect: true});
-    }
 
     componentWillMount() {
+        Axios({
+            method: 'GET', //you can set what request you want to be
+            url: Api.CATEGORY,
+        }).then(response => {
+            if (response.status === 200) {
+                this.setState({category: response.data.value});
+            } else {
+                this.setState({category: json});
+            }
+        }).catch(function (error) {
+            console.log(error);
+        });
+
         let a = getFromStorage(Config.USER);
         if (a) {
             this.setState({useraccount: a});
@@ -60,6 +68,18 @@ class ProfilePicture extends React.Component {
         if (b) {
             this.setState({user: b});
         }
+    }
+
+    handleChange(selectedOption) {
+        this.setState({selectedOption});
+        // selectedOption can be null when the `x` (close) button is clicked
+        if (selectedOption) {
+            console.log(this.state.selectedOption);
+        }
+    }
+
+    handleNext() {
+        this.setState({redirect: true});
     }
 
     handleUploadImage(ev) {
@@ -95,12 +115,13 @@ class ProfilePicture extends React.Component {
     }
 
     render() {
-        const {redirect, selectedOption } = this.state;
+        const {redirect, selectedOption, category} = this.state;
         if (redirect) {
             return <Redirect to='/contact'/>;
         }
         return (
             <div>
+                <ComponentWrapper  />
                 <div className="profile-doccument">
                     <div className="form-indentily">
                         <Jumbotron>
@@ -158,11 +179,12 @@ class ProfilePicture extends React.Component {
                                 value={selectedOption}
                                 multi={true}
                                 onChange={this.handleChange}
-                                options={[
-                                    { value: 'one', label: 'One' },
-                                    { value: 'two', label: 'Two' },
-                                ]}
+                                options={category}
                             />
+                            <div className="indentily-number">
+                                <p>Chọn vị trí: <span className="warning">*</span></p>
+                            </div>
+
                             <div className="indentily-submit">
                                 <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                         onClick={this.handleNext}
