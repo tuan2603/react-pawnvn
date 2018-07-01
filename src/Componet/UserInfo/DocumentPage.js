@@ -88,7 +88,7 @@ class DocumentPage extends React.Component {
                                     <ul className="list-unstyled example-components-list">
                                         <h6 className="mt-3 grey-text"> {title}  </h6>
                                         <li>
-                                            <NavLink to="/documents/profile-pictrue">Chụp ảnh chân dung <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
+                                            <NavLink to="/documents/profile-pictrue">Logo - Danh mục - vị trí Doanh nghiệp <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
                                         </li>
                                         <li>
                                             <NavLink to="/documents/identily-card">Chứng minh nhân dân <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>

@@ -12,7 +12,8 @@ import {ToastContainer, toast} from 'react-toastify';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import Axios from "axios/index";
-import ComponentWrapper from "../GoogleMap/ComponentWrapper";
+import Map from "../GoogleMap/Map";
+
 
 const json = [
     {value: 'smartphone', label: 'SmartPhones'},
@@ -33,17 +34,23 @@ class ProfilePicture extends React.Component {
                 phone: '',
                 avatarLink: '',
                 accept: false,
+                longitude: 106.591489,
+                latitude: 10.754329,
+                categories:[],
             },
             redirect: false,
             selectedOption: [],
             category: [],
+            isMarkerShown: false,
+            isChange: false,
+            map: {lat:"",lng:""},
         };
 
         this.handleUploadImage = this.handleUploadImage.bind(this);
         this.handleNext = this.handleNext.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeCategory = this.handleChangeCategory.bind(this);
+        this.onAddMap = this.onAddMap.bind(this);
     }
-
 
     componentWillMount() {
         Axios({
@@ -69,17 +76,68 @@ class ProfilePicture extends React.Component {
             this.setState({user: b});
         }
     }
-
-    handleChange(selectedOption) {
-        this.setState({selectedOption});
-        // selectedOption can be null when the `x` (close) button is clicked
-        if (selectedOption) {
-            console.log(this.state.selectedOption);
+    componentDidMount(){
+        if (this.state.user.categories !== undefined) {
+            this.setState({selectedOption:this.state.user.categories});
         }
     }
 
+
+    handleChangeCategory(selectedOption) {
+        // selectedOption can be null when the `x` (close) button is clicked
+        if (selectedOption) {
+            this.setState({selectedOption, isChange: true});
+        }
+    }
+
+    onAddMap(map) {
+        //console.log(map);
+        this.setState({
+            map: map,
+            isChange: true
+        });
+    }
+
     handleNext() {
-        this.setState({redirect: true});
+        const {isChange, map, selectedOption} = this.state;
+        const {id, token} = this.state.useraccount;
+        if (isChange) {
+            const headers = new Headers();
+            headers.append('Authorization', 'Bearer ' + token);
+            headers.append('Content-Type', 'application/json');
+            const config = {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify({
+                    'latitude': map.lat,
+                    'longitude': map.lng,
+                    'categories':selectedOption,
+                    'id': id,
+                }),
+            };
+            fetch(Api.UPDATE_USER, config)
+                .then((response) => response.json())
+                .then((responseJson) => {
+                    if (responseJson.value === true) {
+                        setInStorage(Config.USERINFO, responseJson.response);
+                        toast.success('Cập nhật thành công');
+                        setTimeout(function () {
+                            this.setState({user: responseJson.response, redirect: true});
+                        }.bind(this), 2000);
+
+                    } else {
+                        toast.warn('Cập nhật thất bại vui lòng kiểm tra giá trị nhập');
+                        console.log(responseJson.response);
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+
+        } else {
+            this.setState({redirect: true});
+        }
+
     }
 
     handleUploadImage(ev) {
@@ -115,18 +173,17 @@ class ProfilePicture extends React.Component {
     }
 
     render() {
-        const {redirect, selectedOption, category} = this.state;
+        const {redirect, selectedOption, category, user} = this.state;
         if (redirect) {
             return <Redirect to='/contact'/>;
         }
         return (
             <div>
-                <ComponentWrapper  />
                 <div className="profile-doccument">
                     <div className="form-indentily">
                         <Jumbotron>
                             <div className="profile-title">
-                                <h2>Chụp Ảnh Chân Dung <span className="warning">*</span></h2>
+                                <h2>Logo <span className="warning">*</span></h2>
                             </div>
                             <div className="form-upload">
 
@@ -178,13 +235,27 @@ class ProfilePicture extends React.Component {
                                 name="form-field-name"
                                 value={selectedOption}
                                 multi={true}
-                                onChange={this.handleChange}
+                                onChange={this.handleChangeCategory}
                                 options={category}
                             />
                             <div className="indentily-number">
-                                <p>Chọn vị trí: <span className="warning">*</span></p>
+                                <p>Địa điểm Cty/ doanh nghiệp: <span className="warning">*</span></p>
                             </div>
-
+                            <Map
+                                googleMapURL={"https://maps.googleapis.com/maps/api/js?key=AIzaSyA-Y0s_MUWJ-Hyf4oSE8_eQjZb-V5ZNmG8&v=3.exp&libraries=geometry,drawing,places"}
+                                loadingElement={<div style={{height: `100%`}}/>}
+                                containerElement={<div style={{height: `400px`}}/>}
+                                mapElement={<div style={{height: `100%`}}/>}
+                                zoom={14}
+                                onAddMap={this.onAddMap}
+                                isMarkerShown
+                                // center={{lat:  106.591489, lng: 10.754329}}
+                                center={{
+                                    lat: user.latitude ? user.latitude : 10.754329,
+                                    lng: user.longitude ? user.longitude :  106.591489,
+                                }}
+                                //  center={{lat: map.lat , lng: map.lng}}
+                            />
                             <div className="indentily-submit">
                                 <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                         onClick={this.handleNext}

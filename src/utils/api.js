@@ -14,6 +14,7 @@ module.exports = {
   PROFILE_PICTRUE:SERVER+"/api/auth/avatar",
   PROFILE_CARD:SERVER+"/api/auth/card",
   PROFILE_DOC:SERVER+"/api/auth/doccument",
+  UPDATE_USER:SERVER+"/api/auth/doccumentboth",
   CITIES:SERVER+"/api/city",
   CATEGORY:SERVER+"/api/category",
 };

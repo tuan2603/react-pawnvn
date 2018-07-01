@@ -4,6 +4,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
+    "lodash": "^4.17.10",
     "mdbreact": "^4.4.0",
     "moment": "^2.22.2",
     "password-validator": "^4.1.1",

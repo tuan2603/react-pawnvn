@@ -272,3 +272,7 @@ button:focus {
     border: none!important;
     -webkit-box-shadow: none!important;
 }
+
+.pac-item span {
+    color: black !important;
+}
