@@ -159,9 +159,10 @@ class ProfilePicture extends React.Component {
             fetch(Api.PROFILE_PICTRUE, config)
                 .then((response) => response.json())
                 .then((responseJson) => {
-                    if (responseJson.value === true) {
-                        setInStorage(Config.USERINFO, responseJson.response);
-                        this.setState({user: responseJson.response})
+                    //console.log(responseJson);
+                    if (responseJson.response === true) {
+                        setInStorage(Config.USERINFO, responseJson.value);
+                        this.setState({user: responseJson.value});
                     } else {
                         toast.warn('Upload image bị lỗi, hình ảnh không dược quá 5MB');
                     }
@@ -196,13 +197,13 @@ class ProfilePicture extends React.Component {
 
                                 <div className="sample_doc">
                                     {
-                                        this.state.user.avatarLink !== undefined &&
+                                        user.avatarLink !== undefined &&
                                         <img className="img-fluid" style={{maxHeight: "200px"}}
-                                             src={Api.AVATAR + this.state.user.phone + '/' + this.state.user.avatarLink}
+                                             src={Api.AVATAR + user.phone + '/' + user.avatarLink}
                                              alt="avatar"/>
                                     }
                                     {
-                                        this.state.user.avatarLink === undefined &&
+                                        user.avatarLink === undefined &&
                                         <img className="img-fluid" style={{maxHeight: "200px"}} src={boy} alt="avatar"/>
                                     }
 

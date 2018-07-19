@@ -250,9 +250,9 @@ class IndentilyCard extends React.Component {
             fetch(Api.PROFILE_CARD, config)
                 .then((response) => response.json())
                 .then((responseJson) => {
-                    if (responseJson.value === true) {
-                        setInStorage(Config.USERINFO, responseJson.response);
-                        this.setState({user: responseJson.response})
+                    if (responseJson.response === true) {
+                        setInStorage(Config.USERINFO, responseJson.value);
+                        this.setState({user: responseJson.value})
                     } else {
                         console.error(responseJson);
                     }
@@ -288,9 +288,11 @@ class IndentilyCard extends React.Component {
             fetch(Api.PROFILE_CARD, config)
                 .then((response) => response.json())
                 .then((responseJson) => {
-                    if (responseJson.value === true) {
-                        setInStorage(Config.USERINFO, responseJson.response);
-                        this.setState({user: responseJson.response})
+                    if (responseJson.response === true) {
+                        setInStorage(Config.USERINFO, responseJson.value);
+                        this.setState({user: responseJson.value})
+                    } else {
+                        console.error(responseJson);
                     }
                 })
                 .catch((error) => {

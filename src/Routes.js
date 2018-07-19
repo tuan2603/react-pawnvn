@@ -43,15 +43,6 @@ import Privacy from './Componet/Privacy/Privacy';
 import Verify from './Componet/Verify/Verify';
 import ProfilePicture from './Componet/UserInfo/ProfilePicture';
 import IndentilyCard from './Componet/UserInfo/IndentilyCard';
-import VehicleImage from './Componet/UserInfo/VehicleImage';
-import VehicleLog from './Componet/UserInfo/VehicleLog';
-import DrivingLicense from './Componet/UserInfo/DrivingLicense';
-import VehicleInsurance from './Componet/UserInfo/VehicleInsurance';
-import DeviceInformation from './Componet/UserInfo/DeviceInformation';
-import StudentCardClearance from "./Componet/UserInfo/StudentCardClearance";
-import RegistrationBookClearance from "./Componet/UserInfo/RegistrationBookClearance";
-import CVClearance from "./Componet/UserInfo/CVClearance";
-import EmergencyContact from "./Componet/UserInfo/EmergencyContact";
 import BusinessRegistration from "./Componet/UserInfo/BusinessRegistration";
 
 
@@ -70,15 +61,6 @@ const Routes = () => (
         <Route path='/update-user-acount' component={DocumentPage}/>
         <Route path='/documents/profile-pictrue' component={ProfilePicture}/>
         <Route path='/documents/identily-card' component={IndentilyCard}/>
-        <Route path='/documents/vehicle-image' component={VehicleImage}/>
-        <Route path='/documents/vehicle-log' component={VehicleLog}/>
-        <Route path='/documents/vehicle-license' component={DrivingLicense}/>
-        <Route path='/documents/vehicle-insurance' component={VehicleInsurance}/>
-        <Route path='/documents/device-information' component={DeviceInformation}/>
-        <Route path='/documents/student-card-clearance' component={StudentCardClearance}/>
-        <Route path='/documents/registration-book-clearance' component={RegistrationBookClearance}/>
-        <Route path='/documents/cv-clearance' component={CVClearance}/>
-        <Route path='/documents/emergency-contact' component={EmergencyContact}/>
         <Route path='/documents/business-registration' component={BusinessRegistration}/>
 
         <Route exact path='/css' component={CSSPage} />

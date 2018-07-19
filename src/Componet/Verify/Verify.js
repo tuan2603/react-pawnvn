@@ -74,7 +74,7 @@ class Verify extends Component {
                     if (response.status === 200) {
                         let {activeType, value} = response.data;
                         if (activeType === 2 && value === 0) {
-                            toast.success('Xác nhận không thành công, đăng nhập và cập nhật thông tin để sớm trở thành thành viên OR-TRANS', {
+                            toast.success('Xác nhận thành công, đăng nhập và cập nhật thông tin để sớm trở thành thành viên OR-TRANS', {
                                 position: toast.POSITION.BOTTOM_CENTER
                             });
                             setTimeout(function () {
