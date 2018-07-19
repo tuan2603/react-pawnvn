@@ -1,5 +1,5 @@
-const SERVER = "http://localhost:8080";
-// const SERVER = "http://125.212.216.80:8080";
+// const SERVER = "http://localhost:8080";
+const SERVER = "http://125.212.216.80:8080";
 
 module.exports = {
   AVATAR:SERVER+"/uploads/",
