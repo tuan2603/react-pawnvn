@@ -199,7 +199,7 @@ class ProfilePicture extends React.Component {
                                     {
                                         user.avatarLink !== undefined &&
                                         <img className="img-fluid" style={{maxHeight: "200px"}}
-                                             src={Api.AVATAR + user.phone + '/' + user.avatarLink}
+                                             src={Api.AVATAR + user.phone + '/' + user.avatarLink+"?"+Date.now()}
                                              alt="avatar"/>
                                     }
                                     {

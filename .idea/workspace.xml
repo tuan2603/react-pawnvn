@@ -3,27 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c4da06e7-c020-40c3-b57b-dfb566f60854" name="Default" comment="dd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.c96be850.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/css/main.c96be850.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.cfaf47de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.cfaf47de.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/BusinessRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Componet/UserInfo/BusinessRegistration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/CVClearance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/DeviceInformation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/DrivingLicense.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/EmergencyContact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/IndentilyCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Componet/UserInfo/IndentilyCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/ProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Componet/UserInfo/ProfilePicture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/RegistrationBookClearance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/StudentCardClearance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/VehicleImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/VehicleInsurance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/UserInfo/VehicleLog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Componet/Verify/Verify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Componet/Verify/Verify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,7 +20,7 @@
       <file leaf-file-name="SignIn.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Componet/Contact/SignIn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="51">
               <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -52,8 +32,8 @@
       <file leaf-file-name="Routes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="62" column="74" selection-start-line="62" selection-start-column="74" selection-end-line="62" selection-end-column="74" />
+            <state relative-caret-position="136">
+              <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -64,22 +44,26 @@
       <file leaf-file-name="Verify.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Componet/Verify/Verify.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="1156">
               <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/config.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sessionStorage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/sessionStorage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-256">
+              <caret selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -87,7 +71,7 @@
       <file leaf-file-name="DocumentPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/DocumentPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-186">
+            <state relative-caret-position="646">
               <caret line="47" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -99,8 +83,8 @@
       <file leaf-file-name="ProfilePicture.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/ProfilePicture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="163" column="74" selection-start-line="163" selection-start-column="74" selection-end-line="163" selection-end-column="74" />
+            <state relative-caret-position="290">
+              <caret line="204" column="37" lean-forward="true" selection-start-line="204" selection-start-column="37" selection-end-line="204" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -108,7 +92,7 @@
       <file leaf-file-name="IndentilyCard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/IndentilyCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1112">
+            <state relative-caret-position="4709">
               <caret line="292" column="65" selection-start-line="292" selection-start-column="65" selection-end-line="292" selection-end-column="65" />
             </state>
           </provider>
@@ -117,7 +101,7 @@
       <file leaf-file-name="BusinessRegistration.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/BusinessRegistration.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2277">
+            <state relative-caret-position="6868">
               <caret line="419" column="65" selection-start-line="419" selection-start-column="65" selection-end-line="419" selection-end-column="65" />
             </state>
           </provider>
@@ -206,10 +190,10 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Componet/UserInfo/DocumentPage.js" />
         <option value="$PROJECT_DIR$/src/Componet/Verify/Verify.js" />
-        <option value="$PROJECT_DIR$/src/utils/api.js" />
         <option value="$PROJECT_DIR$/src/Routes.js" />
         <option value="$PROJECT_DIR$/src/Componet/UserInfo/BusinessRegistration.js" />
         <option value="$PROJECT_DIR$/src/Componet/UserInfo/IndentilyCard.js" />
+        <option value="$PROJECT_DIR$/src/utils/api.js" />
         <option value="$PROJECT_DIR$/src/Componet/UserInfo/ProfilePicture.js" />
       </list>
     </option>
@@ -251,6 +235,11 @@
             <path>
               <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -265,12 +254,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Componet" type="462c0819:PsiDirectoryNode" />
               <item name="UserInfo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -342,45 +325,38 @@
       <workItem from="1529685293371" duration="839000" />
       <workItem from="1529813668860" duration="3604000" />
       <workItem from="1530198975001" duration="2710000" />
+      <workItem from="1532008044570" duration="1076000" />
+      <workItem from="1532020059415" duration="618000" />
+      <workItem from="1532171542200" duration="816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163648000" />
+    <option name="totallyTimeSpent" value="166158000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25035262" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25074404" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.43463498" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3037448" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.30899832" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25074404" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3293718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.30899832" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.43463498" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,6 +384,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/ProfilePicture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2533">
+          <caret line="163" column="68" lean-forward="true" selection-start-line="163" selection-start-column="68" selection-end-line="163" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Componet/Home/Home.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -627,7 +610,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Componet/Contact/SignIn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="51">
           <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -635,11 +618,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/DeviceInformation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/DeviceInformation.js" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -651,9 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="38" column="25" selection-start-line="34" selection-start-column="12" selection-end-line="38" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,37 +640,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/sessionStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/CVClearance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/CVClearance.js" />
     <entry file="file://$PROJECT_DIR$/src/Componet/Verify/Verify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="1156">
           <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/DocumentPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
+        <state relative-caret-position="646">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/IndentilyCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4709">
+          <caret line="292" column="65" selection-start-line="292" selection-start-column="65" selection-end-line="292" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/BusinessRegistration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6868">
+          <caret line="419" column="65" selection-start-line="419" selection-start-column="65" selection-end-line="419" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -703,39 +684,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/IndentilyCard.js">
+    <entry file="file://$PROJECT_DIR$/src/utils/sessionStorage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1112">
-          <caret line="292" column="65" selection-start-line="292" selection-start-column="65" selection-end-line="292" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/BusinessRegistration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2277">
-          <caret line="419" column="65" selection-start-line="419" selection-start-column="65" selection-end-line="419" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="62" column="74" selection-start-line="62" selection-start-column="74" selection-end-line="62" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-256">
+          <caret selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Componet/UserInfo/ProfilePicture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="163" column="74" selection-start-line="163" selection-start-column="74" selection-end-line="163" selection-end-column="74" />
+        <state relative-caret-position="290">
+          <caret line="204" column="37" lean-forward="true" selection-start-line="204" selection-start-column="37" selection-end-line="204" selection-end-column="37" />
         </state>
       </provider>
     </entry>
