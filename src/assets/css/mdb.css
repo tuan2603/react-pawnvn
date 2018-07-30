@@ -5869,7 +5869,7 @@ button:focus {
   .navbar.navbar-light form input[type=text] {
     border-bottom: 1px solid #000; }
     .navbar.navbar-light form input[type=text]:focus:not([readonly]) {
-      border-color: #4285F4; }
+      border-color: transparent; }
   .navbar.navbar-light form .form-control {
     color: #000; }
     .navbar.navbar-light form .form-control::-webkit-input-placeholder {
@@ -5918,7 +5918,7 @@ button:focus {
   .navbar.navbar-dark form input[type=text] {
     border-bottom: 1px solid #fff; }
     .navbar.navbar-dark form input[type=text]:focus:not([readonly]) {
-      border-color: #4285F4; }
+      border-color: transparent; }
   .navbar.navbar-dark form .form-control {
     color: #fff; }
     .navbar.navbar-dark form .form-control::-webkit-input-placeholder {
@@ -6953,11 +6953,9 @@ input[type=search-md],
 input[type=search],
 textarea.md-textarea {
   background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #bdbdbd;
   border-radius: 0;
   outline: none;
-  height: 2.1rem;
+  height: 2.5rem;
   width: 100%;
   font-size: 1rem;
   -webkit-box-shadow: none;
@@ -7029,9 +7027,10 @@ textarea.md-textarea {
   input[type=search-md]:focus:not([readonly]),
   input[type=search]:focus:not([readonly]),
   textarea.md-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #4285F4;
-    -webkit-box-shadow: 0 1px 0 0 #4285F4;
-    box-shadow: 0 1px 0 0 #4285F4; }
+    /*border-bottom: 1px solid #4285F4;*/
+    /*-webkit-box-shadow: 0 1px 0 0 #4285F4;*/
+    /*box-shadow: 0 1px 0 0 #4285F4; */
+  }
     input[type=text]:focus:not([readonly]) + label,
     input[type=password]:focus:not([readonly]) + label,
     input[type=email]:focus:not([readonly]) + label,
@@ -7044,7 +7043,8 @@ textarea.md-textarea {
     input[type=search-md]:focus:not([readonly]) + label,
     input[type=search]:focus:not([readonly]) + label,
     textarea.md-textarea:focus:not([readonly]) + label {
-      color: #4285F4; }
+      color: #4285F4;
+    }
   input[type=text].valid, input[type=text]:focus.valid,
   input[type=password].valid,
   input[type=password]:focus.valid,
@@ -7265,7 +7265,8 @@ textarea.md-textarea {
     .md-form .prefix ~ label {
       margin-left: 3rem; }
     .md-form .prefix.active {
-      color: #4285F4; }
+      /*color: #4285F4; */
+    }
   @media only screen and (max-width: 992px) {
     .md-form .prefix ~ input {
       width: 86%;
@@ -9860,7 +9861,7 @@ a.pswp__share--download:hover {
 
 select {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  display: none !important; }
+  }
   select.browser-default {
     display: block !important; }
   select:disabled {
