@@ -2,36 +2,6 @@ import React from "react";
 import {
    Route, Switch
 } from "react-router-dom";
-import ButtonPage from './pages/ButtonPage';
-import CSSPage from './pages/CSSPage';
-import TablePage from './pages/TablePage';
-import BadgePage from './pages/BadgePage';
-import BreadcrumbPage from './pages/BreadcrumbPage';
-import FaPage from './pages/FaPage';
-import ComponentsPage from './pages/ComponentsPage';
-import ModalPage from './pages/ModalPage';
-import AdvancedPage from './pages/AdvancedPage';
-import ProgressPage from './pages/ProgressPage';
-import InputPage from './pages/InputPage';
-import MediaPage from './pages/MediaPage';
-import JumbotronPage from './pages/JumbotronPage';
-import AlertPage from './pages/AlertPage';
-import CardsPage from './pages/CardsPage';
-import PaginationPage from './pages/PaginationPage';
-import PopoverPage from './pages/PopoverPage';
-import ListGroupPage from './pages/ListGroupPage';
-import CarouselPage from './pages/CarouselPage';
-import CollapsePage from './pages/CollapsePage';
-import TooltipsPage from './pages/TooltipsPage';
-import FooterPage from './pages/FooterPage';
-import MasksPage from './pages/MasksPage';
-import DropdownPage from './pages/DropdownPage';
-import VideoCarouselPage from './pages/VideoCarouselPage';
-import HoverPage from './pages/HoverPage';
-import FormsPage from './pages/FormsPage';
-import ChartsPage from './pages/ChartsPage';
-import ScrollBarPage from './pages/ScrollBarPage';
-import CRUD from './pages/Crud';
 
 import Home from './Componet/Home/Home';
 import About from './Componet/About/About';

@@ -1,0 +1,9 @@
+.nav-main {
+    background-color: indigo;
+}
+
+.navbar .nav-item .nav-link {
+    color: #157bc1;
+    font-size: 13pt;
+    font-weight: bold;
+}
