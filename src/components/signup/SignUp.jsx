@@ -98,7 +98,9 @@ class SignUp extends React.Component {
                         type: "suc"
                     }));
                     dispatch(alogin({phone}));
-                    this.setState({redirectToReferrer: true});
+                    setTimeout(()=> {
+                        this.setState({redirectToReferrer: true});
+                    },3000)
                 } else {
                     dispatch(show_notification({txt: user.message, type: "err"}));
                 }

@@ -4,13 +4,12 @@ import {
 } from "react-router-dom";
 import {Jumbotron} from 'mdbreact';
 import './Profile.css';
-import boy from '../../assets/img/boy.svg';
 import {connect} from "react-redux";
 import autoBind from "react-autobind";
-import * as config from '../../utils';
 import {avatarHelper} from "../../helpers";
 import {alogin} from "../../actions/userActions";
 import {show_notification} from "../../actions/notifyActions";
+import {UploadeImage} from "../contact";
 
 class Avatar extends React.Component {
     constructor(props) {
@@ -18,11 +17,10 @@ class Avatar extends React.Component {
         autoBind(this);
     }
 
-    handleUploadImage(ev) {
-        ev.preventDefault();
+    handleUploadImage(file) {
         const {dispatch, username} = this.props;
         const data = new FormData();
-        data.append('avatar', this.uploadInput.files[0]);
+        data.append('avatar', file);
         data.append('id', username._id);
         avatarHelper(data)
             .then(user => {
@@ -38,15 +36,10 @@ class Avatar extends React.Component {
 
     render() {
         let {username} = this.props;
-        let html = <img className="img-fluid" style={{maxHeight: "200px"}} src={boy} alt="avatar"/>;
+        let avatarLink  = null;
         if (username !== null) {
-            if (username.avatarLink && username.avatarLink !== null) {
-                html = <img className="img-fluid" style={{maxHeight: "200px"}}
-                            src={config.apiUrl + '/uploads/' + username.phone + '/' + username.avatarLink}
-                            alt="avatar"/>;
-            }
+            avatarLink = username.avatarLink
         }
-
         return (
             <div>
                 <div className="profile-doccument">
@@ -55,25 +48,11 @@ class Avatar extends React.Component {
                             <div className="profile-title">
                                 <h2>Logo <span className="warning">*</span></h2>
                             </div>
-                            <div className="form-upload">
-
-                                <div className="upload-container">
-                                    <input  ref={(ref) => {
-                                        this.uploadInput = ref;
-                                    }}
-                                                   type="file" onChange={this.handleUploadImage} name="file"
-                                                   accept="image/*;capture=camera"/>
-                                </div>
-
-                                <div className="sample_doc">
-                                    {
-                                        html
-                                    }
-
-                                    <p> Bấm để chọn ảnh khác</p>
-                                </div>
-
-                            </div>
+                            <UploadeImage
+                                username={username}
+                                filename={ avatarLink }
+                                uploadF={this.handleUploadImage}
+                            />
                             <div>
                                 <div className="list">
                                     <div className="icon icon-tick"></div>
@@ -103,15 +82,15 @@ class Avatar extends React.Component {
                     </div>
                 </div>
             </div>
-    );
+        );
     }
-    }
+}
 
-    let mapStateToProps = (state) => {
-        return {
+let mapStateToProps = (state) => {
+    return {
         username: state.userReducers,
         notification: state.notifyReducers
     };
-    };
+};
 
-    export default connect(mapStateToProps)(Avatar);
+export default connect(mapStateToProps)(Avatar);

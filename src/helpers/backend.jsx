@@ -64,6 +64,30 @@ export function avatarHelper(body) {
         .then((responseJson) => responseJson);
 }
 
+export function imageUserHelper(body) {
+    let requestOptions = {
+        method: 'POST',
+        headers: authHeader(),
+        body: body
+    };
+
+    return fetch(`${config.apiUrl}/api/auth/card`, requestOptions)
+        .then((response) => response.json())
+        .then((responseJson) => responseJson);
+}
+
+export function UserDocumentHelper(body) {
+    let requestOptions = {
+        method: 'POST',
+        headers: authHeader(),
+        body: body
+    };
+
+    return fetch(`${config.apiUrl}/api/auth/doccumentboth`, requestOptions)
+        .then((response) => response.json())
+        .then((responseJson) => responseJson);
+}
+
 export function verifyCaptcha(token) {
     let configheader = {
         method: 'POST',

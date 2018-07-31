@@ -29,6 +29,21 @@ class NavbarTop extends Component {
 
     render() {
         let {username} = this.props;
+        let htmldn = <NavItem><NavLink to="/signin" exact>Đăng Nhập</NavLink> </NavItem>;
+        let htmldx = <NavItem><NavLink to="/signup" exact>Đăng Ký</NavLink> </NavItem>;
+        if (username !== null) {
+            if (username.fullName !== null) {
+                htmldn = <NavItem> <NavLink to="/contact" exact>{username.fullName}</NavLink></NavItem>;
+
+            }
+            htmldx = <NavItem>
+                <NavLink to="/signin" exact>
+                                    <span className="btn btn-danger btn-sm btn-rounded">
+                                        <i className="fa fa-sign-out" aria-hidden="true"></i><span className={`logout`}>Đăng xuất</span>
+                                    </span>
+                </NavLink>
+            </NavItem>
+        }
         return (
             <Navbar className="nav-main" expand="md" fixed="top" scrolling color="#afafaf">
                 <NavbarBrand href="/">
@@ -41,32 +56,10 @@ class NavbarTop extends Component {
                             <NavLink to="/" exact>Trang Chủ</NavLink>
                         </NavItem>
                         {
-                            !username &&
-                            <NavItem>
-                                <NavLink to="/signin" exact>Đăng Nhập</NavLink>
-                            </NavItem>
+                            htmldn
                         }
                         {
-                            !username &&
-                            <NavItem>
-                                <NavLink to="/signup" exact>Đăng Ký</NavLink>
-                            </NavItem>
-                        }
-                        {
-                            username && username.fullName &&
-                            <NavItem>
-                                <NavLink to="/contact" exact>{username.fullName}</NavLink>
-                            </NavItem>
-                        }
-                        {
-                            username && username.fullName &&
-                            <NavItem>
-                                <NavLink to="/signin" exact >
-                                    <span className="btn btn-danger btn-sm btn-rounded">
-                                        <i className="fa fa-sign-out" aria-hidden="true"></i><span className={`logout`}>Đăng xuất</span>
-                                    </span>
-                                </NavLink>
-                            </NavItem>
+                            htmldx
                         }
                     </NavbarNav>
                 </Collapse>

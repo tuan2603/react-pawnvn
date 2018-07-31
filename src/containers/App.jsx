@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter , Switch} from 'react-router-dom';
+import {BrowserRouter, Switch, Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -14,7 +14,7 @@ import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
-import {Contact, Avatar} from '../components/contact';
+import {Contact, Avatar, IndentilyCard} from '../components/contact';
 import {Verify} from '../components/verify';
 import {TOKEN} from "../constants/Users";
 import {getInfo} from '../helpers';
@@ -23,8 +23,9 @@ import {alogin} from "../actions/userActions";
 class App extends Component {
     componentWillMount() {
         setupTimeOut();
-        const {dispatch} = this.props;
-        if(getFromSession(TOKEN) !== null )  {
+
+        let {dispatch} = this.props;
+        if (getFromSession(TOKEN) !== null) {
             getInfo().then(user => {
                 if (user.response === true) {
                     dispatch(alogin(user.value));
@@ -34,53 +35,62 @@ class App extends Component {
     }
 
     render() {
-        const {  notification } = this.props;
+        let {notification} = this.props;
         return (
-            <BrowserRouter >
-            <main>
-                {( notification !== null) && <Notification />}
-                <Switch>
-                    <LayoutRoute
-                        exact
-                        path='/'
-                        layout={MainLayout}
-                        component={HomePageMain} />
+            <BrowserRouter>
+                <main>
+                    {(notification !== null) && <Notification/>}
+                    <Switch>
+                        <LayoutRoute
+                            exact
+                            path='/'
+                            layout={MainLayout}
+                            component={HomePageMain}/>
 
-                    <LayoutRoute
-                        exact
-                        path='/signin'
-                        layout={MainLayout}
-                        component={Login} />
+                        <LayoutRoute
+                            exact
+                            path='/signin'
+                            layout={MainLayout}
+                            component={Login}/>
 
-                    <LayoutRoute
-                        exact
-                        path='/signup'
-                        layout={MainLayout}
-                        component={SignUp} />
+                        <LayoutRoute
+                            exact
+                            path='/signup'
+                            layout={MainLayout}
+                            component={SignUp}/>
 
-                    <LayoutRoute
-                        exact
-                        path='/verify'
-                        layout={MainLayout}
-                        component={Verify} />
+                        <LayoutRoute
+                            exact
+                            path='/verify'
+                            layout={MainLayout}
+                            component={Verify}/>
 
-                    <LayoutRoute
-                        exact
-                        path='/contact'
-                        layout={MainLayoutLogined}
-                        component={Contact} />
+                        <LayoutRoute
+                            exact
+                            path='/contact'
+                            layout={MainLayoutLogined}
+                            component={Contact}/>
 
-                    <LayoutRoute
-                        exact
-                        path='/avatar'
-                        layout={MainLayoutLogined}
-                        component={Avatar} />
-                </Switch>
-            </main>
+                        <LayoutRoute
+                            exact
+                            path='/avatar'
+                            layout={MainLayoutLogined}
+                            component={Avatar}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/identily-card'
+                            layout={MainLayoutLogined}
+                            component={IndentilyCard}/>
+
+                        <Redirect to="/"/>
+                    </Switch>
+                </main>
             </BrowserRouter>
         );
     }
 }
+
 let mapStateToProps = (state) => {
     return {
         loggingIn: state.userReducers,

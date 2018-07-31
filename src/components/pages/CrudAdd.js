@@ -5,7 +5,6 @@ import '../../containers/App.css';
 class ProductAdd extends Component {
     constructor(props){
         super(props);
-
         this.onSubmit = this.onSubmit.bind(this);
     }
 

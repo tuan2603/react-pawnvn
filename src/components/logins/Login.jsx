@@ -82,7 +82,9 @@ class Login extends Component {
                             }
                         });
                     }
-                    this.setState({redirectToReferrer: true});
+                    setTimeout(()=> {
+                        this.setState({redirectToReferrer: true});
+                    },3000)
                 } else if (user.value === 1) {
                     dispatch(alogin({phone}));
                     dispatch(show_notification({txt: user.message, type: "war"}));

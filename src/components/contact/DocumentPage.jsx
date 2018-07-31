@@ -21,10 +21,10 @@ class DocumentPage extends Component {
                                             <NavLink to="/avatar"> Logo doanh nghiệp <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to="/documents/identily-card">Chứng minh nhân dân <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
+                                            <NavLink to="/identily-card">Chứng minh nhân dân <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to="/documents/business-registration"> Giấy đăng ký Kinh doanh <b style={{color:"red"}}>*</b> <Fa
+                                            <NavLink to="/business-registration"> Giấy đăng ký Kinh doanh <b style={{color:"red"}}>*</b> <Fa
                                                 icon="angle-right"/></NavLink>
                                         </li>
                                     </ul>

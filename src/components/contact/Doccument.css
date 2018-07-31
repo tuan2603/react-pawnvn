@@ -2,13 +2,16 @@
     color: #157bc1;
 }
 
+.main-doccument
 .jumbotron{
-    background-color: #e4e0e0;
+    background-color: #e4e0e01f;
 }
+
 .main-doccument .form-upload form div {
     margin-top: 16px;
 }
 
+.main-doccument
 .row {
     margin-top: 25px;
 }
