@@ -3,21 +3,12 @@ import {
     Redirect
 } from "react-router-dom";
 import {Jumbotron} from 'mdbreact';
-import Api from '../../utils/api';
-import {getFromStorage, setInStorage} from "../../utils/storage";
-import Config from "../../utils/config";
 import './Profile.css';
-import boy from '../../img/boy.svg';
-import {ToastContainer, toast} from 'react-toastify';
+import boy from '../../assets/img/boy.svg';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import Axios from "axios/index";
 import Map from "../GoogleMap/Map";
-
-
-const json = [
-    {value: 'smartphone', label: 'SmartPhones'},
-    {value: 'tablet', label: 'Tablet'}];
 
 class ProfilePicture extends React.Component {
     constructor(props) {

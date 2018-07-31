@@ -2,6 +2,9 @@
     color: #157bc1;
 }
 
+.jumbotron{
+    background-color: #e4e0e0;
+}
 .main-doccument .form-upload form div {
     margin-top: 16px;
 }

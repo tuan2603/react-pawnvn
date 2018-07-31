@@ -14,7 +14,7 @@
     text-align: left;
     background-color: #fff;
 }
-
+.main-signin
 .form-signin {
     width: 100%;
     max-width: 420px!important;
@@ -25,14 +25,16 @@
     margin-bottom: 1rem;
 }
 
+.main-signin
 .form-label-xau button {
     width: 100%;
 }
-
+.main-signin
  .form-label-group {
     margin-bottom: 1rem;
+    padding-right: 5px;
 }
-
+.main-signin
 .form-label-group input {
     box-sizing: border-box;
     display: inline-block;
@@ -50,12 +52,12 @@
     border-radius: 5px;
 }
 
-
+.main-signin
  #telphone {
     border: none !important;
-    margin-right: -84px;
+    margin-right:100px;
 }
-
+.main-signin
 .form-label-group input{
     border: none !important;
 }
@@ -64,13 +66,12 @@
     #rc-imageselect, .g-recaptcha {transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;}
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-
+.main-signin
 .password {
     padding-left: 8px;
+}
+
+.center {
+    margin: auto;
+    padding: 10px;
 }

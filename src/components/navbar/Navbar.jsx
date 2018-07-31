@@ -61,8 +61,10 @@ class NavbarTop extends Component {
                         {
                             username && username.fullName &&
                             <NavItem>
-                                <NavLink to="/signin" exact className="btn btn-danger btn-sm btn-rounded">
-                                        <i className="fa fa-sign-out pr-2 pt-1" aria-hidden="true"></i>Đăng xuất
+                                <NavLink to="/signin" exact >
+                                    <span className="btn btn-danger btn-sm btn-rounded">
+                                        <i className="fa fa-sign-out" aria-hidden="true"></i><span className={`logout`}>Đăng xuất</span>
+                                    </span>
                                 </NavLink>
                             </NavItem>
                         }

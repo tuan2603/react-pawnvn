@@ -1,9 +1,23 @@
 .nav-main {
-    background-color: indigo;
+    background-color: #dae4f2;
+    vertical-align: baseline;
+}
+
+.nav-main .logout {
+    font-size: x-small;
+}
+
+.nav-main .nav-item, .nav-main .nav-item a {
+    vertical-align: baseline;
 }
 
 .navbar .nav-item .nav-link {
     color: #157bc1;
     font-size: 13pt;
-    font-weight: bold;
+}
+
+.nav-main .btn.btn-sm, .nav-main .btn.wishlist {
+    font-size: 0.6rem;
+    padding: 0.3rem 1.6rem;
+    margin-top: -1px;
 }

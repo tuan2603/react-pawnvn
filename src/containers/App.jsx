@@ -8,13 +8,14 @@ import 'font-awesome/css/font-awesome.min.css';
 import '../assets/css/mdb.css';
 import '../assets/css/normalize.css';
 import './App.css';
-import {LayoutRoute, MainLayout} from "../components/layout";
+import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";
 import {setupTimeOut, getFromSession} from '../utils';
 import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
-import {Contact} from '../components/contact';
+import {Contact, Avatar} from '../components/contact';
+import {Verify} from '../components/verify';
 import {TOKEN} from "../constants/Users";
 import {getInfo} from '../helpers';
 import {alogin} from "../actions/userActions";
@@ -59,9 +60,21 @@ class App extends Component {
 
                     <LayoutRoute
                         exact
-                        path='/contact'
+                        path='/verify'
                         layout={MainLayout}
+                        component={Verify} />
+
+                    <LayoutRoute
+                        exact
+                        path='/contact'
+                        layout={MainLayoutLogined}
                         component={Contact} />
+
+                    <LayoutRoute
+                        exact
+                        path='/avatar'
+                        layout={MainLayoutLogined}
+                        component={Avatar} />
                 </Switch>
             </main>
             </BrowserRouter>
