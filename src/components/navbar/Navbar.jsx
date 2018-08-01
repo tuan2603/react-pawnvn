@@ -3,6 +3,7 @@ import {Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLin
 import mainLogo from '../../assets/img/logo.png';
 import './Navbar.css';
 import {connect} from "react-redux";
+import autoBind from "react-autobind";
 
 class NavbarTop extends Component {
     constructor(props) {
@@ -10,8 +11,7 @@ class NavbarTop extends Component {
         this.state = {
             collapsed: false,
         };
-        this.handleTogglerClick = this.handleTogglerClick.bind(this);
-        this.handleNavbarClick = this.handleNavbarClick.bind(this);
+        autoBind(this);
     }
 
 
@@ -29,6 +29,7 @@ class NavbarTop extends Component {
 
     render() {
         let {username} = this.props;
+        let {collapsed} = this.state;
         let htmldn = <NavItem><NavLink to="/signin" exact>Đăng Nhập</NavLink> </NavItem>;
         let htmldx = <NavItem><NavLink to="/signup" exact>Đăng Ký</NavLink> </NavItem>;
         if (username !== null) {
@@ -45,12 +46,12 @@ class NavbarTop extends Component {
             </NavItem>
         }
         return (
-            <Navbar className="nav-main" expand="md" fixed="top" scrolling color="#afafaf">
+            <Navbar className="nav-main" expand="md" fixed="top" >
                 <NavbarBrand href="/">
                     <img src={mainLogo} alt="or-trans" height="32"/>
                 </NavbarBrand>
                 <NavbarToggler onClick={this.handleTogglerClick}/>
-                <Collapse isOpen={this.state.collapsed} navbar>
+                <Collapse isOpen={collapsed} navbar>
                     <NavbarNav right onClick={this.handleNavbarClick}>
                         <NavItem>
                             <NavLink to="/" exact>Trang Chủ</NavLink>

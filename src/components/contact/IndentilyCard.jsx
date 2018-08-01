@@ -20,30 +20,19 @@ class IndentilyCard extends React.Component {
         super(props);
         this.state = {
             identityCardNumber: null,
-            sex: null,
             identityCardDateIssued: null,
-            birthday: null,
             isChange: false,
             redirectToReferrer: false,
         }
         autoBind(this);
     }
 
-
     handleIdentityCardNumber(event) {
         this.setState({identityCardNumber: event.target.value, isChange: true});
     }
 
-    handleChangeSex(event) {
-        this.setState({sex: event.target.value, isChange: true});
-    }
-
     handleChangeDate(date) {
         this.setState({identityCardDateIssued: date, isChange: true});
-    }
-
-    handleChangeBirthday(date) {
-        this.setState({birthday: date, isChange: true});
     }
 
     handleSubmit(e) {
@@ -51,14 +40,11 @@ class IndentilyCard extends React.Component {
         const {dispatch, username} = this.props;
         let {isChange} = this.state;
         this.setState({submitted: true});
-        const {sex, identityCardNumber, identityCardDateIssued, birthday} = this.state;
+        const {identityCardNumber, identityCardDateIssued} = this.state;
         if (isChange) {
             let obj = {};
             if (username != null) {
                 obj.id = username._id;
-            }
-            if (sex != null) {
-                obj.sex = sex;
             }
             if (identityCardNumber != null) {
                 obj.identityCardNumber = identityCardNumber;
@@ -66,11 +52,8 @@ class IndentilyCard extends React.Component {
             if (identityCardDateIssued != null) {
                 obj.identityCardDateIssued = moment(identityCardDateIssued).valueOf();
             }
-            if (birthday != null) {
-                obj.birthday = moment(birthday).valueOf();
-            }
-            setTimeout(()=>{
-                console.log(obj);
+            console.log(obj);
+            setTimeout(()=> {
                 UserDocumentHelper(obj).then(user => {
                     if (user.response === true) {
                         dispatch(show_notification({txt: "Upload thành công", type: "suc"}));
@@ -81,10 +64,9 @@ class IndentilyCard extends React.Component {
                     }
                 });
             },2000);
-
         } else {
 
-                this.setState({redirectToReferrer: true});
+            this.setState({redirectToReferrer: true});
 
         }
     }
@@ -129,14 +111,12 @@ class IndentilyCard extends React.Component {
     render() {
         let {username} = this.props;
         let {isChange, redirectToReferrer} = this.state;
-        let identityCardFront, identityCardBehind, identityCardNumber, sex, identityCardDateIssued, birthday = null;
+        let identityCardFront, identityCardBehind, identityCardNumber, identityCardDateIssued = null;
         if (username !== null) {
             identityCardFront = username.identityCardFront;
             identityCardBehind = username.identityCardBehind;
             identityCardNumber = username.identityCardNumber;
             identityCardDateIssued = username.identityCardDateIssued;
-            birthday = username.birthday;
-            sex = username.sex;
         }
 
         if (redirectToReferrer) {
@@ -179,33 +159,6 @@ class IndentilyCard extends React.Component {
                                        defaultValue={identityCardNumber}
                                        onChange={this.handleIdentityCardNumber} className="card-number"
                                        name="CardNumber"/>
-                            </div>
-                        </div>
-
-
-                        <div className="indentily-number">
-                            <p>Sinh ngày: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <DatePicker
-                                    selected={moment(birthday)}
-                                    onChange={this.handleChangeBirthday}
-                                    peekNextMonth
-                                    showMonthDropdown
-                                    showYearDropdown
-                                    dateFormat="DD/MM/YYYY"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Giới tính: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <select name="city" defaultValue={sex} onChange={this.handleChangeSex}>
-                                    <option value="">Chọn</option>
-                                    <option value="male">Nam</option>
-                                    <option value="female">Nữ</option>
-                                    <option value="other">Khác</option>
-                                </select>
                             </div>
                         </div>
 

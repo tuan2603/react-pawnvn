@@ -9,3 +9,12 @@ export function authHeader() {
         return {};
     }
 }
+export function authHeaderJSon() {
+    // return authorization header with jwt token
+    let token = getFromSession(TOKEN);
+    if (token) {
+        return { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' };
+    } else {
+        return {};
+    }
+}

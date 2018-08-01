@@ -14,7 +14,7 @@ import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
-import {Contact, Avatar, IndentilyCard} from '../components/contact';
+import {Contact, Avatar, IndentilyCard, InfoUser} from '../components/contact';
 import {Verify} from '../components/verify';
 import {TOKEN} from "../constants/Users";
 import {getInfo} from '../helpers';
@@ -82,6 +82,12 @@ class App extends Component {
                             path='/identily-card'
                             layout={MainLayoutLogined}
                             component={IndentilyCard}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/info-user'
+                            layout={MainLayoutLogined}
+                            component={InfoUser}/>
 
                         <Redirect to="/"/>
                     </Switch>

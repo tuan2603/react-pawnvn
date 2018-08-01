@@ -1,8 +1,8 @@
 import * as config from '../utils';
-import {authHeader} from '../helpers';
+import {authHeader, authHeaderJSon} from '../helpers';
 
 export function login(phone, password) {
-    let configheader = {
+    const configheader = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({phone, password}),
@@ -15,7 +15,7 @@ export function login(phone, password) {
 }
 
 export function verifyHelper(code, phone) {
-    let configheader = {
+    const configheader = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({code, phone, 'verifyType': 1, 'roleType': 2}),
@@ -28,7 +28,7 @@ export function verifyHelper(code, phone) {
 }
 
 export function smsHelper(phone) {
-    let configheader = {
+    const configheader = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({phone}),
@@ -42,7 +42,7 @@ export function smsHelper(phone) {
 
 
 export function getInfo() {
-    let requestOptions = {
+    const requestOptions = {
         method: 'GET',
         headers: authHeader()
     };
@@ -53,7 +53,7 @@ export function getInfo() {
 }
 
 export function avatarHelper(body) {
-    let requestOptions = {
+    const requestOptions = {
         method: 'POST',
         headers: authHeader(),
         body: body
@@ -65,7 +65,7 @@ export function avatarHelper(body) {
 }
 
 export function imageUserHelper(body) {
-    let requestOptions = {
+    const requestOptions = {
         method: 'POST',
         headers: authHeader(),
         body: body
@@ -77,10 +77,10 @@ export function imageUserHelper(body) {
 }
 
 export function UserDocumentHelper(body) {
-    let requestOptions = {
+    const requestOptions = {
         method: 'POST',
-        headers: authHeader(),
-        body: body
+        headers: authHeaderJSon(),
+        body: JSON.stringify(body),
     };
 
     return fetch(`${config.apiUrl}/api/auth/doccumentboth`, requestOptions)
@@ -89,7 +89,7 @@ export function UserDocumentHelper(body) {
 }
 
 export function verifyCaptcha(token) {
-    let configheader = {
+    const configheader = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({token}),
@@ -100,7 +100,7 @@ export function verifyCaptcha(token) {
 }
 
 export function register(body) {
-    let configheader = {
+    const configheader = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(body),
