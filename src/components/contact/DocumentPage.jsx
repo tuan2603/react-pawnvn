@@ -27,6 +27,9 @@ class DocumentPage extends Component {
                                             <NavLink to="/identily-card">Chứng minh nhân dân <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
                                         </li>
                                         <li>
+                                            <NavLink to="/location">Vị trí: <b style={{color:"red"}}>*</b> <Fa icon="angle-right"/></NavLink>
+                                        </li>
+                                        <li>
                                             <NavLink to="/business-registration"> Giấy đăng ký Kinh doanh <b style={{color:"red"}}>*</b> <Fa
                                                 icon="angle-right"/></NavLink>
                                         </li>

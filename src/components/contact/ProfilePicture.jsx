@@ -3,7 +3,6 @@ import {
     Redirect
 } from "react-router-dom";
 import {Jumbotron} from 'mdbreact';
-import './Profile.css';
 import boy from '../../assets/img/boy.svg';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';

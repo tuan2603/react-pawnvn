@@ -8,7 +8,6 @@ import {Jumbotron} from 'mdbreact';
 import Api from '../../utils/api';
 import {getFromStorage, setInStorage} from "../../utils/storage";
 import Config from "../../utils/config";
-import './Profile.css';
 import picture from '../../img/picture.svg';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';

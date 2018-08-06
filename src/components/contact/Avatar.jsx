@@ -3,7 +3,6 @@ import {
     NavLink
 } from "react-router-dom";
 import {Jumbotron} from 'mdbreact';
-import './Profile.css';
 import {connect} from "react-redux";
 import autoBind from "react-autobind";
 import {avatarHelper} from "../../helpers";

@@ -4,7 +4,6 @@ import {
 } from "react-router-dom";
 
 import {Jumbotron} from 'mdbreact';
-import './Profile.css';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -68,7 +67,7 @@ class InfoUser extends React.Component {
                     if (user.response === true) {
                         dispatch(show_notification({txt: "Upload thành công", type: "suc"}));
                         dispatch(alogin(user.value));
-                        this.setState({isChange: true});
+                        this.setState({isChange: false});
                     } else {
                         dispatch(show_notification({txt: user.value, type: "err"}));
                     }

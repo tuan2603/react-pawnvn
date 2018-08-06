@@ -14,8 +14,9 @@ import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
-import {Contact, Avatar, IndentilyCard, InfoUser} from '../components/contact';
+import {Contact, Avatar, IndentilyCard, InfoUser, Map} from '../components/contact';
 import {Verify} from '../components/verify';
+import {Privacy} from '../components/privacy';
 import {TOKEN} from "../constants/Users";
 import {getInfo} from '../helpers';
 import {alogin} from "../actions/userActions";
@@ -88,6 +89,18 @@ class App extends Component {
                             path='/info-user'
                             layout={MainLayoutLogined}
                             component={InfoUser}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/location'
+                            layout={MainLayoutLogined}
+                            component={Map}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/conditionsandterms'
+                            layout={MainLayout}
+                            component={Privacy} />
 
                         <Redirect to="/"/>
                     </Switch>

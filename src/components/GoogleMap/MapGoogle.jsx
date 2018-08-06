@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps";
 import {SearchBox} from "react-google-maps/lib/components/places/SearchBox";
 import _ from "lodash";
+import autoBind from "react-autobind";
 
-class Map extends Component {
+class MapGoogle extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,13 +13,7 @@ class Map extends Component {
             bounds: null,
             searchBox: null,
         };
-        this.mapLoaded = this.mapLoaded.bind(this);
-        this.mapMoved = this.mapMoved.bind(this);
-        this.onMarkerClick = this.onMarkerClick.bind(this);
-        this.onSearchBoxMounted = this.onSearchBoxMounted.bind(this);
-        this.onPlacesChanged = this.onPlacesChanged.bind(this);
-        this.onBoundsChanged = this.onBoundsChanged.bind(this);
-
+        autoBind(this);
     }
 
 
@@ -143,4 +138,4 @@ class Map extends Component {
     }
 }
 
-export default withScriptjs(withGoogleMap(Map));
+export default withScriptjs(withGoogleMap(MapGoogle));
