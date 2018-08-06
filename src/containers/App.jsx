@@ -16,7 +16,7 @@ import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
 import {Contact, Avatar, IndentilyCard, InfoUser, Map} from '../components/contact';
 import {Verify} from '../components/verify';
-import {Privacy} from '../components/privacy';
+import {Privacy,About} from '../components/privacy';
 import {TOKEN} from "../constants/Users";
 import {getInfo} from '../helpers';
 import {alogin} from "../actions/userActions";
@@ -98,9 +98,15 @@ class App extends Component {
 
                         <LayoutRoute
                             exact
-                            path='/conditionsandterms'
+                            path='/dieu-khoan-su-dung.html'
                             layout={MainLayout}
                             component={Privacy} />
+
+                        <LayoutRoute
+                            exact
+                            path='/gioi-thieu.html'
+                            layout={MainLayout}
+                            component={About} />
 
                         <Redirect to="/"/>
                     </Switch>

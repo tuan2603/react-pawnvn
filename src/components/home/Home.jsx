@@ -3,7 +3,7 @@ import {
     NavLink
 } from "react-router-dom";
 import {Container, Col, Row, Fa} from 'mdbreact';
-import './HomePage.css';
+// import './HomePage.css';
 import SlideTop from './SlideHome';
 
 class HomePageMain extends React.Component {

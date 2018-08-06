@@ -56,6 +56,9 @@ class NavbarTop extends Component {
                         <NavItem>
                             <NavLink to="/" exact>Trang Chủ</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink to="/gioi-thieu.html" exact>Giới thiệu</NavLink>
+                        </NavItem>
                         {
                             htmldn
                         }

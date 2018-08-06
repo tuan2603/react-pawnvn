@@ -172,7 +172,7 @@ class SignUp extends React.Component {
                         <div className="form-label-xau">
                             <p>Khi tiếp tục, tôi đồng ý PawnVN được phép thu thập, sử dụng và tiết lộ
                                 thông tin được tôi cung cấp theo <a
-                                    href="/privacy"> Chính sách Bảo mật </a>mà tôi đã
+                                    href="/dieu-khoan-su-dung.html"> Chính sách Bảo mật </a>mà tôi đã
                                 đọc và hiểu.</p>
                         </div>
                         <div className="form-label-xau">

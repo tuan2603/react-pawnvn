@@ -40,6 +40,18 @@ export function smsHelper(phone) {
 
 }
 
+export function getTemsHelper(body) {
+    const requestOptions = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body),
+    };
+
+    return fetch(`${config.apiUrl}/api/get-terms`, requestOptions)
+        .then((response) => response.json())
+        .then((responseJson) => responseJson);
+}
+
 
 export function getInfo() {
     const requestOptions = {
