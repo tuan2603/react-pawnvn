@@ -3,7 +3,7 @@ import {getTemsHelper} from '../helpers';
 
 export function loadTerm() {
     return function(dispatch) {
-        return getTemsHelper({title:"terms"}).then(term => {
+        return getTemsHelper({permalink:"dieu-khoan-su-dung"}).then(term => {
             if (term.response === true) {
                 dispatch(loadTermSuccess(term.value));
             }

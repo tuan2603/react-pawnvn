@@ -1,6 +1,7 @@
 .nav-main {
     background-color: #dae4f2;
     vertical-align: baseline;
+    padding: 16px;
 }
 
 .nav-main .logout {

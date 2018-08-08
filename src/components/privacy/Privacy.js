@@ -4,16 +4,12 @@ import autoBind from "react-autobind";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import $ from 'jquery';
+
 
 class Privacy extends Component {
     constructor(props) {
         super(props);
         autoBind(this);
-    }
-
-    unescapeHTML(html) {
-        $('#contents').html(html);
     }
 
     render() {
@@ -22,9 +18,7 @@ class Privacy extends Component {
             <Container className="privacy">
                 <Row>
                     <Col md="10" className="mx-auto mt-4">
-                        {this.unescapeHTML(terms.content)}
-                        <div id="contents">
-                        </div>
+                        <div id="contents" dangerouslySetInnerHTML={{__html: terms.content}}/>
                     </Col>
                 </Row>
             </Container>

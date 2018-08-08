@@ -38,7 +38,7 @@ class App extends Component {
     render() {
         let {notification} = this.props;
         return (
-            <BrowserRouter>
+            <BrowserRouter >
                 <main>
                     {(notification !== null) && <Notification/>}
                     <Switch>

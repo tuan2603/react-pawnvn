@@ -3,7 +3,7 @@ import {getTemsHelper} from '../helpers';
 
 export function loadAbout() {
     return function(dispatch) {
-        return getTemsHelper({title:"introduce"}).then(about => {
+        return getTemsHelper({permalink:"gioi-thieu"}).then(about => {
             if (about.response === true) {
                 dispatch(loadAboutSuccess(about.value));
             }
