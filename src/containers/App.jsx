@@ -2,37 +2,26 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter, Switch, Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import 'font-awesome/css/font-awesome.min.css';
 import '../assets/css/mdb.css';
-import '../assets/css/normalize.css';
+import '../assets/css/themify-icons.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './App.css';
 import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";
-import {setupTimeOut, getFromSession} from '../utils';
+import {setupTimeOut} from '../utils';
 import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
-import {Contact, Avatar, IndentilyCard, InfoUser, Map} from '../components/contact';
+import {Contact, Avatar, IndentilyCard, InfoUser, Map, BusinessRegistration, Categories} from '../components/contact';
 import {Verify} from '../components/verify';
 import {Privacy,About} from '../components/privacy';
-import {TOKEN} from "../constants/Users";
-import {getInfo} from '../helpers';
-import {alogin} from "../actions/userActions";
 
 class App extends Component {
     componentWillMount() {
         setupTimeOut();
-
-        let {dispatch} = this.props;
-        if (getFromSession(TOKEN) !== null) {
-            getInfo().then(user => {
-                if (user.response === true) {
-                    dispatch(alogin(user.value));
-                }
-            });
-        }
     }
 
     render() {
@@ -95,6 +84,18 @@ class App extends Component {
                             path='/location'
                             layout={MainLayoutLogined}
                             component={Map}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/business-registration'
+                            layout={MainLayoutLogined}
+                            component={BusinessRegistration}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/choose-categories'
+                            layout={MainLayoutLogined}
+                            component={Categories}/>
 
                         <LayoutRoute
                             exact

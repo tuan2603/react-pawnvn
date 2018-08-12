@@ -1,3 +1,4 @@
+.profile-doccument
 .uploads {
     display: flex;
     background: #eaeff2;
@@ -8,12 +9,12 @@
 .jumbotron {
     background-color: #d8ebfbf2;
 }
-
+.profile-doccument
 .form-upload {
     text-align: center;
     position: relative;
 }
-
+.profile-doccument
 .upload-container {
     position: absolute;
     height: 100%;
@@ -21,7 +22,7 @@
     background-color: #1581c13b;
     line-height: 1.5em;
 }
-
+.profile-doccument
 .upload-container input[type=file] {
     width: 100%;
     height: 100%;
@@ -33,7 +34,7 @@
     outline: 0;
     line-height: 1.5em;
 }
-
+.profile-doccument
 .form-indentily {
     color: #157bc1 !important;
 }
@@ -43,78 +44,78 @@
     padding-top: 2em;
     color: #157bc1;
 }
-
+.profile-doccument
 .profile-title {
     color: #157bc1;
 }
-
+.profile-doccument
 .profile-title h2 {
     font-size: 1.3rem;
 }
-
+.profile-doccument
 .profile-title .warning {
     color: red !important;
 }
-
+.profile-doccument
 .warning {
     color: red !important;
 }
 
 @media only screen and (min-width: 400px) {
-    .sample_doc img {
+    .profile-doccument .sample_doc img {
         max-height: 200px;
         max-width: 90%;
         border: 1px solid #ccd6dd;
         text-align: center;
     }
 }
-
+.profile-doccument
 .sample_doc {
     text-align: center;
     padding: 16px;
 }
-
+.profile-doccument
 .sample_doc img {
     text-align: center;
     margin-top: 16px;
 }
-
+.profile-doccument
 .sample_doc p {
     text-align: center;
     margin-top: 16px;
 }
-
+.profile-doccument
 input[type="file" i] {
     align-items: baseline;
     color: #157bc1;
     text-align: start !important;
 }
-
+.profile-doccument
 .form-indentily .list {
     display: flex;
     margin: 1em 0;
     padding-left: 20px;
     align-items: center;
 }
-
+.profile-doccument
 .icon-tick {
     background: url("../../assets/img/css/icons8_checkmark_48.png") no-repeat;
     background-size: 24px;
     width: 32px;
     height: 32px;
 }
-
+.profile-doccument
 .react-datepicker-wrapper {
     width: 100%;
     color: #157bc1;
 }
-
+.profile-doccument
 .react-datepicker__input-container {
     width: 100%;
     color: #157bc1;
     text-align: left;
 }
-
+.profile-doccument
 .react-datepicker__header,
 .react-datepicker__header span,
 .react-datepicker__input-container select {
@@ -126,44 +127,44 @@ input[type="file" i] {
     color: #157bc1;
     text-align: left;
 }
-
+.profile-doccument
 .profile-title {
     margin-top: 16px;
 }
-
+.profile-doccument
 .indentily-number p {
     margin-bottom: 0px;
     margin-top: 1em;
 }
-
+.profile-doccument
 .indentily-number .card-number {
     color: #157bc1 !important;
 }
-
+.profile-doccument
 .indentily-number input {
     width: 99% !important;
 }
-
+.profile-doccument
 .indentily-submit {
     margin-top: 16px;
     width: 100%;
     text-align: center;
 }
-
+.profile-doccument
 .indentily-submit .submit {
     margin-top: 16px;
     width: 100%;
     background: #d46c2e;
 }
-
+.profile-doccument
 .list-item {
     color: #157bc1;
 }
-
+.profile-doccument
 .form-upload {
     color: #157bc1;
 }
-
+.profile-doccument
 .main-signup {
     display: flex;
     -ms-flex-align: center;
@@ -172,7 +173,7 @@ input[type="file" i] {
     padding-bottom: 40px;
     background-color: #f5f5f5;
 }
-
+.profile-doccument
 .main-signup {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -183,28 +184,28 @@ input[type="file" i] {
     text-align: left;
     background-color: #fff;
 }
-
+.profile-doccument
 .form-indentily {
     width: 100%;
     max-width: 900px;
     padding: 15px;
     margin: auto;
 }
-
+.profile-doccument
 .form-label-xau {
     position: relative;
     margin-bottom: 1rem;
 }
-
+.profile-doccument
 .form-label-xau button {
     width: 100%;
 }
-
+.profile-doccument
 .form-label-group {
     position: relative;
     margin-bottom: 1rem;
 }
-
+.profile-doccument
 .form-label-group input {
     margin-left: 5px;
     box-sizing: border-box;
@@ -212,72 +213,94 @@ input[type="file" i] {
     background-clip: padding-box;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
+.profile-doccument
 button, input {
     overflow: visible;
 }
-
+.profile-doccument
 button, input, optgroup, select, textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
 }
-
+.profile-doccument
 .form-indentily {
     width: 100%;
     max-width: 620px!important;
     padding: 15px;
     margin: auto;
 }
-
+.profile-doccument
 .form-indentily select {
     width: 100%;
     border: none;
     display: block !important;
     height: 2.1rem;
+    line-height: 2.5;
     font-size: 1rem;
     transition: all 0.3s;
     color: #157bc1;
+    margin: 1;
 }
-
+.profile-doccument
 .Select--multi .Select-multi-value-wrapper span {
     color: #157bc1!important;
-}
 
+}
+.profile-doccument
 .form-label-group {
     display: block;
     width: 100%;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 2.5;
     color: #495057;
     border: 1px solid rgb(208, 208, 208);
     border-radius: 5px;
+    background-color: #fff;
 }
 
-#telphone {
-    border: none !important;
-    margin-right: -84px;
-}
-
+.profile-doccument
 .form-label-group input {
     border: none !important;
+    margin: 1;
+    padding: 0 0 0 8px;
 }
 
+.profile-doccument
 .collapse p {
     color: red;
 }
 
-
+.profile-doccument
 input:focus,
+.profile-doccument
 select:focus,
+.profile-doccument
 textarea:focus,
+.profile-doccument
 button:focus {
     outline: none!important;
     border: none!important;
     -webkit-box-shadow: none!important;
 }
-
+.profile-doccument
 .pac-item span {
     color: black !important;
 }
+
+
+.home-feature-box span {
+    display: block;
+    color: #111;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5em;
+}
+
+  
+  #mybutton {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+  }

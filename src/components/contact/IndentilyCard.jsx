@@ -1,130 +1,142 @@
 import React from 'react';
 import {
-    Redirect
+    NavLink, Redirect
 } from "react-router-dom";
-
-import {Jumbotron} from 'mdbreact';
+import { Jumbotron } from 'mdbreact';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import autoBind from "react-autobind";
-import {connect} from "react-redux";
-import {imageUserHelper, UserDocumentHelper} from "../../helpers";
-import {show_notification} from "../../actions/notifyActions";
-import {alogin} from "../../actions/userActions";
-import {UploadeImage} from "../contact";
+import { connect } from "react-redux";
+import * as userActions from "../../actions/userActions";
+import { UploadeImage } from "../contact";
+import * as config from "../../utils";
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 class IndentilyCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            identityCardNumber: null,
-            identityCardDateIssued: null,
-            isChange: false,
-            redirectToReferrer: false,
+            isEdit: false,
+            saving: false,
+            fileFront: "",
+            fileBehind: "",
+            identityCardNumber: "",
+            identityCardDateIssued: Date.now(),
         }
         autoBind(this);
     }
 
+    componentWillMount() {
+        if (this.props.User === null) {
+            this.props.actionsUser.loadUser();
+        }
+    }
+
     handleIdentityCardNumber(event) {
-        this.setState({identityCardNumber: event.target.value, isChange: true});
+        this.setState({ identityCardNumber: event.target.value, isEdit: true, saving: false });
     }
 
     handleChangeDate(date) {
-        this.setState({identityCardDateIssued: date, isChange: true});
+        this.setState({ identityCardDateIssued: date, isEdit: true, saving: false });
+    }
+
+    handleIdentityCardFront(file) {
+        this.setState({ isEdit: true, fileFront: file, saving: false });
+    }
+
+    handleIdentityCardBehind(file) {
+        this.setState({ isEdit: true, fileBehind: file, saving: false });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const {dispatch, username} = this.props;
-        let {isChange} = this.state;
-        this.setState({submitted: true});
-        const {identityCardNumber, identityCardDateIssued} = this.state;
-        if (isChange) {
+        this.setState({ saving: true });
+        const { identityCardNumber, identityCardDateIssued, fileFront, fileBehind } = this.state;
+        let { actionsUser, User } = this.props;
+
+        if (fileFront !== "") {
+            // thỏa điều kiện tỉ lệ 1 : cho upload
+            const data = new FormData();
+            data.append('avatar', fileFront);
+            data.append('id', User._id);
+            data.append('expression', 'identityCardFront');
+            setTimeout(() => {
+                actionsUser.UploadImage(data).then(res => {
+                    if (res) {
+                        this.setState({ isEdit: false, fileFront: "" });
+                    }
+                })
+            }, 1000);
+        }
+
+        if (fileBehind !== "") {
+            // thỏa điều kiện tỉ lệ 1 : cho upload
+            const data = new FormData();
+            data.append('avatar', fileBehind);
+            data.append('id', User._id);
+            data.append('expression', 'identityCardBehind');
+            setTimeout(() => {
+                actionsUser.UploadImage(data).then(res => {
+                    if (res) {
+                        this.setState({ isEdit: false, fileBehind: "" });
+                    }
+                })
+            }, 2000);
+        }
+
+        if (identityCardNumber !== "" || identityCardDateIssued !== "") {
             let obj = {};
-            if (username != null) {
-                obj.id = username._id;
-            }
-            if (identityCardNumber != null) {
+            obj.id = User._id;
+            if (identityCardNumber !== "") {
                 obj.identityCardNumber = identityCardNumber;
             }
-            if (identityCardDateIssued != null) {
+            if (identityCardDateIssued !== "") {
                 obj.identityCardDateIssued = moment(identityCardDateIssued).valueOf();
             }
-            console.log(obj);
-            setTimeout(()=> {
-                UserDocumentHelper(obj).then(user => {
-                    if (user.response === true) {
-                        dispatch(show_notification({txt: "Upload thành công", type: "suc"}));
-                        dispatch(alogin(user.value));
-                        this.setState({isChange: false});
-                    } else {
-                        dispatch(show_notification({txt: user.value, type: "err"}));
+            setTimeout(() => {
+                actionsUser.UploadDocument(obj).then(res => {
+                    if (res) {
+                        this.setState({
+                            isEdit: false, identityCardNumber: "",
+                            identityCardDateIssued: ""
+                        });
                     }
-                });
-            },2000);
-        } else {
-
-            this.setState({redirectToReferrer: true});
-
+                })
+            }, 3000);
         }
-    }
-
-
-    handleIdentityCardFront(file) {
-        const {dispatch, username} = this.props;
-        const data = new FormData();
-        data.append('avatar', file);
-        data.append('id', username._id);
-        data.append('expression', 'identityCardFront');
-        imageUserHelper(data)
-            .then(user => {
-                if (user.response === true) {
-                    dispatch(show_notification({txt: "Upload thành công", type: "suc"}));
-                    dispatch(alogin(user.value));
-                } else {
-                    dispatch(show_notification({txt: user.value, type: "err"}));
-                }
-            });
-
-    }
-
-    handleIdentityCardBehind(file) {
-        const {dispatch, username} = this.props;
-        const data = new FormData();
-        data.append('avatar', file);
-        data.append('id', username._id);
-        data.append('expression', 'identityCardBehind');
-        imageUserHelper(data)
-            .then(user => {
-                if (user.response === true) {
-                    dispatch(show_notification({txt: "Upload thành công", type: "suc"}));
-                    dispatch(alogin(user.value));
-                } else {
-                    dispatch(show_notification({txt: user.value, type: "err"}));
-                }
-            });
-
     }
 
     render() {
-        let {username} = this.props;
-        let {isChange, redirectToReferrer} = this.state;
-        let identityCardFront, identityCardBehind, identityCardNumber, identityCardDateIssued = null;
-        if (username !== null) {
-            identityCardFront = username.identityCardFront;
-            identityCardBehind = username.identityCardBehind;
-            identityCardNumber = username.identityCardNumber;
-            identityCardDateIssued = username.identityCardDateIssued;
+        let { User } = this.props;
+        if(User._id === ''){
+            return (<Redirect to={"/"} />);
         }
-
-        if (redirectToReferrer) {
-            return <Redirect to={'/contact'}/>
+        let { isEdit, saving, identityCardDateIssued } = this.state;
+   
+        let identityCardFront, identityCardBehind, identityCardNumber = null;
+            
+        if (User !== null) {
+            identityCardFront = `${config.apiUrl}/uploads/${User.phone}/${User.identityCardFront}`;
+            identityCardBehind = `${config.apiUrl}/uploads/${User.phone}/${User.identityCardBehind}`;
+            identityCardNumber = User.identityCardNumber;
+            if(User.identityCardDateIssued != null && isEdit === false){
+                identityCardDateIssued = User.identityCardDateIssued;
+            }
         }
-
-        let htmlsub = 'Tiếp tục';
-        if (isChange) {
-            htmlsub = " Lưu thông tin ";
+        
+        let $button = (<NavLink
+            to={"/contact"}
+            className="btn btn-lg btn-primary btn-block" id="mySubmit"
+            type="submit">Tiếp tục</NavLink>);
+        if (isEdit) {
+            $button = (<input
+                type="submit"
+                disabled={saving}
+                value={saving ? 'Saving...' : 'Save'}
+                className="btn btn-primary btn-block"
+                onClick={this.handleSubmit} />)
         }
 
         return (
@@ -136,28 +148,31 @@ class IndentilyCard extends React.Component {
                             <h2>Chứng Minh Nhân Dân(Mặt trước)<span className="warning">*</span></h2>
                         </div>
                         <UploadeImage
-                            username={username}
-                            filename={identityCardFront}
-                            uploadF={this.handleIdentityCardFront}
+                            value={identityCardFront}
+                            lable="Chứng Minh Nhân Dân"
+                            name="identityCardFront"
+                            onChange={this.handleIdentityCardFront}
                         />
+
 
                         <div className="profile-title">
                             <h2>Chứng Minh Nhân Dân(Mặt sau)<span className="warning">*</span></h2>
                         </div>
-
                         <UploadeImage
-                            username={username}
-                            filename={identityCardBehind}
-                            uploadF={this.handleIdentityCardBehind}
+                            value={identityCardBehind}
+                            lable="Chứng Minh Nhân Dân"
+                            name="identityCardBehind"
+                            onChange={this.handleIdentityCardBehind}
                         />
+
 
                         <div className="indentily-number">
                             <p>Số chứng minh nhân <span className="warning">*</span></p>
                             <div className="form-label-group">
                                 <input type="text"
-                                       defaultValue={identityCardNumber}
-                                       onChange={this.handleIdentityCardNumber} className="card-number"
-                                       name="CardNumber"/>
+                                    defaultValue={identityCardNumber}
+                                    onChange={this.handleIdentityCardNumber} className="card-number"
+                                    name="CardNumber" />
                             </div>
                         </div>
 
@@ -176,11 +191,7 @@ class IndentilyCard extends React.Component {
                         </div>
 
                         <div className="indentily-submit">
-                            <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
-                                    onClick={this.handleSubmit}
-                            >
-                                {htmlsub}
-                            </button>
+                            {$button}
                         </div>
                     </Jumbotron>
                 </div>
@@ -190,11 +201,21 @@ class IndentilyCard extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => {
+IndentilyCard.propTypes = {
+    User: PropTypes.object.isRequired,
+    actionsUser: PropTypes.object.isRequired,
+};
+
+function mapDispatchToProps(dispatch) {
     return {
-        username: state.userReducers,
-        notification: state.notifyReducers
+        actionsUser: bindActionCreators(userActions, dispatch),
+    };
+}
+
+let mapStateToProps = (state) => { 
+    return {
+        User: state.userReducers,
     };
 };
 
-export default connect(mapStateToProps)(IndentilyCard);
+export default connect(mapStateToProps, mapDispatchToProps)(IndentilyCard);

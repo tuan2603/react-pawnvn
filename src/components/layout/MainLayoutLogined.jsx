@@ -13,7 +13,7 @@ class MainLayoutLogined extends Component {
         autoBind(this);
     }
     componentWillMount(){
-        if(getFromSession(TOKEN) == null )  {
+        if(getFromSession(TOKEN) === null )  {
             this.setState({
                 redirectToReferrer: true,
             });

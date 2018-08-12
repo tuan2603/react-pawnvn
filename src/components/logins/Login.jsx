@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
+import { Jumbotron } from 'mdbreact';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import autoBind from 'react-autobind';
-import {alogin, alogout} from '../../actions/userActions';
-import {show_notification} from '../../actions/notifyActions';
-import {TOKEN} from '../../constants/Users';
-import {getInfo, login, verifyCaptcha} from '../../helpers';
-import {setInSession, removeSession, getFromSession} from '../../utils';
+import * as userActions from '../../actions/userActions';
+import {verifyCaptcha} from '../../helpers';
 import IntlTelInput from 'react-intl-tel-input';
 import libphonenumber from '../../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
 import '../../../node_modules/react-intl-tel-input/dist/main.css';
 import './login.css';
 import ReCAPTCHA from 'react-grecaptcha';
+import {bindActionCreators} from 'redux';
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -30,17 +30,13 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        if (getFromSession(TOKEN) != null) {
-            this.props.dispatch(alogout());
-            removeSession(TOKEN);
-        }
+        // logout
+        this.props.actions.alogout();
     }
 
     // specifying your onload callback function
     expiredCallback() {
-        let {dispatch} = this.props;
         this.setState({isDisabled: true});
-        dispatch(show_notification({txt: "Đã hết thời gian verify captcha", type: "war"}));
     };
 
     verifyCallback(token) {
@@ -68,31 +64,15 @@ class Login extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.setState({submitted: true});
-        const {dispatch} = this.props;
         let {phone, password} = this.state.username;
-        login(phone, password)
-            .then(user => {
-                if (user.value === 0) {
-                    setInSession(TOKEN, user.message);
-                    dispatch(show_notification({txt: "Đăng nhập thành công", type: "suc"}));
-                    if (getFromSession(TOKEN) !== null) {
-                        getInfo().then(user => {
-                            if (user.response === true) {
-                                dispatch(alogin(user.value));
-                            }
-                        });
-                    }
-                    setTimeout(()=> {
-                        this.setState({redirectToReferrer: true});
-                    },3000)
-                } else if (user.value === 1) {
-                    dispatch(alogin({phone}));
-                    dispatch(show_notification({txt: user.message, type: "war"}));
-                    this.setState({redirectToVerify: true});
-                } else {
-                    dispatch(show_notification({txt: user.message, type: "err"}));
-                }
-            });
+        this.props.actions.Login({phone, password}).then(res => {
+            if (res === 0) {
+                this.setState({redirectToReferrer: true});
+            }
+            if (res === 1){
+                this.setState({redirectToVerify: true});
+            }
+        });
     }
 
     render() {
@@ -108,6 +88,7 @@ class Login extends Component {
             <div>
                 <div className="main-signin">
                     <div className="form-signin">
+                    <Jumbotron>
                         <form className="m-4">
                             <div className="text-center">
                                 <h1 className="h3 mb-3 font-weight-normal">Đăng nhập</h1>
@@ -130,17 +111,17 @@ class Login extends Component {
                                 <div className="help-block">Username is required</div>
                                 }
                             </div>
-                            <div className={"form-group" + (submitted && !username.password ? ' has-error' : '')}>
-                                <div className={"form-label-group"}>
-                                    <input type="password" className={`password`}
+                            <div className={"form-label-group" + (submitted && !username.password ? ' has-error' : '')}>
+                
+                                    <input type="password" className={`password card-number`}
                                            placeholder="password" name="password"
                                            onChange={this.handleChangePassword}
-                                    />
-                                </div>
-                                {submitted && !username.password &&
+                                          
+                                    />                   
+                            </div>
+                            {submitted && !username.password &&
                                 <div className="help-block">Password is required</div>
                                 }
-                            </div>
                             <div className="form-label-xau">
                                 <ReCAPTCHA
                                     sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
@@ -157,6 +138,7 @@ class Login extends Component {
                                 </button>
                             </div>
                         </form>
+                        </Jumbotron>
                     </div>
                 </div>
             </div>
@@ -166,9 +148,11 @@ class Login extends Component {
 
 let mapStateToProps = (state) => {
     return {
-        loggingIn: state.userReducers,
-        notification: state.notifyReducers
+        loggingIn: state.userReducers
     };
 };
+function mapDispatchToProps(dispatch) {
+    return {actions: bindActionCreators(userActions, dispatch)}
+}
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

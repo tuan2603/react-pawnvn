@@ -2,17 +2,17 @@ import React from 'react';
 import {
     Redirect
 } from "react-router-dom";
-import './SingUp.css';
-import {Collapse} from 'mdbreact';
+
+import { Collapse , Jumbotron} from 'mdbreact';
 import IntlTelInput from 'react-intl-tel-input';
 import libphonenumber from '../../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
 import ReCAPTCHA from 'react-grecaptcha';
 import autoBind from "react-autobind";
 import validator from "password-validator";
-import {show_notification} from "../../actions/notifyActions";
-import {register, verifyCaptcha} from "../../helpers";
-import {connect} from "react-redux";
-import {alogin} from "../../actions/userActions";
+import { show_notification } from "../../actions/notifyActions";
+import { register, verifyCaptcha } from "../../helpers";
+import { connect } from "react-redux";
+import { alogin } from "../../actions/userActions";
 
 const checkPass = new validator();
 // Add properties to it
@@ -44,42 +44,42 @@ class SignUp extends React.Component {
     }
 
     handleChangePassword(event) {
-        let {username} = this.state;
+        let { username } = this.state;
         username.password = event.target.value;
         if (checkPass.validate(username.password)) {
-            this.setState({username});
+            this.setState({ username });
         }
     }
 
 
     handleChangeFullname(event) {
-        let {username} = this.state;
+        let { username } = this.state;
         username.fullName = event.target.value;
         if (username.fullName !== "") {
-            this.setState({username});
+            this.setState({ username });
         }
     }
 
 
     handleChangePhone(status, value, countryData, number, id) {
-        let {username} = this.state;
+        let { username } = this.state;
         username.phone = value;
         username.countryData = countryData.dialCode;
-        this.setState({username});
+        this.setState({ username });
     };
 
     // specifying your onload callback function
     expiredCallback() {
-        let {dispatch} = this.props;
-        this.setState({isDisabled: true});
-        dispatch(show_notification({txt: "Đã hết thời gian verify captcha", type: "war"}));
+        let { dispatch } = this.props;
+        this.setState({ isDisabled: true });
+        dispatch(show_notification({ txt: "Đã hết thời gian verify captcha", type: "war" }));
     };
 
     verifyCallback(token) {
         verifyCaptcha(token)
             .then(response => {
                 if (response !== undefined) {
-                    this.setState({isDisabled: !response});
+                    this.setState({ isDisabled: !response });
                 }
             });
     }
@@ -87,101 +87,106 @@ class SignUp extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({submitted: true});
-        const {dispatch} = this.props;
-        let {phone, password, fullName, countryData} = this.state.username;
-        register({phone, password, fullName, countryCode: countryData})
+        this.setState({ submitted: true });
+        const { dispatch } = this.props;
+        let { phone, password, fullName, countryData } = this.state.username;
+        register({ phone, password, fullName, countryCode: countryData })
             .then(user => {
                 if (user.value === 0) {
                     dispatch(show_notification({
                         txt: "Đăng ký thành công, vui lòng xác nhận bằng mã tin nhắn điện thoại ",
                         type: "suc"
                     }));
-                    dispatch(alogin({phone}));
-                    setTimeout(()=> {
-                        this.setState({redirectToReferrer: true});
-                    },3000)
+                    dispatch(alogin({ phone }));
+                    setTimeout(() => {
+                        this.setState({ redirectToReferrer: true });
+                    }, 3000)
                 } else {
-                    dispatch(show_notification({txt: user.message, type: "err"}));
+                    dispatch(show_notification({ txt: user.message, type: "err" }));
                 }
             });
     }
 
 
     render() {
-        let {isDisabled, username, submitted, redirectToReferrer} = this.state;
+        let { isDisabled, username, submitted, redirectToReferrer } = this.state;
         if (redirectToReferrer) {
-            return <Redirect to="/verify"/>;
+            return <Redirect to="/verify" />;
         }
         return (
             <div>
-                <div className="main-signup">
+                <div className="main-signin">
                     <div className="form-signin">
-                        <div className="text-center mb-4">
-                            <h1 className="h3 mb-3 font-weight-normal">Đăng ký Doanh nghiệp PawnVN!</h1>
-                        </div>
+                    <Jumbotron>
+                        <form className="m-3">
+                            <div className="text-center">
+                                <h1 className="h3 mb-3 font-weight-normal">Đăng ký Doanh nghiệp PawnVN!</h1>
+                            </div>
 
-                        <div className="form-label-group">
-                            <input type="text" placeholder="Họ và Tên"
-                                   name="fullname"
-                                   onChange={this.handleChangeFullname}
-                            />
-                        </div>
-                        <Collapse isOpen={submitted && !username.fullName}>
-                            <p>Vui lòng nhập đầy đủ họ tên</p>
-                        </Collapse>
+                            <div className="form-label-group">
+                                <input type="text" placeholder="Họ và Tên" className={`password`}
+                                    name="fullname"
+                                    onChange={this.handleChangeFullname}
+                                />
+                            </div>
 
-                        <div className={"form-label-group"}>
-                            <IntlTelInput
-                                onPhoneNumberChange={this.handleChangePhone}
-                                onPhoneNumberBlur={this.handleChangePhone}
-                                preferredCountries={['vn']}
-                                onlyCountries={['vn', 'us']}
-                                onSelectFlag={null}
-                                nationalMode={false}
-                                separateDialCode={true}
-                                fieldId={'telphone'}
-                                utilsScript={libphonenumber}/>
-                        </div>
+                            <Collapse isOpen={submitted && !username.fullName}>
+                                <p>Vui lòng nhập đầy đủ họ tên</p>
+                            </Collapse>
 
-                        <Collapse isOpen={submitted && !username.phone}>
-                            <p>Vui lòng nhập số điện thoại </p>
-                        </Collapse>
+                            <div className={"form-label-group"}>
+                                <IntlTelInput
+                                    onPhoneNumberChange={this.handleChangePhone}
+                                    onPhoneNumberBlur={this.handleChangePhone}
+                                    preferredCountries={['vn']}
+                                    onlyCountries={['vn', 'us']}
+                                    onSelectFlag={null}
+                                    nationalMode={false}
+                                    separateDialCode={true}
+                                    fieldId={'telphone'}
+                                    utilsScript={libphonenumber} />
+                            </div>
 
-                        <div className="form-label-group">
-                            <input type="password" className={`password`}
-                                   placeholder="Mật khẩu" name="password"
-                                   onChange={this.handleChangePassword}
-                            />
-                        </div>
-                        <Collapse isOpen={submitted && !username.password}>
-                            <p>Vui lòng nhập Mật khẩu phải có ít nhất 8 ký tự, có
+                            <Collapse isOpen={submitted && !username.phone}>
+                                <p>Vui lòng nhập số điện thoại </p>
+                            </Collapse>
+
+                            <div className="form-label-group">
+                                <input type="password" className={`password`}
+                                    placeholder="Mật khẩu" name="password"
+                                    onChange={this.handleChangePassword}
+                                />
+                            </div>
+                            <Collapse isOpen={submitted && !username.password}>
+                                <p>Vui lòng nhập Mật khẩu phải có ít nhất 8 ký tự, có
                                 số, chữ hoa, chữ thường, ký tự đặc biệt</p>
-                        </Collapse>
+                            </Collapse>
 
 
-                        <div className="form-label-xau">
-                            <ReCAPTCHA
-                                sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
-                                callback={this.verifyCallback}
-                                expiredCallback={this.expiredCallback}
-                                locale="en"
-                            />
-                        </div>
+                            <div className="form-label-xau">
+                                <ReCAPTCHA
+                                    sitekey="6LfPfVwUAAAAAODFgOV5Qch0OV7lIBky41Tk1rp7"
+                                    callback={this.verifyCallback}
+                                    expiredCallback={this.expiredCallback}
+                                    locale="en"
+                                />
+                            </div>
 
-                        <div className="form-label-xau">
-                            <p>Khi tiếp tục, tôi đồng ý PawnVN được phép thu thập, sử dụng và tiết lộ
+                            <div className="form-label-xau">
+                                <p>Khi tiếp tục, tôi đồng ý PawnVN được phép thu thập, sử dụng và tiết lộ
                                 thông tin được tôi cung cấp theo <a
-                                    href="/dieu-khoan-su-dung.html"> Chính sách Bảo mật </a>mà tôi đã
+                                        href="/dieu-khoan-su-dung.html"> Chính sách Bảo mật </a>mà tôi đã
                                 đọc và hiểu.</p>
-                        </div>
-                        <div className="form-label-xau">
-                            <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
+                            </div>
+                            <div className="form-label-xau">
+                                <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
                                     disabled={isDisabled}
                                     onClick={this.handleSubmit}
-                            >ĐĂNG KÝ
+                                >ĐĂNG KÝ
                             </button>
-                        </div>
+                            </div>
+                        </form>
+                        </Jumbotron>
                     </div>
                 </div>
             </div>

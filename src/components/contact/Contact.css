@@ -1,7 +1,7 @@
 .contact-container {
     color: white;
     background-color: white;
-    text-align: center !important;
+    text-align: center;
 }
 
 .contact-container p {
@@ -30,7 +30,6 @@
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
 }
 .contact-container
 .form-signin {
@@ -41,6 +40,7 @@
 .contact-container
 .main-contact  .form-label-xau {
     margin-bottom: 1rem;
+    background-color: #fff;
 }
 .contact-container
 .form-label-xau button {
@@ -49,12 +49,14 @@
 .contact-container
 .form-label-group {
     margin-bottom: 1rem;
+    background-color: #fff;
 }
 .contact-container
 .form-label-group input {
     box-sizing: border-box;
     display: inline-block;
     width: 100%;
+    margin: 0;
     background-color: #fff;
 }
 
@@ -68,11 +70,7 @@
     border-radius: 5px;
 }
 
-.contact-container
-#telphone {
-    border: none !important;
-    margin-right: 84px;
-}
+
 .contact-container
 .form-label-group input{
     border: none !important;

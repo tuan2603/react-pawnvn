@@ -2,43 +2,87 @@ import React from 'react';
 import {
     NavLink
 } from "react-router-dom";
-import {Jumbotron} from 'mdbreact';
-import {connect} from "react-redux";
+import { Jumbotron } from 'mdbreact';
+import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
 import autoBind from "react-autobind";
-import {avatarHelper} from "../../helpers";
-import {alogin} from "../../actions/userActions";
-import {show_notification} from "../../actions/notifyActions";
-import {UploadeImage} from "../contact";
+import * as userActions from "../../actions/userActions";
+import * as notifyActions from "../../actions/notifyActions";
+import { UploadeImage } from "../contact";
+import * as config from "../../utils";
+
 
 class Avatar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            isEdit: false,
+            saving: false,
+            file: "",
+            imgagel: new Image(),
+        }
         autoBind(this);
     }
 
     handleUploadImage(file) {
-        const {dispatch, username} = this.props;
-        const data = new FormData();
-        data.append('avatar', file);
-        data.append('id', username._id);
-        avatarHelper(data)
-            .then(user => {
-                if (user.response === true) {
-                    dispatch(show_notification({txt: "Upload thành công", type: "suc"}));
-                    dispatch(alogin(user.value));
-                } else {
-                    dispatch(show_notification({txt: user.value, type: "err"}));
-                }
-            });
+        this.setState({ isEdit: true, file, saving: false });
+    }
 
+    onLoad() {
+        let { file, imgagel } = this.state;
+        var width = imgagel.naturalWidth,
+            height = imgagel.naturalHeight;
+        let { actionsNot, actionsUser, username } = this.props;
+        window.URL.revokeObjectURL(imgagel.src);
+        if ((width / height <= 1.1 && width / height >= 0.9) || file.size / 1024 / 1204 > 5) {
+            // thỏa điều kiện tỉ lệ 1 : cho upload
+            const data = new FormData();
+            data.append('avatar', file);
+            data.append('id', username._id);
+            actionsUser.UploadeAvata(data).then(res => {
+                if (res) {
+                    this.setState({ isEdit: false, saving: false });
+                }
+            })
+        }
+        else {
+            // sai thỉ lệ thông báo người dùng up lại anh khác
+            actionsNot.Notification({ txt: "Ảnh yêu cầu tỉ lệ 1:1, không quá 5MB", type: "err" })
+        }
+    }
+    onSave() {
+        this.setState({ saving: true });
+        let { file } = this.state;
+        if (file) {
+            //kiểm tra anh có đúng kích thước theo yêu cấu hay không           
+            var img = this.state.imgagel;
+            img.src = window.URL.createObjectURL(file);
+            img.onload = this.onLoad.bind(this);
+            this.setState({imgagel: img})
+        }
     }
 
     render() {
-        let {username} = this.props;
-        let avatarLink  = null;
-        if (username !== null) {
-            avatarLink = username.avatarLink
+        let { username } = this.props;
+        let { isEdit, saving } = this.state;
+        let $button = (<NavLink
+            to={"/contact"}
+            className="btn btn-lg btn-primary btn-block" id="mySubmit"
+            type="submit">Tiếp tục</NavLink>);
+        if (isEdit) {
+            $button = (<input
+                type="submit"
+                disabled={saving}
+                value={saving ? 'Saving...' : 'Save'}
+                className="btn btn-primary btn-block"
+                onClick={this.onSave} />)
         }
+
+        let avatarLink = null;
+        if (username !== null && username.avatarLink !== null) {
+            avatarLink = `${config.apiUrl}/uploads/${username.phone}/${username.avatarLink}`;
+        }
+
         return (
             <div>
                 <div className="profile-doccument">
@@ -48,34 +92,25 @@ class Avatar extends React.Component {
                                 <h2>Logo <span className="warning">*</span></h2>
                             </div>
                             <UploadeImage
-                                username={username}
-                                filename={ avatarLink }
-                                uploadF={this.handleUploadImage}
+                                value={avatarLink}
+                                lable="avatar"
+                                name="avatarLink"
+                                onChange={this.handleUploadImage}
                             />
                             <div>
                                 <div className="list">
                                     <div className="icon icon-tick"></div>
-                                    <div className="list-item">Hình chụp thẳng trực diện.</div>
-                                </div>
-                                <div className="list">
-                                    <div className="icon icon-tick"></div>
-                                    <div className="list-item">Không đội nón, kính râm.</div>
-                                </div>
+                                    <div className="list-item">Ảnh yêu cầu tỉ lệ 1:1, không quá 5MB</div>
+                                </div>                        
                                 <div className="list">
                                     <div className="icon icon-tick"></div>
                                     <div className="list-item">Ảnh rõ nét, không bị mờ.</div>
                                 </div>
-                                <div className="list">
-                                    <div className="icon icon-tick"></div>
-                                    <div className="list-item">Nền trơn, màu trắng hoặc xanh dương.</div>
-                                </div>
                             </div>
 
                             <div className="indentily-submit">
-                                <NavLink to={"/contact"} className="btn btn-lg btn-primary btn-block" id="mySubmit"
-                                         type="submit"
-                                >Tiếp tục
-                                </NavLink>
+                                {$button}
+
                             </div>
                         </Jumbotron>
                     </div>
@@ -88,8 +123,15 @@ class Avatar extends React.Component {
 let mapStateToProps = (state) => {
     return {
         username: state.userReducers,
-        notification: state.notifyReducers
+        notify: state.notifyReducers,
     };
 };
 
-export default connect(mapStateToProps)(Avatar);
+function mapDispatchToProps(dispatch) {
+    return {
+        actionsNot: bindActionCreators(notifyActions, dispatch),
+        actionsUser: bindActionCreators(userActions, dispatch),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Avatar);

@@ -33,6 +33,11 @@ class DocumentPage extends Component {
                                             <NavLink to="/business-registration"> Giấy đăng ký Kinh doanh <b style={{color:"red"}}>*</b> <Fa
                                                 icon="angle-right"/></NavLink>
                                         </li>
+                                       
+                                        <li>
+                                            <NavLink to="/choose-categories"> Danh mục thế chấp <b style={{color:"red"}}>*</b> <Fa
+                                                icon="angle-right"/></NavLink>
+                                        </li>
                                     </ul>
                                 </Jumbotron>
                             </Col>

@@ -1,29 +1,43 @@
 import React from 'react';
 import autoBind from "react-autobind";
-import * as config from "../../utils";
+import PropTypes from 'prop-types';
 import boy from '../../assets/img/boy.svg';
 
 class UploadeImage extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {file: '', imagePreviewUrl: ''};
         autoBind(this);
     }
 
     handleUploadImage(ev){
         ev.preventDefault();
-        this.props.uploadF( this.uploadInput.files[0]);
+        let reader = new FileReader();
+        let file = this.uploadInput.files[0];
+
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+            });
+        }
+        reader.readAsDataURL(file)
+        this.props.onChange(file);
+        
     }
 
     render() {
-
-        let {username, filename} = this.props;
-        let html = <img className="img-fluid" style={{maxHeight: "200px"}} src={boy} alt="avatar"/>;
-        if (username !== null) {
-            if (filename !== null) {
-                html = <img className="img-fluid" style={{maxHeight: "200px"}}
-                            src={config.apiUrl + '/uploads/' + username.phone + '/' + filename}
-                            alt="avatar"/>;
-            }
+        let {imagePreviewUrl} = this.state;
+        let {value, name, label} = this.props;
+        //let {username, filename} = this.props;
+        let $imagePreview = (<img className="img-fluid" style={{maxHeight: "200px"}} src={boy} alt={label}/>);
+       
+        if (imagePreviewUrl) {
+            $imagePreview = (<img className="img-fluid" style={{maxHeight: "200px"}} src={imagePreviewUrl} alt={label}/>);
+        } else if (value) {
+            $imagePreview = (<img className="img-fluid" style={{maxHeight: "200px"}} src={value} alt={label}/>);
+        } else  {
+            $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
         }
         return (
             <div className="form-upload">
@@ -31,15 +45,12 @@ class UploadeImage extends React.Component {
                     <input ref={(ref) => {
                         this.uploadInput = ref;
                     }}
-                           type="file" onChange={this.handleUploadImage} name="file"
+                           type="file" onChange={this.handleUploadImage} name={name}
                            accept="image/*;capture=camera"/>
                 </div>
 
                 <div className="sample_doc">
-                    {
-                        html
-                    }
-
+                    {$imagePreview}
                     <p> Bấm để chọn ảnh khác</p>
                 </div>
 
@@ -47,5 +58,10 @@ class UploadeImage extends React.Component {
            )
     }
 }
-
+UploadeImage.propTypes = {
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    label: PropTypes.string,
+    value: PropTypes.string,
+};
 export default UploadeImage;

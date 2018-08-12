@@ -1,11 +1,11 @@
 import * as config from '../utils';
 import {authHeader, authHeaderJSon} from '../helpers';
 
-export function login(phone, password) {
+export function login(obj) {
     const configheader = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({phone, password}),
+        body: JSON.stringify(obj),
     };
 
     return fetch(`${config.apiUrl}/api/auth/sign-in-pass-word`, configheader)
@@ -64,6 +64,16 @@ export function getInfo() {
         .then((responseJson) => responseJson);
 }
 
+export function getCity() {
+    const requestOptions = {
+        method: 'GET'
+    };
+
+    return fetch(`${config.apiUrl}/api/city`, requestOptions)
+        .then((response) => response.json())
+        .then((responseJson) => responseJson);
+}
+
 export function avatarHelper(body) {
     const requestOptions = {
         method: 'POST',
@@ -118,6 +128,16 @@ export function register(body) {
         body: JSON.stringify(body),
     };
     return fetch(`${config.apiUrl}/api/auth/register-web`, configheader)
+        .then((response) => response.json())
+        .then((responseJson) => responseJson);
+}
+
+export function getAllCats() {
+    const requestOptions = {
+        method: 'GET'
+    };
+
+    return fetch(`${config.apiUrl}/api/category`, requestOptions)
         .then((response) => response.json())
         .then((responseJson) => responseJson);
 }
