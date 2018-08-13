@@ -46,16 +46,14 @@ class HomePageMain extends React.Component {
                     </Row>
                 </Container>
                 <div className="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon" style={{left: "0px", bottom: "200px", position: "fixed"}}>
-                    <div className="phonering-alo-ph-circle"></div>
-                    <div className="phonering-alo-ph-circle-fill"></div>
+                    <div className="phonering-alo-ph-circle"> </div>
+                    <div className="phonering-alo-ph-circle-fill"> </div>
+                    <NavLink to="tel:0975 227 856" />
                     <div className="phonering-alo-ph-img-circle">
-                        {/* <a href="tel:0901 015 257"></a>
-                        <a href="tel:0901 015 257" className="pps-btn-img " title="Liên hệ?">
-                        <img src="https://i.imgur.com/v8TniL3.png" 
-                            alt="Liên hệ" width="50" 
-                            onmouseover="this.src='https://i.imgur.com/v8TniL3.png';" 
-                            onmouseout="this.src='https://i.imgur.com/v8TniL3.png';" />
-                        </a> */}
+                        <NavLink to="tel:0975 227 856" />
+                        <NavLink to="tel:0975 227 856" className="pps-btn-img " title="Liên hệ?">
+
+                        </NavLink>
                     </div>
                 </div>
             </div>

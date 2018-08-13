@@ -241,7 +241,7 @@ button, input, optgroup, select, textarea {
     font-size: 1rem;
     transition: all 0.3s;
     color: #157bc1;
-    margin: 1;
+    margin: 1px;
 }
 .profile-doccument
 .Select--multi .Select-multi-value-wrapper span {
@@ -263,7 +263,7 @@ button, input, optgroup, select, textarea {
 .profile-doccument
 .form-label-group input {
     border: none !important;
-    margin: 1;
+    margin: 1px;
     padding: 0 0 0 8px;
 }
 
@@ -304,3 +304,48 @@ button:focus {
     bottom: 32px;
     right: 32px;
   }
+
+  /*//loader*/
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-center {
+    margin: 100px auto;
+}
+
+/* add on trasation*/
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}

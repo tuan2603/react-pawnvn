@@ -9,7 +9,7 @@ import {loadUser} from './actions/userActions';
 store.dispatch(loadTerm());
 store.dispatch(loadAbout());
 store.dispatch(loadUser());
-store.subscribe(()=>console.log(store.getState()));
+// store.subscribe(()=>console.log(store.getState()));
 render((
         <Provider store={store}>
             <App/>

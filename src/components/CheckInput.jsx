@@ -9,15 +9,16 @@ class CheckInput extends React.Component {
     }
 
     render() {
-        let { name, label, onChange } = this.props;
+        let { item, handleChange } = this.props;
         
         return (
                 <div >
                     <input
                         type="checkbox"
-                        id={name}
-                        name={name}
-                        placeholder={label}
+                        name={item.name}
+                        value={item._id}
+                        checked={item.checked}
+                        onChange={handleChange}
                     />
                 </div>
                 
@@ -25,9 +26,8 @@ class CheckInput extends React.Component {
     };
 }
 CheckInput.propTypes = {
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    label: PropTypes.string,
+    item: PropTypes.object.isRequired,
+    handleChange: PropTypes.func.isRequired
 };
 
 export default CheckInput;

@@ -2,101 +2,134 @@ import React from 'react';
 import {
     NavLink
 } from "react-router-dom";
-import { Container, Col, Row, Fa, Jumbotron } from 'mdbreact';
+import {Container, Col, Row,  Jumbotron} from 'mdbreact';
 import autoBind from "react-autobind";
-import { connect } from 'react-redux';
-import * as actions from '../../actions/catsActions';
-import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import * as catsActions from '../../actions/catsActions';
+import * as userActions from '../../actions/userActions';
+import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
-import { CheckInput } from '../../components';
+import {CheckInput} from '../../components';
 import * as config from "../../utils";
+
 
 class Categories extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
         this.state = {
             isEdit: false,
             saving: false,
-            cats: [],
+            user: this.props.userprops,
+            checkBoxCats: this.props.checkBoxCats,
+            // cats: this.props.cats,
         };
         autoBind(this);
     }
 
     componentWillMount() {
-        if (this.props.cats[0]._id === '') {
-            this.props.actions.loadCats();
+        if (this.props.checkBoxCats.length === 0) {
+            this.props.actionsCat.loadCats();
         }
+    }
+
+    componentDidMount() {
+        setTimeout(()=>{
+            return this.setState({ user: this.props.userprops,  checkBoxCats: this.props.checkBoxCats});
+        },3000);
     }
 
     updateCatState(event) {
-        const field = event.target.name;
-        console.log(field);
+        const {checkBoxCats, user} = this.state;
+        const catID = event.target.value;
+        const cat = checkBoxCats.filter(cat => cat._id === catID)[0];
+        const checked = !cat.checked;
+        cat['checked'] = !cat.checked;
+        if (checked) {
+            user.categories.push(cat);
+        } else {
+            user.categories.splice(user.categories.indexOf(cat.id));
+        }
+        this.setState({user, isEdit: true, saving: false});
+
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.setState({ saving: true });
+        let { user } = this.state;
+        let {actionsUser} = this.props;
+
+        if (!user._id) {
+            this.setState({ saving: false });
+            return;
+        }
+
+
+        let obj = {};
+        obj = Object.assign({},user);
+        obj._id = undefined;
+        obj.id = user._id;
+        console.log(obj);
+        setTimeout(() => {
+            actionsUser.UploadDocument(obj).then(res => {
+                if (res) {
+                    this.setState({
+                        isEdit: false,
+                        saving: false,
+                    });
+                }
+            })
+        }, 1000);
     }
 
     render() {
-        let { cats, userprops } = this.props;
-        if (!cats || !userprops) {
-            return (<div>not found</div>);
+        let {isEdit, saving,  checkBoxCats} = this.state;
+        let $content;
+        if ( checkBoxCats.length === 0) {
+            $content = ( <Row><Col md="4" className="text-center home-feature-box loader-center"><div className="loader"> </div></Col></Row>);
+        }else{
+            $content = (<Jumbotron>
+                <h3 className="text-center mb-3">Danh mục thế chấp</h3>
+                <Row>
+                    {checkBoxCats.map((cat, index) => (
+                        <Col md="4" className="text-center home-feature-box" key={cat._id}>
+                            <div className="form-label-group">
+                                <img className="img-fluid" style={{maxHeight: "200px"}}
+                                     src={`${config.apiUrl}/uploads/categories/${cat.icon}`} alt={cat.label}/>
+                                <CheckInput
+                                    item={cat}
+                                    handleChange={this.updateCatState}
+                                    key={cat._id}
+                                />
+                            </div>
+                            <span>{cat.label}</span>
+                        </Col>
+                    ))}
+                </Row>
+            </Jumbotron>);
         }
-        let { categories } = this.props.userprops;
-        let { isEdit, saving } = this.state;
-        const total = cats.length
-        let complete = [];
-        categories.map(cate => {
-            cats.map(catc => {
-                if(cate._id === catc._id){
-                    complete.push(catc);
-                }
-            });
-        });
 
-
-
-        const incomplete = cats.filter((cat) => cat._id !== categories._id);
-        console.log("complete", complete);
-        console.log("incomplete", incomplete);
         let $button = (<NavLink
             to={"/contact"}
             className="btn btn-lg btn-primary btn-block btn-rounded" id="mySubmit"
             type="submit">Tiếp tục</NavLink>);
+
         if (isEdit) {
             $button = (<input
                 type="submit"
                 disabled={saving}
                 value={saving ? 'Saving...' : 'Save'}
-                className="btn btn-primary btn-block btn-rounded"
-                onClick={this.handleSubmit} />)
+                className="btn btn-danger btn-block btn-rounded"
+                onClick={this.handleSubmit}/>)
         }
+
         return (
-            <div >
+            <div>
                 <Container>
                     <Row>
-                        <Col md="8" className="mx-auto mt-4 profile-doccument">
-                            <Jumbotron>
-                                <h3 className="text-center mb-3">Danh mục thế chấp</h3>
-                                <Row>
-                                    {cats.map((cat, index) => (
-                                        <Col md="4" className="text-center home-feature-box" key={cat._id}>
-                                            <div className="form-label-group">
-                                                <CheckInput
-                                                    name={cat.value}
-                                                    value={cat.value}
-                                                    label={cat.label}
-                                                    onChange={this.updateCatState}
-                                                />
-                                                <img className="img-fluid" style={{ maxHeight: "200px" }}
-                                                    src={`${config.apiUrl}/uploads/categories/${cat.icon}`} alt={cat.label} />
-
-                                            </div>
-                                            <span>{cat.label}</span>
-                                        </Col>
-                                    ))}
-                                </Row>
-                            </Jumbotron>
-                            <div className="white">
-                                {/* Total: {total} , Complete: {complete} , Incomplete: {incomplete} */}
-                            </div>
+                        <Col md="8" className="mx-auto mt-4 profile-doccument" >
+                                {$content}
                         </Col>
                     </Row>
                     <div id="mybutton">
@@ -109,26 +142,63 @@ class Categories extends React.Component {
 }
 
 Categories.propTypes = {
-    cats: PropTypes.array.isRequired,
+    // cats: PropTypes.array.isRequired,
+    checkBoxCats: PropTypes.array.isRequired,
     userprops: PropTypes.object.isRequired,
+    actionsCat: PropTypes.object.isRequired,
+    actionsUser: PropTypes.object.isRequired,
 };
 
-function mapStateToProps(state) {
-    if (state.cats) {
-        return {
-            cats: state.cats,
-            userprops: state.userReducers
-        };
-    } else {
-        return {
-            cats: [{ _id: '', value: '', label: '', icon: '' }],
-            userprops: { categories: [] },
+function catsForCheckBoxes(cats, user = null) {
+    return cats.map(cat => {
+        if (user && user.categories.filter(category => category._id === cat._id).length > 0) {
+            cat['checked'] = true;
+            return cat;
+        } else {
+            cat['checked'] = false;
+            return cat;
         }
+
+    });
+}
+
+// function collectUserCats(cats, user) {
+//     let selected = cats.map(cat => {
+//         if (user.categories.filter(category => category._id === cat._id).length > 0) {
+//             return cat;
+//         }
+//     });
+//     return selected.filter(el => el !== undefined);
+// }
+
+function mapStateToProps(state) {
+
+    const stateCats = Object.assign([], state.cats);
+    let checkBoxCats = [];
+    // let cats = [];
+    let userprops = {categories: []};
+
+    if (stateCats.length > 0 && state.userReducers) {
+        userprops = state.userReducers;
+        if (userprops._id && userprops.categories.length > 0) {
+            checkBoxCats = catsForCheckBoxes(stateCats, userprops);
+            // cats = collectUserCats(stateCats, userprops);
+        } else {
+            checkBoxCats = catsForCheckBoxes(stateCats);
+        }
+
     }
+
+    return {
+        // cats: cats,
+        userprops: userprops, checkBoxCats: checkBoxCats};
 }
 
 function mapDispatchToProps(dispatch) {
-    return { actions: bindActionCreators(actions, dispatch) }
+    return {
+        actionsCat: bindActionCreators(catsActions, dispatch),
+        actionsUser: bindActionCreators(userActions, dispatch),
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
