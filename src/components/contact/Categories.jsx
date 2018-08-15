@@ -2,7 +2,7 @@ import React from 'react';
 import {
     NavLink
 } from "react-router-dom";
-import {Container, Col, Row,  Jumbotron} from 'mdbreact';
+import {Container, Col, Row,  Jumbotron, Fa} from 'mdbreact';
 import autoBind from "react-autobind";
 import {connect} from 'react-redux';
 import * as catsActions from '../../actions/catsActions';
@@ -11,6 +11,7 @@ import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import {CheckInput} from '../../components';
 import * as config from "../../utils";
+import {title} from "../../utils";
 
 
 class Categories extends React.Component {
@@ -34,10 +35,13 @@ class Categories extends React.Component {
     }
 
     componentDidMount() {
+
         setTimeout(()=>{
             return this.setState({ user: this.props.userprops,  checkBoxCats: this.props.checkBoxCats});
         },3000);
-    }
+
+            document.title = `${title} - Gói tài sản vay`
+        }
 
     updateCatState(event) {
         const {checkBoxCats, user} = this.state;
@@ -87,7 +91,11 @@ class Categories extends React.Component {
         let {isEdit, saving,  checkBoxCats} = this.state;
         let $content;
         if ( checkBoxCats.length === 0) {
-            $content = ( <Row><Col md="4" className="text-center home-feature-box loader-center"><div className="loader"> </div></Col></Row>);
+            $content = (  <div className="container-fluid text-center">
+                <div className="">
+                    <p><Fa icon="spinner" size="5x" spin/></p>
+                </div>
+            </div>);
         }else{
             $content = (<Jumbotron>
                 <h3 className="text-center mb-3">Danh mục thế chấp</h3>
@@ -116,12 +124,22 @@ class Categories extends React.Component {
             type="submit">Tiếp tục</NavLink>);
 
         if (isEdit) {
-            $button = (<input
-                type="submit"
-                disabled={saving}
-                value={saving ? 'Saving...' : 'Save'}
-                className="btn btn-danger btn-block btn-rounded"
-                onClick={this.handleSubmit}/>)
+            $button = (
+                <div className="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon" style={{right: "0px", bottom: "200px", position: "fixed"}}>
+                    <div className="phonering-alo-ph-circle-fill"> </div>
+                    <div className="save-img-circle"  disabled={saving}
+                         value={saving ? 'Saving...' : 'Save'}
+                         onClick={this.handleSubmit}>
+                        <span> {saving ? 'Saving...' : 'Save'}</span>
+                    </div>
+                    {/*<input*/}
+                        {/*type="submit"*/}
+                        {/*disabled={saving}*/}
+                        {/*value={saving ? 'Saving...' : 'Save'}*/}
+                        {/*className="btn btn-danger btn-block btn-rounded"*/}
+                        {/*onClick={this.handleSubmit}/>*/}
+                </div>
+            )
         }
 
         return (
@@ -135,6 +153,7 @@ class Categories extends React.Component {
                     <div id="mybutton">
                         {$button}
                     </div>
+
                 </Container>
             </div>
         );

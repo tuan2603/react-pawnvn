@@ -2,15 +2,25 @@ import React from 'react';
 import {
     NavLink
 } from "react-router-dom";
-import { Container, Col, Row, Fa } from 'mdbreact';
+import {Container, Col, Row, Fa} from 'mdbreact';
 import './HomePage.css';
 import SlideTop from './SlideHome';
+import {Footers} from '../../components/footer';
+import {title} from '../../utils';
+import download_btn_clipped from '../../assets/img/download_btn_clipped.jpg';
+import app_store_download from '../../assets/img/app_store_download.png';
+
+// import mainLogo from '../../assets/img/logo.png';
 
 class HomePageMain extends React.Component {
+    componentDidMount() {
+        document.title = `${title} - Trang chủ`
+    }
+
     render() {
         return (
-            <div >
-                <SlideTop />
+            <div>
+                <SlideTop/>
                 <Container className="home-container">
                     <Row>
                         <Col md="10" className="mx-auto mt-4">
@@ -20,24 +30,24 @@ class HomePageMain extends React.Component {
                                 easier development of responsive and effective websites.</p>
                             <p className="text-center">We present you a framework containing the best features of
                                 both of them - Material Design for Bootstrap.</p>
-                            <hr />
+                            <hr/>
                             <h3 className="text-center mb-3">See it in action</h3>
                             <Row>
                                 <Col md="4" className="text-center home-feature-box">
                                     <NavLink to="/css">
-                                        <Fa icon="css3" className="pink-text" />
+                                        <Fa icon="css3" className="pink-text"/>
                                         <span>CSS</span>
                                     </NavLink>
                                 </Col>
                                 <Col md="4" className="text-center home-feature-box">
                                     <NavLink to="/components">
-                                        <Fa icon="cubes" className="blue-text" />
+                                        <Fa icon="cubes" className="blue-text"/>
                                         <span>Components</span>
                                     </NavLink>
                                 </Col>
                                 <Col md="4" className="text-center home-feature-box">
                                     <NavLink to="/advanced">
-                                        <Fa icon="code" className="green-text" />
+                                        <Fa icon="code" className="green-text"/>
                                         <span>Advanced</span>
                                     </NavLink>
                                 </Col>
@@ -45,17 +55,22 @@ class HomePageMain extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                <div className="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon" style={{left: "0px", bottom: "200px", position: "fixed"}}>
-                    <div className="phonering-alo-ph-circle"> </div>
-                    <div className="phonering-alo-ph-circle-fill"> </div>
-                    <NavLink to="tel:0975 227 856" />
-                    <div className="phonering-alo-ph-img-circle">
-                        <NavLink to="tel:0975 227 856" />
-                        <NavLink to="tel:0975 227 856" className="pps-btn-img " title="Liên hệ?">
 
-                        </NavLink>
+                <div id="home-cta" className="home-cta text-center">
+                    <div className="wrap cols text-center">
+                        <div className="col-8 main-color centered-col"><p className="h2">Tải ứng dụng</p>
+                            <a
+                                className="btn big download wide offset signload-btn"> <img
+                                src={app_store_download} alt="" height={40}/></a>
+                            <a
+                                href="#"
+                                className="btn big download wide offset signload-btn">
+                                <img src={download_btn_clipped} alt="" height={60}/>
+                            </a></div>
                     </div>
                 </div>
+
+                <Footers/>
             </div>
         );
     }

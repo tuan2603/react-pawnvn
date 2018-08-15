@@ -10,6 +10,7 @@ import * as userActions from "../../actions/userActions";
 import * as notifyActions from "../../actions/notifyActions";
 import { UploadeImage } from "../contact";
 import * as config from "../../utils";
+import {title} from "../../utils";
 
 
 class Avatar extends React.Component {
@@ -23,7 +24,9 @@ class Avatar extends React.Component {
         }
         autoBind(this);
     }
-
+    componentDidMount() {
+        document.title = `${title} - Ảnh đại diện`
+    }
     handleUploadImage(file) {
         this.setState({ isEdit: true, file, saving: false });
     }

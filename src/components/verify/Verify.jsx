@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import autoBind from "react-autobind";
 import * as userActions from "../../actions/userActions";
 import { bindActionCreators } from "redux";
+import { title } from "../../utils";
 
 
 class Verify extends Component {
@@ -18,6 +19,10 @@ class Verify extends Component {
             redirectToReferrer: false,
         };
         autoBind(this);
+    }
+
+    componentDidMount() {
+        document.title = `${title} - Xác thực`
     }
 
     verifyChange(event) {

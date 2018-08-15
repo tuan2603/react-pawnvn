@@ -12,6 +12,7 @@ import {connect} from "react-redux";
 import { UserDocumentHelper} from "../../helpers";
 import {show_notification} from "../../actions/notifyActions";
 import {alogin} from "../../actions/userActions";
+import {title} from "../../utils";
 
 
 class InfoUser extends React.Component {
@@ -26,7 +27,9 @@ class InfoUser extends React.Component {
         }
         autoBind(this);
     }
-
+    componentDidMount() {
+        document.title = `${title} - Thông tin người dùng`
+    }
 
     handleFullname(event) {
         this.setState({fullName: event.target.value, isChange: true});

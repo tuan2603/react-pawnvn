@@ -4,6 +4,7 @@ import autoBind from "react-autobind";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import {title} from "../../utils";
 
 
 class Privacy extends Component {
@@ -11,6 +12,10 @@ class Privacy extends Component {
         super(props);
         autoBind(this);
     }
+    componentDidMount() {
+        document.title = `${title} - Điều khoản sử dụng`
+    }
+
 
     render() {
         let {terms} = this.props;

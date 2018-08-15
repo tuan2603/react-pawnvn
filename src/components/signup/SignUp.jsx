@@ -11,6 +11,7 @@ import autoBind from "react-autobind";
 import validator from "password-validator";
 import { show_notification } from "../../actions/notifyActions";
 import { register, verifyCaptcha } from "../../helpers";
+import { title } from "../../utils";
 import { connect } from "react-redux";
 import { alogin } from "../../actions/userActions";
 
@@ -41,6 +42,10 @@ class SignUp extends React.Component {
             redirectToReferrer: false,
         };
         autoBind(this);
+    }
+
+    componentDidMount() {
+        document.title =`${title} - Đăng ký`
     }
 
     handleChangePassword(event) {

@@ -4,13 +4,16 @@ import autoBind from "react-autobind";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import {title} from "../../utils";
 
 class About extends Component {
     constructor(props) {
         super(props);
         autoBind(this);
     }
-
+    componentDidMount() {
+        document.title = `${title} - Giới thiệu`
+    }
     render() {
         let {about} = this.props;
         return (

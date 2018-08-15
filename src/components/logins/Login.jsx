@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import autoBind from 'react-autobind';
 import * as userActions from '../../actions/userActions';
 import {verifyCaptcha} from '../../helpers';
+import {title} from '../../utils';
 import IntlTelInput from 'react-intl-tel-input';
 import libphonenumber from '../../../node_modules/react-intl-tel-input/dist/libphonenumber.js';
 import '../../../node_modules/react-intl-tel-input/dist/main.css';
@@ -32,6 +33,8 @@ class Login extends Component {
     componentDidMount() {
         // logout
         this.props.actions.alogout();
+
+        document.title = `${title}- Đăng nhập`
     }
 
     // specifying your onload callback function

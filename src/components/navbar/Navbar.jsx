@@ -46,7 +46,7 @@ class NavbarTop extends Component {
             </NavItem>
         }
         return (
-            <Navbar className="nav-main" expand="md" fixed="top" >
+            <Navbar className="nav-main" expand="md" fixed="top" scrolling >
                 <NavbarBrand href="/">
                     <img src={mainLogo} alt="or-trans" height="32"/>
                 </NavbarBrand>

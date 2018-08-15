@@ -9,6 +9,7 @@ import {UserDocumentHelper} from "../../helpers";
 import {alogin} from "../../actions/userActions";
 import {show_notification} from "../../actions/notifyActions";
 import {MapGoogle} from "../GoogleMap";
+import {title} from "../../utils";
 
 class Map extends React.Component {
     constructor(props) {
@@ -20,6 +21,10 @@ class Map extends React.Component {
             redirectToReferrer: false,
         }
         autoBind(this);
+    }
+
+    componentDidMount() {
+        document.title = `${title} - Vị trí người dùng`
     }
 
     onAddMap(map) {

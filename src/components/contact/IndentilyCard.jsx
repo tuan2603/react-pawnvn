@@ -13,6 +13,7 @@ import { UploadeImage } from "../contact";
 import * as config from "../../utils";
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import {title} from "../../utils";
 
 class IndentilyCard extends React.Component {
     constructor(props) {
@@ -32,6 +33,9 @@ class IndentilyCard extends React.Component {
         if (this.props.User === null) {
             this.props.actionsUser.loadUser();
         }
+    }
+    componentDidMount() {
+        document.title = `${title} - Thông tin người dùng`
     }
 
     handleIdentityCardNumber(event) {

@@ -16,6 +16,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import {title} from "../../utils";
 
 
 class BusinessRegistration extends React.Component {
@@ -56,6 +57,8 @@ class BusinessRegistration extends React.Component {
             this.props.actionsUser.loadUser();
            return this.setState({User: this.props.userprops})
         }
+
+        document.title = `${title} - Giấy phép kinh doanh`
     }
 
     updateCatState(event) {

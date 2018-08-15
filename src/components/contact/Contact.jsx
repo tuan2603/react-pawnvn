@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-// import './Contact.css';
 import './Profile.css';
 import {DocumentPage} from '../contact';
+import {title} from '../../utils';
 
 class Contact extends Component {
+    componentDidMount() {
+        document.title = `${title} - Thông tin người dùng`
+    }
     render() {
         return (
             <div>
