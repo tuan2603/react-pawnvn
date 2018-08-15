@@ -13,6 +13,7 @@ import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";
 import {setupTimeOut} from '../utils';
 import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
+import { AppyPage} from '../components/appy';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
 import {Contact, Avatar, IndentilyCard, InfoUser, Map, BusinessRegistration, Categories} from '../components/contact';
@@ -36,6 +37,12 @@ class App extends Component {
                             path='/'
                             layout={MainLayout}
                             component={HomePageMain}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/home.html'
+                            layout={MainLayout}
+                            component={AppyPage}/>
 
                         <LayoutRoute
                             exact

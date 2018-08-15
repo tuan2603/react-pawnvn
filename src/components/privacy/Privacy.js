@@ -3,7 +3,6 @@ import {Container, Row, Col} from 'mdbreact';
 import autoBind from "react-autobind";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import {title} from "../../utils";
 
 

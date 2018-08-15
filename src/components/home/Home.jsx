@@ -10,7 +10,6 @@ import {title} from '../../utils';
 import download_btn_clipped from '../../assets/img/download_btn_clipped.jpg';
 import app_store_download from '../../assets/img/app_store_download.png';
 
-// import mainLogo from '../../assets/img/logo.png';
 
 class HomePageMain extends React.Component {
     componentDidMount() {
@@ -59,14 +58,14 @@ class HomePageMain extends React.Component {
                 <div id="home-cta" className="home-cta text-center">
                     <div className="wrap cols text-center">
                         <div className="col-8 main-color centered-col"><p className="h2">Tải ứng dụng</p>
-                            <a
+                            <NavLink to={"#"}
                                 className="btn big download wide offset signload-btn"> <img
-                                src={app_store_download} alt="" height={40}/></a>
-                            <a
-                                href="#"
+                                src={app_store_download} alt="" height={40}/></NavLink>
+                            <NavLink
+                                to={"#"}
                                 className="btn big download wide offset signload-btn">
                                 <img src={download_btn_clipped} alt="" height={60}/>
-                            </a></div>
+                            </NavLink></div>
                     </div>
                 </div>
 

@@ -1,15 +1,16 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Container, Row, Col,Footer } from 'mdbreact';
-// import autoBind from 'react-autobind';
+import autoBind from 'react-autobind';
 
 
 
 class Footers extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     // autoBind(this);
-    // }
+    constructor(props) {
+        super(props);
+        autoBind(this);
+    }
 
     render() {
         return (
@@ -18,16 +19,16 @@ class Footers extends React.Component {
                     <Container className="text-center text-md-left">
                         <Row className="text-center text-md-left mt-3 pb-3">
                             <Col md="3" lg="3" xl="3" className="mx-auto mt-3">
-                                <p><a href="#!">Đăng ký</a></p>
-                                <p><a href="#!">Giới thiệu</a></p>
-                                <p><a href="#!">Điều khoản</a></p>
-                                <p><a href="#!">Hỏi đáp</a></p>
+                                <p><NavLink to="/signup">Đăng ký</NavLink></p>
+                                <p><NavLink to="/gioi-thieu.html">Giới thiệu</NavLink></p>
+                                <p><NavLink to="/dieu-khoan-su-dung.html">Điều khoản</NavLink></p>
+                                <p><NavLink to="/hoi-dap.html">Hỏi đáp</NavLink></p>
                             </Col>
                             <hr className="w-100 clearfix d-md-none"/>
                             <Col md="3" lg="3" xl="3" className="mx-auto mt-3">
                                 <p><i className="fa fa-envelope mr-3"></i><a href="mailto:ori.pawnvietnam@gmail.com">ori.pawnvietnam@gmail.com</a></p>
                                 <p><i className="fa fa-phone mr-3"></i><a href="+84 938 950 407">+84 938 950 407</a></p>
-                                <p><i className="fa fa-question mr-3"></i><a href="#!">Câu hỏi thường gặp</a></p>
+                                <p><i className="fa fa-question mr-3"></i><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp</a></p>
                             </Col>
                             <hr className="w-100 clearfix d-md-none"/>
                             <Col md="6" lg="6" xl="6" className="mx-auto mt-3 text-right">
