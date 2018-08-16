@@ -22,7 +22,6 @@
     src: url(../fonts/themify.eot);
     src: url(../fonts/themify.eot?#iefix) format('embedded-opentype'), url(../fonts/themify.woff) format('woff'), url(../fonts/themify.ttf) format('truetype'), url(../fonts/themify.svg#slick) format('svg')
 }
-
 .slick-next, .slick-prev {
     font-size: 0;
     line-height: 0;
@@ -70,11 +69,11 @@
 }
 
 .slick-prev:before {
-    content: '\003c'
+    content: 'â†'
 }
 
 .slick-next:before, [dir=rtl] .slick-prev:before {
-    content: '\003e'
+    content: 'â†’'
 }
 
 .slick-next {
@@ -87,7 +86,7 @@
 }
 
 [dir=rtl] .slick-next:before {
-    content: '\003c'
+    content: 'â†'
 }
 
 .slick-dotted.slick-slider {
@@ -142,7 +141,7 @@
     left: 0;
     width: 20px;
     height: 20px;
-    content: '•';
+    content: 'â€¢';
     text-align: center;
     opacity: .25;
     color: #000
