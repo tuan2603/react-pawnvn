@@ -2,47 +2,31 @@ import React from 'react';
 import {Footers} from '../../components/footer';
 import {title} from '../../utils';
 import './Appy.css';
-// import { Carousel, CarouselInner, CarouselItem, Container, Row, Col, Card, CardImage, CardBody, CardTitle, CardText, Button } from 'mdbreact';
-import { Carousel } from 'react-responsive-carousel';
+import {
+    Carousel,
+    CarouselInner,
+    CarouselItem,
+    Container,
+    Row,
+    Col,
+    Card,
+    CardImage,
+    CardBody,
+    CardTitle,
+    CardText,
+    Button
+} from 'mdbreact';
+import {NavLink} from "react-router-dom";
+import autoBind from "react-autobind";
+import Slider from "react-slick";
+
 
 
 class AppyPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.next = this.next.bind(this);
-        this.prev = this.prev.bind(this);
-        this.state = {
-            activeItem: 1,
-            interval: 10000,
-            length: 6
-        };
-    }
-
-    next() {
-        let nextItem = this.state.activeItem + 1;
-        if (nextItem > this.state.length) {
-            this.setState({activeItem: 1});
-        } else {
-            this.setState({activeItem: nextItem});
-        }
-    }
-
-    prev() {
-        let prevItem = this.state.activeItem - 1;
-        if (prevItem < 1) {
-            this.setState({activeItem: this.state.length});
-        } else {
-            this.setState({activeItem: prevItem});
-        }
-    }
-
-    goToIndex(item) {
-        if (this.state.activeItem !== item) {
-            this.setState({
-                activeItem: item
-            });
-        }
+        autoBind(this);
     }
 
 
@@ -51,31 +35,42 @@ class AppyPage extends React.Component {
 
     }
 
-
     render() {
-        const {activeItem} = this.state;
+        let settings = {
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true,
+        };
+
         let rows = [];
-        // for (var i = 1; i < 7; i++) {
-        //     rows.push(
-        //         <CarouselItem itemId={i} key={i}>
-        //         <Col md="4">
-        //             <div className="team-box">
-        //                 <div className="team-image">
-        //                     <img src={`/images/team-1.png`} alt=""/>
-        //                 </div>
-        //                 <h4>Ashekur Rahman {i}</h4>
-        //                 <h6 className="position">Art Dirrector</h6>
-        //                 <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput
-        //                     laborelaborus ed sed
-        //                     do eiusmod tempo.</p>
-        //             </div>
-        //         </Col>
-        //     </CarouselItem>
-        //     );
-        // }
+        for (var i = 1; i < 7; i++) {
+            rows.push(
+
+                        <Col md="12"  key={i}>
+                            <Card>
+                                <div className="team-box">
+                                    <div className="team-image">
+                                        <img src={`/images/team-1.png`} alt=""/>
+                                    </div>
+                                    <h4>Ashekur Rahman {i}</h4>
+                                    <h6 className="position">Art Dirrector</h6>
+                                    <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput
+                                        laborelaborus ed sed
+                                        do eiusmod tempo.</p>
+                                </div>
+                            </Card>
+                        </Col>
+
+            );
+        }
+
 
 
         return (
+
             <div>
                 <section className="testimonial-area" id="testimonial_page">
                     <div className="container">
@@ -84,7 +79,6 @@ class AppyPage extends React.Component {
                                 <div className="page-title text-center">
                                     <h5 className="title">Testimonials</h5>
                                     <h3 className="dark-color">Our Client Loves US</h3>
-                                    <div className="space-60"></div>
                                 </div>
                             </div>
                         </div>
@@ -92,13 +86,14 @@ class AppyPage extends React.Component {
                         <div className="row">
                             <div className="col-xs-12">
                                 <div className="team-slide ">
-                                   
+                                    <Slider ref={slider => (this.slider = slider)} {...settings}>
+                                        {rows}
+                                    </Slider>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-
                 <Footers/>
             </div>
         );

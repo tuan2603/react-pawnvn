@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '../assets/css/mdb.css';
 import '../assets/css/themify-icons.css';
+import '../assets/css/slick.min.css';
+import '../assets/css/slick-theme.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
