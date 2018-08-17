@@ -1,8 +1,5 @@
 .nav-main {
-    background: rgb(23, 81, 152);
-    background: -webkit-linear-gradient(45deg, rgba(13, 78, 132, 1) 0%, rgba(12, 113, 196, 1) 100%);
-    background: -o-linear-gradient(45deg, rgba(13, 78, 132, 1) 0%, rgba(12, 113, 196, 1) 100%);
-    background: linear-gradient(45deg, rgba(13, 78, 132, 1) 0%, rgba(12, 113, 196, 1) 100%);
+    background-color: #dae4f2;
     vertical-align: baseline;
     padding: 16px;
 }
@@ -12,12 +9,11 @@
 }
 
 .nav-main .nav-item, .nav-main .nav-item a {
-    color: #fff;
     vertical-align: baseline;
 }
 .nav-main
 .navbar .nav-item .nav-link {
-    color: #fff;
+    color: #157bc1;
     font-size: 13pt;
 }
 

@@ -4,6 +4,7 @@ import autoBind from "react-autobind";
 import {Redirect} from 'react-router-dom';
 import {TOKEN} from '../../constants/Users';
 import {getFromSession} from '../../utils';
+import {Footers} from "../footer";
 class MainLayoutLogined extends Component {
     constructor(props) {
         super(props);
@@ -27,10 +28,14 @@ class MainLayoutLogined extends Component {
         }
         return (
             <div className="flyout">
+                <div className="preloader">
+                    <span><i className="lnr lnr-sun"></i></span>
+                </div>
                 <NavbarTop />
                 <main style={{marginTop:"4em"}}>
                     {children}
                 </main>
+                <Footers/>
             </div>
         );
     }

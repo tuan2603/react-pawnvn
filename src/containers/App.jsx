@@ -9,13 +9,17 @@ import '../assets/css/slick.min.css';
 import '../assets/css/slick-theme.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import '../appy/css/linearicons.css';
+import '../appy/css/magnific-popup.css';
+import '../appy/css/animate.css';
+import '../appy/css/responsive.css';
+import '../appy/style.css';
 
 import './App.css';
 import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";
 import {setupTimeOut} from '../utils';
 import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
-import { AppyPage} from '../components/appy';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
 import {Contact, Avatar, IndentilyCard, InfoUser, Map, BusinessRegistration, Categories} from '../components/contact';
@@ -40,11 +44,6 @@ class App extends Component {
                             layout={MainLayout}
                             component={HomePageMain}/>
 
-                        <LayoutRoute
-                            exact
-                            path='/home.html'
-                            layout={MainLayout}
-                            component={AppyPage}/>
 
                         <LayoutRoute
                             exact

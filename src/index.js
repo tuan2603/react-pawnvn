@@ -6,6 +6,7 @@ import {App} from './containers';
 import {loadTerm} from './actions/termActions';
 import {loadAbout} from './actions/aboutActions';
 import {loadUser} from './actions/userActions';
+
 store.dispatch(loadTerm());
 store.dispatch(loadAbout());
 store.dispatch(loadUser());

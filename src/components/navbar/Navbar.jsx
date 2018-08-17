@@ -46,28 +46,32 @@ class NavbarTop extends Component {
             </NavItem>
         }
         return (
-            <Navbar className="nav-main" expand="md" fixed="top" scrolling >
-                <NavbarBrand href="/">
-                    <img src={mainLogo} alt="or-trans" height="32"/>
-                </NavbarBrand>
-                <NavbarToggler onClick={this.handleTogglerClick}/>
-                <Collapse isOpen={collapsed} navbar>
-                    <NavbarNav right onClick={this.handleNavbarClick}>
-                        <NavItem>
-                            <NavLink to="/" exact>Trang Chủ</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/gioi-thieu.html" exact>Giới thiệu</NavLink>
-                        </NavItem>
-                        {
-                            htmldn
-                        }
-                        {
-                            htmldx
-                        }
-                    </NavbarNav>
-                </Collapse>
-            </Navbar>
+            <nav className="mainmenu-area" data-spy="affix" data-offset-top="200">
+                <div className="container-fluid">
+                    <Navbar className="nav-main" expand="md" fixed="top" scrolling>
+                        <NavbarBrand href="/">
+                            <img src={mainLogo} alt="or-trans" height="32"/>
+                        </NavbarBrand>
+                        <NavbarToggler onClick={this.handleTogglerClick}/>
+                        <Collapse isOpen={collapsed} navbar>
+                            <NavbarNav right onClick={this.handleNavbarClick}>
+                                <NavItem>
+                                    <NavLink to="/" exact>Trang Chủ</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink to="/gioi-thieu.html" exact>Giới thiệu</NavLink>
+                                </NavItem>
+                                {
+                                    htmldn
+                                }
+                                {
+                                    htmldx
+                                }
+                            </NavbarNav>
+                        </Collapse>
+                    </Navbar>
+                </div>
+            </nav>
         );
     }
 }
