@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Container, Row, Col} from 'mdbreact';
 import autoBind from "react-autobind";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -10,19 +9,35 @@ class About extends Component {
         super(props);
         autoBind(this);
     }
+
     componentDidMount() {
         document.title = `${title} - Giới thiệu`
     }
+
     render() {
         let {about} = this.props;
         return (
-            <Container className="privacy">
-                <Row>
-                    <Col md="10" className="mx-auto mt-4">
-                        <div id="contents" dangerouslySetInnerHTML={{__html: about.content}}/>
-                    </Col>
-                </Row>
-            </Container>
+            <div>
+                <header className="site-header">
+
+                </header>
+                < div className="section-padding">
+                    < div
+                        className="container">
+                        < div
+                            className="row">
+                            < div
+                                className="col-xs-12">
+                                < article className="post-single">
+                                    <div className="post-body">
+                                        <div id="contents" dangerouslySetInnerHTML={{__html: about.content}}/>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

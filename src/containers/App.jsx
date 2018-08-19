@@ -3,23 +3,21 @@ import {connect} from 'react-redux';
 import {BrowserRouter, Switch, Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import '../appy/css/bootstrap.min.css';
 import '../assets/css/mdb.css';
 import '../assets/css/themify-icons.css';
 import '../assets/css/slick.min.css';
 import '../assets/css/slick-theme.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-toastify/dist/ReactToastify.css';
-import '../appy/css/linearicons.css';
-import '../appy/css/magnific-popup.css';
-import '../appy/css/animate.css';
-import '../appy/css/responsive.css';
-import '../appy/style.css';
+
 
 import './App.css';
 import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";
 import {setupTimeOut} from '../utils';
 import {Notification} from '../components/notification';
 import {HomePageMain} from '../components/home';
+import {ModalPage} from '../components';
 import {Login} from '../components/logins';
 import {SignUp} from '../components/signup';
 import {Contact, Avatar, IndentilyCard, InfoUser, Map, BusinessRegistration, Categories} from '../components/contact';
@@ -35,7 +33,7 @@ class App extends Component {
         let {notification} = this.props;
         return (
             <BrowserRouter >
-                <main>
+                <main style={{backgroundColor:"#f3f3f3"}}>
                     {(notification !== null) && <Notification/>}
                     <Switch>
                         <LayoutRoute
@@ -50,6 +48,12 @@ class App extends Component {
                             path='/signin'
                             layout={MainLayout}
                             component={Login}/>
+
+                        <LayoutRoute
+                            exact
+                            path='/modalpage'
+                            layout={MainLayout}
+                            component={ModalPage}/>
 
                         <LayoutRoute
                             exact

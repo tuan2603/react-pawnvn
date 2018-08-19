@@ -1,0 +1,49 @@
+.document-main .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.document-main .list-unstyled ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.document-main .list-unstyled li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    box-sizing: border-box;
+}
+
+.document-main .example-components-list li > a {
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.document-main .example-components-list li a {
+    color: #0275d8;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+}
+
+.document-main .example-components-list li > a .fa {
+    color: rgba(0,0,0,.35);
+    float: right;
+}
+
+.document-main .example-components-list li > a .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+

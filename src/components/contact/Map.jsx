@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Redirect
 } from "react-router-dom";
-import {Jumbotron} from 'mdbreact';
 import {connect} from "react-redux";
 import autoBind from "react-autobind";
 import {UserDocumentHelper} from "../../helpers";
@@ -30,8 +29,7 @@ class Map extends React.Component {
     onAddMap(map) {
         let {username} = this.props;
         if (username !== null) {
-            if (username.longitude !== map.lng && username.latitude !== map.lat)
-            {
+            if (username.longitude !== map.lng && username.latitude !== map.lat) {
                 this.setState({lat: map.lat, lng: map.lng, isChange: true})
             }
         }
@@ -83,37 +81,42 @@ class Map extends React.Component {
             htmlsub = " Lưu thông tin ";
         }
         return (
-            <div>
-                <div className="profile-doccument">
-                    <div className="form-indentily">
-                        <Jumbotron>
+            <div className="map-contain">
+                <header className="site-header">
 
-                            <div className="indentily-number">
-                                <p>Địa điểm Cty/ doanh nghiệp: <span className="warning">*</span></p>
+                </header>
+                <div className="section-padding">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xs-12">
+                                <article className="post-single">
+                                    <div className="post-body">
+                                        <label className="mt10" htmlFor="birthday">Địa điểm Cty/ doanh nghiệp: </label>
+                                        <div className="space-20"></div>
+                                        <MapGoogle
+                                            googleMapURL={"https://maps.googleapis.com/maps/api/js?key=AIzaSyA-Y0s_MUWJ-Hyf4oSE8_eQjZb-V5ZNmG8&v=3.exp&libraries=geometry,drawing,places"}
+                                            loadingElement={<div style={{height: `100%`}}/>}
+                                            containerElement={<div style={{height: `400px`}}/>}
+                                            mapElement={<div style={{height: `100%`}}/>}
+                                            zoom={12}
+                                            onAddMap={this.onAddMap}
+                                            isMarkerShown
+                                            center={{
+                                                lat: latitude,
+                                                lng: longitude,
+                                            }}
+                                        />
+                                        <div className="space-20"></div>
+                                        <button className="bttn-default align-content-center" id="mySubmit"
+                                                type="submit"
+                                                onClick={this.handleSubmit}
+                                        >
+                                            {htmlsub}
+                                        </button>
+                                    </div>
+                                </article>
                             </div>
-
-                            <MapGoogle
-                                googleMapURL={"https://maps.googleapis.com/maps/api/js?key=AIzaSyA-Y0s_MUWJ-Hyf4oSE8_eQjZb-V5ZNmG8&v=3.exp&libraries=geometry,drawing,places"}
-                                loadingElement={<div style={{height: `100%`}}/>}
-                                containerElement={<div style={{height: `400px`}}/>}
-                                mapElement={<div style={{height: `100%`}}/>}
-                                zoom={12}
-                                onAddMap={this.onAddMap}
-                                isMarkerShown
-                                center={{
-                                    lat: latitude,
-                                    lng: longitude,
-                                }}
-                            />
-
-                            <div className="indentily-submit">
-                                <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
-                                        onClick={this.handleSubmit}
-                                >
-                                    {htmlsub}
-                                </button>
-                            </div>
-                        </Jumbotron>
+                        </div>
                     </div>
                 </div>
             </div>

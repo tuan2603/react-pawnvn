@@ -1,0 +1,19 @@
+#sign-up-form input{
+    font-size: medium;
+    text-align: left;
+    border-bottom: 1px #0b51c5 solid;
+}
+#sign-up-form label{
+    font-size: medium;
+    text-align: left;
+    width: 100%;
+    font-weight: normal;
+}
+
+select {
+    width: 100%;
+    border:none;
+    border-bottom: 1px #0b51c5 solid;
+    display: block;
+    text-align: left;
+}

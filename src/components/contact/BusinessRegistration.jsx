@@ -2,21 +2,22 @@ import React from 'react';
 import {
     NavLink
 } from "react-router-dom";
-import { Jumbotron } from 'mdbreact';
-import { TextInput } from '../../components';
+import {Fa} from 'mdbreact';
+import {TextInput} from '../../components';
 import autoBind from "react-autobind";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import * as userActions from "../../actions/userActions";
-import { UploadeImage } from "../contact";
+import {UploadeImage} from "../contact";
 import * as config from "../../utils";
-import { getCity } from "../../helpers";
-import { bindActionCreators } from 'redux';
+import {getCity} from "../../helpers";
+import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import {title} from "../../utils";
+import "./BusinessRegistration.css";
 
 
 class BusinessRegistration extends React.Component {
@@ -39,11 +40,11 @@ class BusinessRegistration extends React.Component {
     }
 
     componentWillMount() {
-       
+
         //get danh sach city
         getCity().then(city => {
             if (city.response === true) {
-                this.setState({ arrayCities: city.value });
+                this.setState({arrayCities: city.value});
             }
         })
             .catch(function (error) {
@@ -55,40 +56,40 @@ class BusinessRegistration extends React.Component {
         let {User} = this.state;
         if (User._id === "") {
             this.props.actionsUser.loadUser();
-           return this.setState({User: this.props.userprops})
+            return this.setState({User: this.props.userprops})
         }
 
         document.title = `${title} - Giấy phép kinh doanh`
     }
 
     updateCatState(event) {
-    
+
         const field = event.target.name;
         const User = this.state.User;
         User[field] = event.target.value;
         console.log(User);
-        this.setState({ User: User, isEdit: true, saving: false, isEditDoc:true });
+        this.setState({User: User, isEdit: true, saving: false, isEditDoc: true});
     }
 
     handleChangeDate(date) {
         let {User} = this.state;
         User.businessDate = moment(date).valueOf();
         console.log(User);
-        this.setState({ User:User, businessDate: date, isEdit: true, isEditDoc:true, saving: false });
+        this.setState({User: User, businessDate: date, isEdit: true, isEditDoc: true, saving: false});
     }
 
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ saving: true });
-        let { User, ImageFront, ImageBehind , isEditDoc} = this.state;
+        this.setState({saving: true});
+        let {User, ImageFront, ImageBehind, isEditDoc} = this.state;
         let {userprops, actionsUser} = this.props;
 
         if (userprops._id === undefined) {
             console.log(userprops);
-            this.setState({ saving: false });
+            this.setState({saving: false});
             return;
-        }      
+        }
         if (ImageFront !== "") {
             // thỏa điều kiện tỉ lệ 1 : cho upload
             const data = new FormData();
@@ -98,7 +99,7 @@ class BusinessRegistration extends React.Component {
             setTimeout(() => {
                 actionsUser.UploadImage(data).then(res => {
                     if (res) {
-                        this.setState({ isEdit: false, ImageFront: "" });
+                        this.setState({isEdit: false, ImageFront: ""});
                     }
                 })
             }, 1000);
@@ -113,7 +114,7 @@ class BusinessRegistration extends React.Component {
             setTimeout(() => {
                 actionsUser.UploadImage(data).then(res => {
                     if (res) {
-                        this.setState({ isEdit: false, ImageBehind: "" });
+                        this.setState({isEdit: false, ImageBehind: ""});
                     }
                 })
             }, 2000);
@@ -121,7 +122,7 @@ class BusinessRegistration extends React.Component {
 
         if (isEditDoc) {
             let obj = {};
-            obj = Object.assign({},User);
+            obj = Object.assign({}, User);
             obj._id = undefined;
             obj.id = User._id;
             console.log(obj);
@@ -129,8 +130,8 @@ class BusinessRegistration extends React.Component {
                 actionsUser.UploadDocument(obj).then(res => {
                     if (res) {
                         this.setState({
-                            isEdit: false, 
-                            isEditDoc: false, 
+                            isEdit: false,
+                            isEditDoc: false,
                         });
                     }
                 })
@@ -139,25 +140,43 @@ class BusinessRegistration extends React.Component {
     }
 
 
-
     handlelicenseeImageFront(file) {
-      
-         this.setState({ ImageFront: file, isEdit: true, saving: false });
+
+        this.setState({ImageFront: file, isEdit: true, saving: false});
     }
 
     handlelicenseeImageBehind(file) {
-       
-         this.setState({ ImageBehind: file, isEdit: true, saving: false });
+
+        this.setState({ImageBehind: file, isEdit: true, saving: false});
     }
 
 
     render() {
-        let { arrayCities, isEdit, saving, businessDate } = this.state;
+        let {arrayCities, isEdit, saving, businessDate} = this.state;
         let {userprops} = this.props;
-        if(userprops === null){
-            return (<div>
-                user null
-            </div>);
+        if (userprops === null) {
+            return (
+                <div className="business-registration-main">
+                    <header className="site-header">
+
+                    </header>
+                    <div className="subscribe-area section-padding">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-xs-12 col-sm-6 col-sm-offset-3">
+                                    <div className="subscribe-form text-center">
+                                        <div className="container-fluid text-center">
+                                            <div className="">
+                                                <p><Fa icon="spinner" size="5x" spin/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
         }
 
         let licenseeImageFront, licenseeImageBehind = null;
@@ -178,139 +197,122 @@ class BusinessRegistration extends React.Component {
 
         let $button = (<NavLink
             to={"/contact"}
-            className="btn btn-lg btn-primary btn-block" id="mySubmit"
+            className="bttn-default" id="mySubmit"
             type="submit">Tiếp tục</NavLink>);
         if (isEdit) {
             $button = (<input
                 type="submit"
                 disabled={saving}
                 value={saving ? 'Saving...' : 'Save'}
-                className="btn btn-primary btn-block"
-                onClick={this.handleSubmit} />)
+                className="bttn-default"
+                onClick={this.handleSubmit}/>)
         }
 
         return (
+            <div className="business-registration-main">
+                <header className="site-header">
 
-            <div className="profile-doccument">
-                <div className="form-indentily">
-                    <Jumbotron>
-                        <div className="profile-title">
-                            <h2>Giấy phép kinh doanh(Mặt trước)<span className="warning">*</span></h2>
-                        </div>
-                        <UploadeImage
-                            value={licenseeImageFront}
-                            lable="Giấy phép kinh doanh mặt trước"
-                            name="licenseeImageFront"
-                            onChange={this.handlelicenseeImageFront}
-                        />
+                </header>
+                <div className="subscribe-area section-padding">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xs-12 col-sm-6 col-sm-offset-3">
+                                <div className="subscribe-form text-center">
+                                    <label className="mt10" htmlFor="licenseeImageFront">Giấy phép kinh doanh(Mặt trước):</label>
+                                    <UploadeImage
+                                        value={licenseeImageFront}
+                                        lable="Giấy phép kinh doanh mặt trước"
+                                        name="licenseeImageFront"
+                                        onChange={this.handlelicenseeImageFront}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="licenseeImageBehind">Giấy phép kinh doanh(Mặt sau):</label>
+                                    <UploadeImage
+                                        value={licenseeImageBehind}
+                                        lable="Giấy phép kinh doanh mặt sau"
+                                        name="licenseeImageBehind"
+                                        onChange={this.handlelicenseeImageBehind}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="companyName">Tên công ty, doanh nghiệp:</label>
+                                    <TextInput
+                                        name="companyName"
+                                        label="Tên công ty"
+                                        value={userprops.companyName}
+                                        onChange={this.updateCatState}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="businessNumber">Số đăng ký doanh nghiệp:</label>
+                                    <TextInput
+                                        name="businessNumber"
+                                        label="Số đăng ký doanh nghiệp"
+                                        value={userprops.businessNumber}
+                                        onChange={this.updateCatState}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="fullname">Tên người đại diện: </label>
+                                    <TextInput
+                                        name="representativeName"
+                                        label="Tên người đại diện"
+                                        value={userprops.representativeName}
+                                        onChange={this.updateCatState}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="title">Chức danh: </label>
+                                    <TextInput
+                                        name="title"
+                                        label="Chức danh"
+                                        value={userprops.title}
+                                        onChange={this.updateCatState}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="businessDate">Ngày cấp:</label>
+                                    <DatePicker
+                                        selected={moment(businessDate)}
+                                        onChange={this.handleChangeDate}
+                                        peekNextMonth
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        dateFormat="DD/MM/YYYY"
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="licensee">Nơi cấp: </label>
+                                    <TextInput
+                                        name="licensee"
+                                        label="Nơi cấp"
+                                        value={userprops.licensee}
+                                        onChange={this.updateCatState}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="address">Địa chỉ công ty/doanh nghiệp: </label>
+                                    <TextInput
+                                        name="address"
+                                        label="Địa chỉ "
+                                        value={userprops.address}
+                                        onChange={this.updateCatState}
+                                    />
+                                    <div className="space-20"></div>
+                                    <label className="mt10" htmlFor="city">Tỉnh/Thành phố: </label>
+                                    <select name="city" value={city} onChange={this.updateCatState}>
+                                        <option value="">Chọn</option>
+                                        {
+                                            arrayCities.map((item) => {
+                                                return (
+                                                    <option key={item.ID}
+                                                            value={item.Title}>{item.Title}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                    <div className="space-20"></div>
+                                    {$button}
 
-                        <div className="profile-title">
-                            <h2>Giấy phép kinh doanh(Mặt sau)<span className="warning">*</span></h2>
-                        </div>
-                        <UploadeImage
-                            value={licenseeImageBehind}
-                            lable="Giấy phép kinh doanh mặt sau"
-                            name="licenseeImageBehind"
-                            onChange={this.handlelicenseeImageBehind}
-                        />
-
-                        <div className="indentily-number">
-                            <p>Tên công ty, doanh nghiệp<span className="warning">*</span></p>
-                            <TextInput
-                                name="companyName"
-                                label="Tên công ty"
-                                value={userprops.companyName}
-                                onChange={this.updateCatState}
-                            />
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Số đăng ký doanh nghiệp <span className="warning">*</span></p>
-                            <TextInput
-                                name="businessNumber"
-                                label="Số đăng ký doanh nghiệp"
-                                value={userprops.businessNumber}
-                                onChange={this.updateCatState}
-                            />
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Tên người đại diện <span className="warning">*</span></p>
-                            <TextInput
-                                name="representativeName"
-                                label="Tên người đại diện"
-                                value={userprops.representativeName}
-                                onChange={this.updateCatState}
-                            />
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Chức danh <span className="warning">*</span></p>
-                            <TextInput
-                                name="title"
-                                label="Chức danh"
-                                value={userprops.title}
-                                onChange={this.updateCatState}
-                            />
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Ngày cấp: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <DatePicker
-                                    selected={moment(businessDate)}
-                                    onChange={this.handleChangeDate}
-                                    peekNextMonth
-                                    showMonthDropdown
-                                    showYearDropdown
-                                    dateFormat="DD/MM/YYYY"
-                                />
+                                </div>
                             </div>
                         </div>
-                        <div className="indentily-number">
-                            <p>Nơi cấp <span className="warning">*</span></p>
-                            <TextInput
-                                name="licensee"
-                                label="Nơi cấp"
-                                value={userprops.licensee}
-                                onChange={this.updateCatState}
-                            />
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Địa chỉ công ty/doanh nghiệp <span className="warning">*</span></p>
-                            <TextInput
-                                name="address"
-                                label="Địa chỉ "
-                                value={userprops.address}
-                                onChange={this.updateCatState}
-                            />
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Tỉnh/Thành phố: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <select name="city" value={city} onChange={this.updateCatState}>
-                                    <option value="">Chọn</option>
-                                    {
-                                        arrayCities.map((item) => {
-                                            return (
-                                                <option key={item.ID}
-                                                    value={item.Title}>{item.Title}</option>
-                                            )
-                                        })
-                                    }
-                                </select>
-                            </div>
-                        </div>
-
-                        <div className="indentily-submit">
-                            {$button}
-                        </div>
-                    </Jumbotron>
+                    </div>
                 </div>
             </div>
-
         );
     }
 }
@@ -342,7 +344,7 @@ let mapStateToProps = (state) => {
         return {
             userprops: state.userReducers
         };
-    } else{
+    } else {
         return {
             userprops: user,
         };

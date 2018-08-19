@@ -1,0 +1,27 @@
+.info-main.section-padding {
+    padding-top: 64px;
+    padding-bottom: 120px;
+}
+
+.info-main input{
+    font-size: medium;
+    text-align: left;
+    border-bottom: 1px #0b51c5 solid;
+}
+.info-main label{
+    font-size: medium;
+    text-align: left;
+    width: 100%;
+    font-weight: normal;
+}
+
+.info-main
+.react-datepicker-wrapper {
+    display: block;
+}
+
+.info-main
+.react-datepicker__input-container {
+    /* position: relative; */
+    display: block;
+}

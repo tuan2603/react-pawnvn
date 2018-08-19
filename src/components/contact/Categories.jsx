@@ -2,7 +2,7 @@ import React from 'react';
 import {
     NavLink
 } from "react-router-dom";
-import {Container, Col, Row,  Jumbotron, Fa} from 'mdbreact';
+import {Fa} from 'mdbreact';
 import autoBind from "react-autobind";
 import {connect} from 'react-redux';
 import * as catsActions from '../../actions/catsActions';
@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 import {CheckInput} from '../../components';
 import * as config from "../../utils";
 import {title} from "../../utils";
+import "./Categories.css";
 
 
 class Categories extends React.Component {
@@ -36,12 +37,12 @@ class Categories extends React.Component {
 
     componentDidMount() {
 
-        setTimeout(()=>{
-            return this.setState({ user: this.props.userprops,  checkBoxCats: this.props.checkBoxCats});
-        },3000);
+        setTimeout(() => {
+            return this.setState({user: this.props.userprops, checkBoxCats: this.props.checkBoxCats});
+        }, 3000);
 
-            document.title = `${title} - Gói tài sản vay`
-        }
+        document.title = `${title} - Gói tài sản vay`
+    }
 
     updateCatState(event) {
         const {checkBoxCats, user} = this.state;
@@ -60,18 +61,18 @@ class Categories extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ saving: true });
-        let { user } = this.state;
+        this.setState({saving: true});
+        let {user} = this.state;
         let {actionsUser} = this.props;
 
         if (!user._id) {
-            this.setState({ saving: false });
+            this.setState({saving: false});
             return;
         }
 
 
         let obj = {};
-        obj = Object.assign({},user);
+        obj = Object.assign({}, user);
         obj._id = undefined;
         obj.id = user._id;
         console.log(obj);
@@ -88,73 +89,79 @@ class Categories extends React.Component {
     }
 
     render() {
-        let {isEdit, saving,  checkBoxCats} = this.state;
+        let {isEdit, saving, checkBoxCats} = this.state;
         let $content;
-        if ( checkBoxCats.length === 0) {
-            $content = (  <div className="container-fluid text-center">
+        if (checkBoxCats.length === 0) {
+            $content = (<div className="container-fluid text-center">
                 <div className="">
                     <p><Fa icon="spinner" size="5x" spin/></p>
                 </div>
             </div>);
-        }else{
-            $content = (<Jumbotron>
-                <h3 className="text-center mb-3">Danh mục thế chấp</h3>
-                <Row>
-                    {checkBoxCats.map((cat, index) => (
-                        <Col md="4" className="text-center home-feature-box" key={cat._id}>
-                            <div className="form-label-group">
-                                <img className="img-fluid" style={{maxHeight: "200px"}}
-                                     src={`${config.apiUrl}/uploads/categories/${cat.icon}`} alt={cat.label}/>
-                                <CheckInput
-                                    item={cat}
-                                    handleChange={this.updateCatState}
-                                    key={cat._id}
-                                />
+        } else {
+            $content =
+                (<div className="post-body">
+                        {checkBoxCats.map((cat, index) => (
+                            <div className="col-xs-12 col-sm-6 col-md-4" key={cat._id}>
+                                <article className="post-single">
+                                    <figure className="post-media">
+                                        <img src={`${config.apiUrl}/uploads/categories/${cat.icon}`} alt={cat.label}/>
+                                    </figure>
+                                    <div className="post-body">
+                                        <CheckInput
+                                            item={cat}
+                                            handleChange={this.updateCatState}
+                                            key={cat._id}
+                                        />
+                                        <h4 className="dark-color">{cat.label}</h4>
+                                    </div>
+                                </article>
                             </div>
-                            <span>{cat.label}</span>
-                        </Col>
-                    ))}
-                </Row>
-            </Jumbotron>);
+                        ))}
+                    </div>
+                );
         }
 
         let $button = (<NavLink
             to={"/contact"}
-            className="btn btn-lg btn-primary btn-block btn-rounded" id="mySubmit"
+            className="bttn-default" id="mySubmit"
             type="submit">Tiếp tục</NavLink>);
 
         if (isEdit) {
             $button = (
-                <div className="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon" style={{right: "0px", bottom: "200px", position: "fixed"}}>
-                    <div className="phonering-alo-ph-circle-fill"> </div>
-                    <div className="save-img-circle"  disabled={saving}
+                <div className="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon"
+                     style={{right: "0px", bottom: "200px", position: "fixed"}}>
+                    <div className="phonering-alo-ph-circle-fill"></div>
+                    <div className="save-img-circle" disabled={saving}
                          value={saving ? 'Saving...' : 'Save'}
                          onClick={this.handleSubmit}>
                         <span> {saving ? 'Saving...' : 'Save'}</span>
                     </div>
-                    {/*<input*/}
-                        {/*type="submit"*/}
-                        {/*disabled={saving}*/}
-                        {/*value={saving ? 'Saving...' : 'Save'}*/}
-                        {/*className="btn btn-danger btn-block btn-rounded"*/}
-                        {/*onClick={this.handleSubmit}/>*/}
                 </div>
             )
         }
 
         return (
-            <div>
-                <Container>
-                    <Row>
-                        <Col md="8" className="mx-auto mt-4 profile-doccument" >
-                                {$content}
-                        </Col>
-                    </Row>
-                    <div id="mybutton">
-                        {$button}
-                    </div>
+            <div className="map-contain">
+                <header className="site-header">
+                    <h3 className="text-center mb-3">Danh mục thế chấp</h3>
+                </header>
+                <div className="section-padding">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xs-12">
+                                <article className="post-single text-center">
 
-                </Container>
+                                    {$content}
+
+                                    <div className="space-30"></div>
+                                    <div id="mybutton">
+                                        {$button}
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -210,7 +217,8 @@ function mapStateToProps(state) {
 
     return {
         // cats: cats,
-        userprops: userprops, checkBoxCats: checkBoxCats};
+        userprops: userprops, checkBoxCats: checkBoxCats
+    };
 }
 
 function mapDispatchToProps(dispatch) {

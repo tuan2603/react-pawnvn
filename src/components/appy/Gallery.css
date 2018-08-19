@@ -1,0 +1,87 @@
+/*-- 13. Gallery-Area --*/
+
+.gallery-area {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgb(4, 46, 117);
+    background: -webkit-linear-gradient(45deg, rgb(4, 46, 117) 0%, rgb(11, 39, 64) 100%);
+    background: -o-linear-gradient(45deg, rgba(4, 46, 117, 1) 0%, rgba(11, 39, 64, 1) 100%);
+    background: linear-gradient(45deg, rgba(4, 46, 117 1) 0%, rgba(11, 39, 64, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#042E75', endColorstr='#0B2740', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    color: #ffffff;
+}
+
+.gallery-slide .owl-stage-outer {
+    background: url('../../appy/images/mobile-screen.png') no-repeat center right / auto 100%;
+
+}
+
+.gallery-slide .item {
+    margin: 58px 17px 60px 15px;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+/*// 64px 14px 86px 19px;*/
+@media only screen and (max-width: 676px) {
+    /* For tablets: */
+    .gallery-slide .item {
+        margin: 64px 14px 86px 19px;
+    }
+}
+
+.gallery-slide .owl-nav
+{
+    display: none;
+    position: static;
+    text-align: right;
+    padding-right: 80px;
+}
+
+.gallery-slide .owl-dots
+{
+    position: static;
+    text-align: right;
+    padding-right: 80px;
+}
+
+.gallery-slide .owl-nav > div
+{
+    display: inline-block;
+    background-color: #ffffff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    color: rgba(11, 39, 64, 1);
+    margin: 5px;
+}
+
+.gallery-slide  .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 3px;
+}
+
+.gallery-slide .owl-dots .owl-dot span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.5;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.gallery-slide  .owl-dots .owl-dot.active span {
+    opacity: 1;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}

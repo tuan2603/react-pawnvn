@@ -1,0 +1,74 @@
+.business-registration-main .section-padding {
+    padding-top: 64px;
+    padding-bottom: 120px;
+}
+
+.business-registration-main input{
+    font-size: medium;
+    text-align: left;
+    border-bottom: 1px #0b51c5 solid;
+}
+.business-registration-main label{
+    font-size: medium;
+    text-align: left;
+    width: 100%;
+    font-weight: normal;
+}
+
+.business-registration-main .uploads {
+    display: flex;
+    background: #eaeff2;
+    border: 1px solid #ccd6dd;
+}
+
+.business-registration-main .form-upload {
+    text-align: center;
+    position: relative;
+}
+
+.business-registration-main .upload-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #1581c13b;
+    line-height: 1.5em;
+}
+
+.business-registration-main .upload-container input[type=file] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    outline: 0;
+    line-height: 1.5em;
+}
+
+.business-registration-main .sample_doc {
+    text-align: center;
+    padding: 16px;
+}
+
+.business-registration-main .sample_doc img {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.business-registration-main.sample_doc p {
+    text-align: center;
+    margin-top: 16px;
+}
+
+
+.business-registration-main
+.react-datepicker-wrapper {
+    display: block;
+}
+
+.business-registration-main
+.react-datepicker__input-container {
+    /* position: relative; */
+    display: block;
+}

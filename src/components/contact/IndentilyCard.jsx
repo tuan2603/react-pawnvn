@@ -1,19 +1,20 @@
 import React from 'react';
 import {
-    NavLink, Redirect
+    NavLink
 } from "react-router-dom";
-import { Jumbotron } from 'mdbreact';
+import {Fa } from 'mdbreact';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import autoBind from "react-autobind";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import * as userActions from "../../actions/userActions";
-import { UploadeImage } from "../contact";
+import {UploadeImage} from "../contact";
 import * as config from "../../utils";
-import { bindActionCreators } from 'redux';
+import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import {title} from "../../utils";
+import "./IndentilyCard.css";
 
 class IndentilyCard extends React.Component {
     constructor(props) {
@@ -34,31 +35,32 @@ class IndentilyCard extends React.Component {
             this.props.actionsUser.loadUser();
         }
     }
+
     componentDidMount() {
         document.title = `${title} - Thông tin người dùng`
     }
 
     handleIdentityCardNumber(event) {
-        this.setState({ identityCardNumber: event.target.value, isEdit: true, saving: false });
+        this.setState({identityCardNumber: event.target.value, isEdit: true, saving: false});
     }
 
     handleChangeDate(date) {
-        this.setState({ identityCardDateIssued: date, isEdit: true, saving: false });
+        this.setState({identityCardDateIssued: date, isEdit: true, saving: false});
     }
 
     handleIdentityCardFront(file) {
-        this.setState({ isEdit: true, fileFront: file, saving: false });
+        this.setState({isEdit: true, fileFront: file, saving: false});
     }
 
     handleIdentityCardBehind(file) {
-        this.setState({ isEdit: true, fileBehind: file, saving: false });
+        this.setState({isEdit: true, fileBehind: file, saving: false});
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ saving: true });
-        const { identityCardNumber, identityCardDateIssued, fileFront, fileBehind } = this.state;
-        let { actionsUser, User } = this.props;
+        this.setState({saving: true});
+        const {identityCardNumber, identityCardDateIssued, fileFront, fileBehind} = this.state;
+        let {actionsUser, User} = this.props;
 
         if (fileFront !== "") {
             // thỏa điều kiện tỉ lệ 1 : cho upload
@@ -69,7 +71,7 @@ class IndentilyCard extends React.Component {
             setTimeout(() => {
                 actionsUser.UploadImage(data).then(res => {
                     if (res) {
-                        this.setState({ isEdit: false, fileFront: "" });
+                        this.setState({isEdit: false, fileFront: ""});
                     }
                 })
             }, 1000);
@@ -84,7 +86,7 @@ class IndentilyCard extends React.Component {
             setTimeout(() => {
                 actionsUser.UploadImage(data).then(res => {
                     if (res) {
-                        this.setState({ isEdit: false, fileBehind: "" });
+                        this.setState({isEdit: false, fileBehind: ""});
                     }
                 })
             }, 2000);
@@ -113,94 +115,111 @@ class IndentilyCard extends React.Component {
     }
 
     render() {
-        let { User } = this.props;
-        if(User._id === ''){
-            return (<Redirect to={"/"} />);
+        let {User} = this.props;
+        if (User === null) {
+            return (
+                <div className="indentily-card-main">
+                    <header className="site-header">
+
+                    </header>
+                    <div className="subscribe-area section-padding">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-xs-12 col-sm-6 col-sm-offset-3">
+                                    <div className="subscribe-form text-center">
+                                        <div className="container-fluid text-center">
+                                            <div className="">
+                                                <p><Fa icon="spinner" size="5x" spin/></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
         }
-        let { isEdit, saving, identityCardDateIssued } = this.state;
-   
+
+
+        let {isEdit, saving, identityCardDateIssued} = this.state;
+
         let identityCardFront, identityCardBehind, identityCardNumber = null;
-            
+
         if (User !== null) {
             identityCardFront = `${config.apiUrl}/uploads/${User.phone}/${User.identityCardFront}`;
             identityCardBehind = `${config.apiUrl}/uploads/${User.phone}/${User.identityCardBehind}`;
             identityCardNumber = User.identityCardNumber;
-            if(User.identityCardDateIssued != null && isEdit === false){
+            if (User.identityCardDateIssued != null && isEdit === false) {
                 identityCardDateIssued = User.identityCardDateIssued;
             }
         }
-        
+
         let $button = (<NavLink
             to={"/contact"}
-            className="btn btn-lg btn-primary btn-block" id="mySubmit"
+            className="bttn-default" id="mySubmit"
             type="submit">Tiếp tục</NavLink>);
         if (isEdit) {
             $button = (<input
                 type="submit"
                 disabled={saving}
                 value={saving ? 'Saving...' : 'Save'}
-                className="btn btn-primary btn-block"
-                onClick={this.handleSubmit} />)
+                className="bttn-default"
+                onClick={this.handleSubmit}/>)
         }
 
         return (
+            <div className="indentily-card-main">
+                <header className="site-header">
 
-            <div className="profile-doccument">
-                <div className="form-indentily">
-                    <Jumbotron>
-                        <div className="profile-title">
-                            <h2>Chứng Minh Nhân Dân(Mặt trước)<span className="warning">*</span></h2>
-                        </div>
-                        <UploadeImage
-                            value={identityCardFront}
-                            lable="Chứng Minh Nhân Dân"
-                            name="identityCardFront"
-                            onChange={this.handleIdentityCardFront}
-                        />
+                </header>
+                <div className="subscribe-area section-padding">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xs-12 col-sm-6 col-sm-offset-3">
+                                <div className="subscribe-form text-center">
+                                    <label className="mt10" htmlFor="fullname">Chứng Minh Nhân Dân(Mặt trước)</label>
+                                    <UploadeImage
+                                        value={identityCardFront}
+                                        lable="Chứng Minh Nhân Dân"
+                                        name="identityCardFront"
+                                        onChange={this.handleIdentityCardFront}
+                                    />
+                                    <div className="space-20"></div>
 
+                                    <label className="mt10" htmlFor="fullname">Chứng Minh Nhân Dân(Mặt sau)</label>
+                                    <UploadeImage
+                                        value={identityCardBehind}
+                                        lable="Chứng Minh Nhân Dân"
+                                        name="identityCardBehind"
+                                        onChange={this.handleIdentityCardBehind}
+                                    />
+                                    <div className="space-20"></div>
 
-                        <div className="profile-title">
-                            <h2>Chứng Minh Nhân Dân(Mặt sau)<span className="warning">*</span></h2>
-                        </div>
-                        <UploadeImage
-                            value={identityCardBehind}
-                            lable="Chứng Minh Nhân Dân"
-                            name="identityCardBehind"
-                            onChange={this.handleIdentityCardBehind}
-                        />
+                                    <label className="mt10" htmlFor="fullname">Số chứng minh nhân </label>
+                                    <input type="text"
+                                           defaultValue={identityCardNumber}
+                                           onChange={this.handleIdentityCardNumber} className="card-number"
+                                           name="CardNumber"/>
+                                    <div className="space-20"></div>
 
-
-                        <div className="indentily-number">
-                            <p>Số chứng minh nhân <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <input type="text"
-                                    defaultValue={identityCardNumber}
-                                    onChange={this.handleIdentityCardNumber} className="card-number"
-                                    name="CardNumber" />
+                                    <label className="mt10" htmlFor="fullname">Ngày cấp:</label>
+                                    <DatePicker
+                                        selected={moment(identityCardDateIssued)}
+                                        onChange={this.handleChangeDate}
+                                        peekNextMonth
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        dateFormat="DD/MM/YYYY"
+                                    />
+                                    <div className="space-20"></div>
+                                    {$button}
+                                </div>
                             </div>
                         </div>
-
-                        <div className="indentily-number">
-                            <p>Ngày cấp: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <DatePicker
-                                    selected={moment(identityCardDateIssued)}
-                                    onChange={this.handleChangeDate}
-                                    peekNextMonth
-                                    showMonthDropdown
-                                    showYearDropdown
-                                    dateFormat="DD/MM/YYYY"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="indentily-submit">
-                            {$button}
-                        </div>
-                    </Jumbotron>
+                    </div>
                 </div>
             </div>
-
         );
     }
 }
@@ -216,7 +235,7 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-let mapStateToProps = (state) => { 
+let mapStateToProps = (state) => {
     return {
         User: state.userReducers,
     };

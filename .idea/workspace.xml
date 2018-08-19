@@ -2,64 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4da06e7-c020-40c3-b57b-dfb566f60854" name="Default" comment="dd">
-      <change afterPath="$PROJECT_DIR$/public/css/owl.theme.default.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/android.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_0800.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_0801.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_0802.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_08020.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_08021.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_08022.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_08023.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_08024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_0803.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ios_0804.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/iosowner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/iphone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/iphone_transparent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/iphone_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/register_android_093450.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/register_android_093615.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/register_pawn_owner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/register_pawnvn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/chosen.jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/IMG_08022.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_0800.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_0801.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_0802.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_08020.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_08021.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_08022.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_0803.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_0804.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/ios_0805.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/iphone_transparent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/iphone_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/register_android_093450.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/register_android_093615.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/register_pawn_owner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appy/images/register_pawnvn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/appy/DownloadArea.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/appy/Gallery.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/appy/Testimonial2.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbar2/Navbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbar2/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/approval.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/connect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/money_icon_by_vexels.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/register.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/tinylogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/appy/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/tinylogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/Architecture.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/Architecture.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/CategoryArea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/CategoryArea.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/Disbursement.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/Disbursement.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/Gallery.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/HeaderHome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/appy/Testimonial.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contact/Avatar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contact/BusinessRegistration.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contact/Categories.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contact/DocumentPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contact/IndentilyCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contact/InfoUser.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/contact/Map.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/footer/FooterHome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/logins/ModalLogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/logins/ModalLoginPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navbar2/MainMenuArea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/signup/SignUp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.8ef86c3a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.8ef86c3a.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.90da367b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.90da367b.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/owl.carousel.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/appy/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/appy/Appy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Appy.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/appy/AppyPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Testimonial.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appy/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Appy.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/DownloadArea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/DownloadArea.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Gallery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Testimonial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Testimonial.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Testimonial2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Testimonial2.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/appy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/Avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/Avatar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/BusinessRegistration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/BusinessRegistration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/Categories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/Contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/Contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/Doccument.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/DocumentPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/DocumentPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/IndentilyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/IndentilyCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/InfoUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/InfoUser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/Map.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/MainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/MainLayout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/MainLayoutLogined.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/MainLayoutLogined.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logins/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logins/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logins/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logins/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logins/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/Navbar.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar2/Navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/notification/Notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notification/Notification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/privacy/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/privacy/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/privacy/Privacy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/privacy/Privacy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/signup/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/signup/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -134,37 +161,52 @@
     <session id="-2014178382">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="191" />
-          <entry key="html" value="30" />
-          <entry key="jsx" value="257" />
+          <entry key="css" value="1167" />
+          <entry key="html" value="56" />
+          <entry key="js" value="946" />
+          <entry key="jsx" value="2520" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="191" />
-          <entry key="HTML" value="30" />
-          <entry key="JSX Harmony" value="257" />
+          <entry key="CSS" value="1167" />
+          <entry key="HTML" value="56" />
+          <entry key="JSX Harmony" value="2520" />
+          <entry key="JavaScript" value="946" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="1" />
-          <entry key="js" value="2" />
-          <entry key="jsx" value="1" />
+          <entry key="css" value="69" />
+          <entry key="html" value="8" />
+          <entry key="jpg" value="1" />
+          <entry key="js" value="30" />
+          <entry key="jsx" value="91" />
+          <entry key="png" value="3" />
+          <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="JSX Harmony" value="1" />
-          <entry key="JavaScript" value="2" />
+          <entry key="CSS" value="69" />
+          <entry key="HTML" value="8" />
+          <entry key="Image" value="4" />
+          <entry key="JSX Harmony" value="91" />
+          <entry key="JavaScript" value="30" />
+          <entry key="TypeScript" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -175,10 +217,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.jsx">
+        <entry file="file://$PROJECT_DIR$/src/components/contact/Categories.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="60" lean-forward="true" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+            <state relative-caret-position="51">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Header.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/HeaderHome.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="16" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -187,19 +256,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/DownloadArea.jsx">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial2.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="73" lean-forward="true" selection-start-line="58" selection-start-column="73" selection-end-line="58" selection-end-column="73" />
+            <state relative-caret-position="119">
+              <caret line="7" column="52" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="52" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -208,10 +268,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+            <state relative-caret-position="68">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -219,35 +279,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/appy/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/appy/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="1299" column="27" selection-start-line="1299" selection-start-column="27" selection-end-line="1299" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/navbar/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="46" selection-start-column="40" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/navbar/Navbar.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="136">
+              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -255,8 +288,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="442">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -264,40 +297,54 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/responsive.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main-signin</find>
-      <find>map</find>
-      <find>left</find>
-      <find>phonering-alo-ph-img-circle</find>
-      <find>stylish-color-organ</find>
-      <find>color-organ</find>
-      <find>stylish</find>
-      <find>stylish-c</find>
-      <find>phonering-alo-ph-circle-fill</find>
-      <find>owl.video.play.png</find>
-      <find>team-slide</find>
-      <find>class</find>
-      <find>$</find>
-      <find>CarouselItem</find>
-      <find>carousel-slide-item</find>
-      <find>Carousel.css</find>
-      <find>Carousel</find>
-      <find>carousel-multi-item</find>
-      <find>nextArrow</find>
-      <find>next</find>
       <find>images/download-bg.png</find>
       <find>/images</find>
       <find>mobile-screen.png</find>
       <find>.gallery-slide</find>
       <find>getDefaultProps</find>
-      <find>class=</find>
-      <find>Gallery-Area</find>
       <find>owl-prev</find>
-      <find>#6ac6f0</find>
+      <find>Gallery-Area</find>
       <find>rgb(72, 44, 191)</find>
+      <find>rgba(72, 44, 191, 1)</find>
+      <find>#482cbf</find>
+      <find>rgba(106, 198, 240, 1)</find>
+      <find>#6ac6f0</find>
+      <find>Home-Area</find>
+      <find>Testimonial-Area</find>
+      <find>.owl-controls</find>
+      <find>site-header</find>
+      <find>class=</find>
+      <find>.mainmenu-area</find>
+      <find>username</find>
+      <find>text-transform</find>
+      <find>form</find>
+      <find>mc-form</find>
+      <find>ScrollUp-Button</find>
+      <find>list-</find>
+      <find>angle-right</find>
+      <find>example-components-list</find>
+      <find>avatar-main</find>
+      <find>select</find>
+      <find>.indentily-card-main</find>
+      <find>business-registration-main</find>
     </findStrings>
     <replaceStrings>
       <replace>h1</replace>
@@ -316,13 +363,20 @@
       <replace>div</replace>
       <replace>CarouselItem</replace>
       <replace>../../appy/images</replace>
-      <replace>className=</replace>
-      <replace>#0c71c4</replace>
       <replace>rgb(23, 81, 152)</replace>
+      <replace>rgba(13, 78, 132, 1)</replace>
+      <replace>#0d4e84</replace>
+      <replace>rgba(12, 113, 196, 1)</replace>
+      <replace>#0c71c4</replace>
+      <replace>indentily-card-main</replace>
+      <replace>className=</replace>
+      <replace>business-registration-main</replace>
+      <replace>.business-registration-main</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\nodeproject\react-pawnvn\node_modules\mdbreact\dist</dir>
       <dir>D:\nodeproject\react-pawnvn\node_modules</dir>
+      <dir>D:\GITHUP\react-pawnvn</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -331,57 +385,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/CheckInput.jsx" />
-        <option value="$PROJECT_DIR$/src/components/contact/Profile.css" />
-        <option value="$PROJECT_DIR$/src/utils/config.jsx" />
+        <option value="$PROJECT_DIR$/src/components/logins/login.css" />
+        <option value="$PROJECT_DIR$/src/components/index.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/components/ModalPage.js" />
+        <option value="$PROJECT_DIR$/src/components/logins/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/App.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/Testimonial.css" />
+        <option value="$PROJECT_DIR$/src/components/notification/Notification.jsx" />
+        <option value="$PROJECT_DIR$/src/components/layout/MainLayout.jsx" />
+        <option value="$PROJECT_DIR$/src/components/layout/MainLayoutLogined.jsx" />
+        <option value="$PROJECT_DIR$/src/components/navbar2/MainMenuArea.css" />
+        <option value="$PROJECT_DIR$/src/components/logins/ModalLogin.css" />
+        <option value="$PROJECT_DIR$/src/components/appy/DownloadArea.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/public/js/main.js" />
+        <option value="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/Gallery.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/Doccument.css" />
         <option value="$PROJECT_DIR$/src/components/contact/Contact.jsx" />
-        <option value="$PROJECT_DIR$/src/components/verify/Verify.jsx" />
-        <option value="$PROJECT_DIR$/src/components/signup/SignUp.jsx" />
-        <option value="$PROJECT_DIR$/src/components/logins/Login.jsx" />
+        <option value="$PROJECT_DIR$/public/style.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/Avatar.css" />
         <option value="$PROJECT_DIR$/src/components/contact/Avatar.jsx" />
-        <option value="$PROJECT_DIR$/src/components/contact/IndentilyCard.jsx" />
-        <option value="$PROJECT_DIR$/src/components/contact/InfoUser.jsx" />
-        <option value="$PROJECT_DIR$/src/components/contact/Map.jsx" />
-        <option value="$PROJECT_DIR$/src/components/contact/BusinessRegistration.jsx" />
-        <option value="$PROJECT_DIR$/src/components/contact/Categories.jsx" />
-        <option value="$PROJECT_DIR$/src/components/footer/index.js" />
-        <option value="$PROJECT_DIR$/src/components/home/HomePage.css" />
-        <option value="$PROJECT_DIR$/src/components/footer/Footer.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/Home.jsx" />
-        <option value="$PROJECT_DIR$/src/appy/css/owl.carousel.min.css" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/privacy/Privacy.js" />
         <option value="$PROJECT_DIR$/src/components/privacy/About.js" />
-        <option value="$PROJECT_DIR$/src/components/appy/HomePage.css" />
-        <option value="$PROJECT_DIR$/src/components/home/SlideHome.js" />
-        <option value="$PROJECT_DIR$/node_modules/mdbreact/dist/mdbreact.js.map" />
-        <option value="$PROJECT_DIR$/src/assets/css/slick-theme.min.css" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/src/components/Dialog.js" />
-        <option value="$PROJECT_DIR$/public/js/owl.carousel.min.js" />
-        <option value="$PROJECT_DIR$/src/components/Chosen.js" />
-        <option value="$PROJECT_DIR$/src/components/layout/MainLayoutLogined.jsx" />
-        <option value="$PROJECT_DIR$/src/components/navbar2/index.js" />
-        <option value="$PROJECT_DIR$/public/style.css" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" />
-        <option value="$PROJECT_DIR$/src/components/layout/MainLayout.jsx" />
-        <option value="$PROJECT_DIR$/src/components/navbar/Navbar.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/Appy.css" />
-        <option value="$PROJECT_DIR$/src/components/appy/AppyPage.jsx" />
-        <option value="$PROJECT_DIR$/src/containers/App.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/Testimonial.jsx" />
-        <option value="$PROJECT_DIR$/public/js/main.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/appy/Download.jsx" />
+        <option value="$PROJECT_DIR$/src/components/logins/Login.jsx" />
+        <option value="$PROJECT_DIR$/src/components/footer/Footer.jsx" />
+        <option value="$PROJECT_DIR$/src/components/logins/ModalLoginPage.js" />
+        <option value="$PROJECT_DIR$/src/components/signup/SignUp.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/Gallery.jsx" />
+        <option value="$PROJECT_DIR$/src/components/contact/Contact.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/InfoUser.jsx" />
+        <option value="$PROJECT_DIR$/src/components/signup/SignUp.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/IndentilyCard.jsx" />
+        <option value="$PROJECT_DIR$/src/components/contact/IndentilyCard.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/InfoUser.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/DocumentPage.jsx" />
+        <option value="$PROJECT_DIR$/src/components/contact/DocumentPage.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/BusinessRegistration.css" />
+        <option value="$PROJECT_DIR$/src/components/contact/BusinessRegistration.jsx" />
+        <option value="$PROJECT_DIR$/src/components/contact/Map.jsx" />
+        <option value="$PROJECT_DIR$/src/components/contact/Categories.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/CategoryArea.css" />
+        <option value="$PROJECT_DIR$/src/components/appy/CategoryArea.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/Header.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/HeaderHome.css" />
         <option value="$PROJECT_DIR$/src/components/appy/index.js" />
         <option value="$PROJECT_DIR$/src/components/home/Home.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/DownloadArea.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/Gallery.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/Testimonial2.jsx" />
-        <option value="$PROJECT_DIR$/src/appy/style.css" />
-        <option value="$PROJECT_DIR$/src/components/navbar/Navbar.css" />
+        <option value="$PROJECT_DIR$/src/components/appy/Disbursement.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/Disbursement.css" />
+        <option value="$PROJECT_DIR$/src/components/appy/Architecture.jsx" />
       </list>
     </option>
   </component>
@@ -402,10 +456,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="x" value="-27" />
+    <option name="y" value="91" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -425,12 +479,6 @@
               <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
@@ -455,6 +503,13 @@
               <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="contact" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -462,7 +517,21 @@
               <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar" type="462c0819:PsiDirectoryNode" />
+              <item name="notification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="privacy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="signup" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -472,7 +541,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/appy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-tutrial" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -480,21 +549,22 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GITHUP\react-pawnvn\src\components\logins" />
       <recent name="D:\nodeproject\react-pawnvn\public\css" />
       <recent name="D:\nodeproject\react-pawnvn\public\js" />
       <recent name="D:\GITHUP\react-pawnvn\public" />
       <recent name="D:\nodeproject\react-pawnvn\src\components\signup" />
-      <recent name="D:\nodeproject\react-pawnvn\src\components\logins" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\nodeproject\react-pawnvn\public\images" />
-      <recent name="D:\nodeproject\react-pawnvn\src\components\appy" />
-      <recent name="D:\nodeproject\react-pawnvn\src\appy\images" />
-      <recent name="D:\nodeproject\react-pawnvn\src\appy" />
-      <recent name="D:\nodeproject\react-pawnvn\src\components" />
+      <recent name="D:\GITHUP\react-pawnvn\src\components\appy" />
+      <recent name="D:\GITHUP\react-pawnvn\public\images" />
+      <recent name="D:\GITHUP\react-pawnvn\src\assets\img" />
+      <recent name="D:\GITHUP\react-pawnvn\src\appy\images" />
+      <recent name="D:\GITHUP\react-pawnvn\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -557,17 +627,18 @@
       <workItem from="1534428143900" duration="16489000" />
       <workItem from="1534468935417" duration="19299000" />
       <workItem from="1534496287163" duration="6753000" />
+      <workItem from="1534518401264" duration="14389000" />
+      <workItem from="1534562936653" duration="70045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355339000" />
+    <option name="totallyTimeSpent" value="439773000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49643704" visible="true" weight="0.22849083" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49643704" visible="true" weight="0.31175596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5035629" side_tool="true" weight="0.27574047" />
       <window_info id="Favorites" order="3" sideWeight="0.5008518" side_tool="true" weight="0.27433005" />
@@ -580,7 +651,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.30820996" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32993197" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -627,7 +698,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" log-message="true" suspend="NONE" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/contact/Map.jsx</url>
-          <line>6</line>
+          <line>5</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -641,305 +712,403 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" log-message="true" suspend="NONE" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/appy/Testimonial.jsx</url>
-          <line>6</line>
+          <line>5</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/App.jsx</url>
-          <line>21</line>
+          <line>23</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/appy/Header.jsx</url>
+          <line>22</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Doccument.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/mdb.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="966" column="41" lean-forward="true" selection-start-line="966" selection-start-column="41" selection-end-line="966" selection-end-column="41" />
+        <state relative-caret-position="68">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="4" column="14633" selection-start-line="4" selection-start-column="14633" selection-end-line="4" selection-end-column="14633" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/UploadeImage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/privacy/Privacy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/logins/Login.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redux/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="361" column="2" selection-start-line="361" selection-start-column="2" selection-end-line="361" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/notification/Notification.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/logins/ModalLoginPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Avatar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="132" column="18" lean-forward="true" selection-start-line="127" selection-start-column="31" selection-end-line="132" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/notifyActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/footer/Footer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="53" column="32" selection-start-line="18" selection-start-column="20" selection-end-line="53" selection-end-column="32" />
+        <state relative-caret-position="17">
+          <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/node_modules/react-datepicker/es/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2262">
+          <caret line="2492" column="4" selection-start-line="2492" selection-start-column="4" selection-end-line="2492" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-datepicker/dist/react-datepicker.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1484" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/signup/SignUp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/signup/SignUp.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Avatar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="50" lean-forward="true" selection-start-line="5" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="234" column="19" selection-start-line="234" selection-start-column="16" selection-end-line="244" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/InfoUser.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Contact.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/privacy/About.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="39" column="18" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="39" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/DocumentPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Contact.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="66" selection-start-line="12" selection-start-column="10" selection-end-line="19" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/DocumentPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/InfoUser.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="122" column="79" lean-forward="true" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Map.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="227" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/BusinessRegistration.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97">
+          <caret line="219" column="76" selection-start-line="219" selection-start-column="76" selection-end-line="219" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/BusinessRegistration.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Map.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="121" column="18" lean-forward="true" selection-start-line="115" selection-start-column="36" selection-end-line="121" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/IndentilyCard.css">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="23" />
+          <caret line="19" column="24" lean-forward="true" selection-end-line="73" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/IndentilyCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="187" column="36" lean-forward="true" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="68" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mdbreact/dist/mdbreact.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="3040" column="1730" selection-start-line="3040" selection-start-column="1730" selection-end-line="3040" selection-end-column="1730" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mdbreact/dist/mdbreact.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5576">
-          <caret line="5820" column="37" lean-forward="true" selection-start-line="5820" selection-start-column="37" selection-end-line="5820" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/slick.min.css">
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Categories.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/SlideHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1130">
-          <caret line="100" column="96" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/slick-theme.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/owl.carousel.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="740" column="17" selection-start-line="738" selection-start-column="6" selection-end-line="740" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/owl.theme.default.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-owl-carousel2/lib/OwlCarousel.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Chosen.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/contact/Categories.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="95" column="58" lean-forward="true" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navbar2/Navbar.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navbar2/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="20" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/style.css" />
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/layout/MainLayoutLogined.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="37" column="49" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="37" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navbar/Navbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/layout/MainLayout.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="45" lean-forward="true" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Appy.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1270">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/gallery-1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ios_08025.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ios_08020.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ios_08021.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ios_08022.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ios_08024.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/comment-image.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/header-mobile.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/iphone_transparent.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/iphone_white.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/register_android_093450.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/register_android_093615.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/register_pawnvn.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/register_pawn_owner.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/download-image.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="60" lean-forward="true" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/DownloadArea.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+        <state relative-caret-position="34">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial2.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="73" lean-forward="true" selection-start-line="58" selection-start-column="73" selection-end-line="58" selection-end-column="73" />
+        <state relative-caret-position="204">
+          <caret line="57" column="73" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="73" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navbar/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" selection-start-column="40" selection-end-column="46" />
+        <state relative-caret-position="94">
+          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/appy/style.css">
+    <entry file="file://$PROJECT_DIR$/public/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="1299" column="27" selection-start-line="1299" selection-start-column="27" selection-end-line="1299" selection-end-column="27" />
+        <state relative-caret-position="162">
+          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="227" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navbar/Navbar.css">
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="170">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/CategoryArea.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/CategoryArea.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="50" column="40" selection-start-line="47" selection-start-column="27" selection-end-line="56" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contact/Categories.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/team-1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Header.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/HeaderHome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="52" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

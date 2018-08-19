@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink} from 'mdbreact';
 import mainLogo from '../../assets/img/logo.png';
-import './Navbar.css';
 import {connect} from "react-redux";
 import autoBind from "react-autobind";
 
@@ -46,8 +45,7 @@ class NavbarTop extends Component {
             </NavItem>
         }
         return (
-            <nav className="mainmenu-area" data-spy="affix" data-offset-top="200">
-                <div className="container-fluid">
+
                     <Navbar className="nav-main" expand="md" fixed="top" scrolling>
                         <NavbarBrand href="/">
                             <img src={mainLogo} alt="or-trans" height="32"/>
@@ -70,8 +68,7 @@ class NavbarTop extends Component {
                             </NavbarNav>
                         </Collapse>
                     </Navbar>
-                </div>
-            </nav>
+
         );
     }
 }

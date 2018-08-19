@@ -1,6 +1,7 @@
 import React from 'react';
 import autoBind from "react-autobind";
 import OwlCarousel from 'react-owl-carousel2';
+import "./Testimonial.css";
 
 class Testimonial extends React.Component {
 
@@ -28,15 +29,13 @@ class Testimonial extends React.Component {
         }
 
         const options2 = {
-            items: 4,
+            loop: true,
             margin: 0,
-            loop: false,
-            dots: false,
-            rewind: true,
             nav: true,
-            navText: ['<i class="lnr lnr-chevron-left"> </i>', '<i class="lnr lnr-chevron-right"> </i>'],
             autoplay: true,
             autoplayTimeout: 4000,
+            smartSpeed: 1000,
+            navText: ['<i class="lnr lnr-chevron-left"></i>', '<i class="lnr lnr-chevron-right"></i>'],
             responsive: {
                 0: {
                     items: 1,

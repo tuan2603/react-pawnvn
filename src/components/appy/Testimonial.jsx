@@ -1,8 +1,7 @@
 import React from 'react';
-import "./Appy.css";
 import autoBind from "react-autobind";
 import Slider from "react-slick";
-
+import "./Testimonial.css";
 
 class Testimonial extends React.Component {
 

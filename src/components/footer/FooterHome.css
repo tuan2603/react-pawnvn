@@ -1,0 +1,8 @@
+.footer-main {
+    font-weight: 600;
+}
+
+#fotter-background {
+    background-color: #042c66; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #042c66, #272c33); /* Standard */
+}

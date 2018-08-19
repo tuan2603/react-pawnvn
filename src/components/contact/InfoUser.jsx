@@ -3,16 +3,16 @@ import {
     Redirect
 } from "react-router-dom";
 
-import {Jumbotron} from 'mdbreact';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import autoBind from "react-autobind";
 import {connect} from "react-redux";
-import { UserDocumentHelper} from "../../helpers";
+import {UserDocumentHelper} from "../../helpers";
 import {show_notification} from "../../actions/notifyActions";
 import {alogin} from "../../actions/userActions";
 import {title} from "../../utils";
+import "./InfoUser.css"
 
 
 class InfoUser extends React.Component {
@@ -27,6 +27,7 @@ class InfoUser extends React.Component {
         }
         autoBind(this);
     }
+
     componentDidMount() {
         document.title = `${title} - Thông tin người dùng`
     }
@@ -49,7 +50,7 @@ class InfoUser extends React.Component {
         const {dispatch, username} = this.props;
         let {isChange} = this.state;
         this.setState({submitted: true});
-        const {sex, birthday,fullName} = this.state;
+        const {sex, birthday, fullName} = this.state;
         if (isChange) {
             let obj = {};
             if (username != null) {
@@ -103,53 +104,54 @@ class InfoUser extends React.Component {
         }
 
         return (
-            <div className="profile-doccument">
-                <div className="form-indentily">
-                    <Jumbotron>
-                        <div className="indentily-number">
-                            <p>Họ và Tên <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <input type="text"
-                                       defaultValue={fullName}
-                                       onChange={this.handleFullname} className="card-number"
-                                       name="CardNumber"/>
+            <div className="info-main">
+                <header className="site-header">
+
+                </header>
+                <div className="subscribe-area section-padding">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xs-12 col-sm-6 col-sm-offset-3">
+                                <div className="subscribe-form text-center">
+                                    <label className="mt10" htmlFor="fullname">Họ và Tên</label>
+                                    <input type="text"
+                                           defaultValue={fullName}
+                                           onChange={this.handleFullname} className="card-number"
+                                           name="fullname"/>
+                                    <div className="space-20"></div>
+
+                                    <label className="mt10" htmlFor="birthday">Sinh ngày:</label>
+                                    <DatePicker
+                                        selected={moment(birthday)}
+                                        onChange={this.handleChangeBirthday}
+                                        peekNextMonth
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        dateFormat="DD/MM/YYYY"
+
+                                    />
+                                    <div className="space-20"> </div>
+
+                                    <label className="mt10" htmlFor="city">Giới tính:</label>
+                                    <select name="city" defaultValue={sex} onChange={this.handleChangeSex}>
+                                        <option value="">Chọn</option>
+                                        <option value="male">Nam</option>
+                                        <option value="female">Nữ</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                    <div className="space-20"> </div>
+
+
+                                    <button className="bttn-default" id="mySubmit" type="submit"
+                                            onClick={this.handleSubmit}
+                                    >
+                                        {htmlsub}
+                                    </button>
+
+                                </div>
                             </div>
                         </div>
-
-                        <div className="indentily-number">
-                            <p>Sinh ngày: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <DatePicker
-                                    selected={moment(birthday)}
-                                    onChange={this.handleChangeBirthday}
-                                    peekNextMonth
-                                    showMonthDropdown
-                                    showYearDropdown
-                                    dateFormat="DD/MM/YYYY"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="indentily-number">
-                            <p>Giới tính: <span className="warning">*</span></p>
-                            <div className="form-label-group">
-                                <select name="city" defaultValue={sex} onChange={this.handleChangeSex}>
-                                    <option value="">Chọn</option>
-                                    <option value="male">Nam</option>
-                                    <option value="female">Nữ</option>
-                                    <option value="other">Khác</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div className="indentily-submit">
-                            <button className="btn btn-lg btn-primary btn-block" id="mySubmit" type="submit"
-                                    onClick={this.handleSubmit}
-                            >
-                                {htmlsub}
-                            </button>
-                        </div>
-                    </Jumbotron>
+                    </div>
                 </div>
             </div>
 

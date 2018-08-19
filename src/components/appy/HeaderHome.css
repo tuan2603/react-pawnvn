@@ -1,0 +1,17 @@
+/*Header Home area*/
+
+/*-- 7. Home-Area --*/
+
+.home-area {
+    width: 100%;
+    background: url('../../appy/images/header-bg.jpg') no-repeat scroll center bottom / cover;
+    padding-top: 26vh;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.home-area .mobile-image {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: -158px;
+}

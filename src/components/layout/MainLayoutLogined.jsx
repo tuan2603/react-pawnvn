@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { NavbarTop } from  '../../components/navbar';
+import { MainMenu } from  '../../components/navbar2';
 import autoBind from "react-autobind";
 import {Redirect} from 'react-router-dom';
 import {TOKEN} from '../../constants/Users';
@@ -27,12 +27,9 @@ class MainLayoutLogined extends Component {
             return <Redirect to={`/signin`}/>
         }
         return (
-            <div className="flyout">
-                <div className="preloader">
-                    <span><i className="lnr lnr-sun"></i></span>
-                </div>
-                <NavbarTop />
-                <main style={{marginTop:"4em"}}>
+            <div>
+                <MainMenu />
+                <main>
                     {children}
                 </main>
                 <Footers/>

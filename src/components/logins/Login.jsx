@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Jumbotron } from 'mdbreact';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import autoBind from 'react-autobind';
@@ -89,13 +88,18 @@ class Login extends Component {
         }
         return (
             <div>
+                <header className="site-login">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xs-12 text-center">
+                                <h1 className="white-color">Đăng nhập</h1>
+                            </div>
+                        </div>
+                    </div>
+                </header>
                 <div className="main-signin">
                     <div className="form-signin">
-                    <Jumbotron>
                         <form className="m-4">
-                            <div className="text-center">
-                                <h1 className="h3 mb-3 font-weight-normal">Đăng nhập</h1>
-                            </div>
                             <div className={"form-group" + (submitted && !username ? ' has-error' : '')}>
                                 <div className={"form-label-group"}>
                                     <IntlTelInput
@@ -141,7 +145,6 @@ class Login extends Component {
                                 </button>
                             </div>
                         </form>
-                        </Jumbotron>
                     </div>
                 </div>
             </div>

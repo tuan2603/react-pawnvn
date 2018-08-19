@@ -29,22 +29,22 @@ class Notification extends React.Component {
             switch (notification.type) {
                 case 'err':
                     toast.error(notification.txt, {
-                        position: toast.POSITION.TOP_CENTER
+                        position: toast.POSITION.BOTTOM_CENTER
                     });
                     break;
                 case 'war':
                     toast.warn(notification.txt, {
-                        position: toast.POSITION.TOP_CENTER
+                        position: toast.POSITION.BOTTOM_CENTER
                     });
                     break;
                 case 'suc':
                     toast.success(notification.txt, {
-                        position: toast.POSITION.TOP_CENTER
+                        position: toast.POSITION.BOTTOM_CENTER
                     });
                     break;
                 case 'inf':
                     toast.info(notification.txt, {
-                        position: toast.POSITION.TOP_CENTER
+                        position: toast.POSITION.BOTTOM_CENTER
                     });
                     break;
                 default:

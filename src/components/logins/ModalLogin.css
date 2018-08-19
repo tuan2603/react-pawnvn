@@ -1,0 +1,43 @@
+/*modal login*/
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body.modal-open {
+    padding-right: 0 !important;
+}
+
+.modal-dialog {
+    transform: translate3d(-50%, -50%, 0);
+    box-shadow: none;
+    max-width: 480px;
+    max-height: 90%;
+    -webkit-overflow-scrolling: touch;
+    padding: 30px;
+    padding-bottom: 31px;
+    z-index: 100;
+    overflow: hidden;
+    color: #6484a0;
+}
+
+.modal-content {
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 20px;
+    transition: all .5s ease;
+}
+
+.login-form > input {
+    font-size: medium;
+}
+
+.login-form .bttn-default {
+    font-size: medium;
+    text-transform: capitalize;
+}
