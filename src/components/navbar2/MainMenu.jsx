@@ -56,7 +56,7 @@ class MainMenu extends Component {
                         </div>
                         <div className="collapse navbar-collapse" id="primary_menu">
                             <ul className="nav navbar-nav mainmenu">
-                                <li className="active"><NavLink to="/" exact>Trang Chủ</NavLink></li>
+                                <li><NavLink to="/" exact>Trang Chủ</NavLink></li>
                                 <li><Link to="gallery_page">Gallery</Link></li>
                                 <li><NavLink to="/gioi-thieu.html" exact>Giới thiệu</NavLink></li>
                                 <li><NavLink to="/#">Hỏi đáp</NavLink></li>

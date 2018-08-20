@@ -11,11 +11,6 @@ class DownloadAreaOner  extends React.Component {
             <div className="download-area overlay">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xs-12 col-sm-6 hidden-sm">
-                            <figure className="mobile-image">
-                                <img src="/images/iosowner.png" alt="pawn vietnam" />
-                            </figure>
-                        </div>
                         <div className="col-xs-12 col-md-6 section-padding">
                             <h3 className="white-color">Tải Ứng Dụng</h3>
                             <div className="space-20"> </div>
@@ -25,6 +20,11 @@ class DownloadAreaOner  extends React.Component {
                                                                        alt="apple icon" /> Apple Store</Link>
                             <Link to="/#" className="bttn-white sq"><img src="/images/play-store-icon.png"
                                                                        alt="Play Store Icon"/> Play Store</Link>
+                        </div>
+                        <div className="col-xs-12 col-sm-6 hidden-sm">
+                            <figure className="mobile-image">
+                                <img src="/images/iosowner.png" alt="pawn vietnam" />
+                            </figure>
                         </div>
                     </div>
                 </div>

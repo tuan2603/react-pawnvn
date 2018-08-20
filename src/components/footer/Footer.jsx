@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {Container, Row, Col, Footer} from 'mdbreact';
 import autoBind from 'react-autobind';
 import "./FooterHome.css";
@@ -19,10 +19,10 @@ class Footers extends React.Component {
                         <Container className="text-center text-md-left">
                             <Row className="text-center text-md-left mt-3 pb-3">
                                 <Col md="3" lg="2" xl="2" className="mx-auto mt-3">
-                                    <p><Link to="/signup">Đăng ký</Link></p>
-                                    <p><Link to="/gioi-thieu.html">Giới thiệu</Link></p>
-                                    <p><Link to="/dieu-khoan-su-dung.html">Điều khoản</Link></p>
-                                    <p><Link to="/hoi-dap.html">Hỏi đáp</Link></p>
+                                    <p><NavLink to="/dieu-khoan-su-dung.html">Điều khoản</NavLink></p>
+                                    <p><NavLink to="/hoi-dap.html">Hỏi đáp</NavLink></p>
+                                    <p><NavLink to="/signup" exact>Đăng ký</NavLink></p>
+                                    <p><NavLink to="/gioi-thieu.html">Giới thiệu</NavLink></p>
                                 </Col>
                                 <hr className="w-100 clearfix d-md-none"/>
                                 <Col md="3" lg="4" xl="4" className="mx-auto mt-3">
