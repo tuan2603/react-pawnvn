@@ -56,7 +56,7 @@ class ModalLoginPage extends React.Component {
         const {submitted, username, redirectToVerify} = this.state;
 
         if (redirectToVerify) {
-            return <Redirect to="/verify"/>;
+            return <div data-dismiss="modal"><Redirect to="/verify"/></div>;
         }
 
         return (
