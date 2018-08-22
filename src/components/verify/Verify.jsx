@@ -11,6 +11,7 @@ import {title} from "../../utils";
 import {Fa} from "mdbreact";
 
 
+
 class Verify extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +25,8 @@ class Verify extends Component {
 
     componentDidMount() {
         document.title = `${title} - Xác thực`;
-
+        document.body.classList.remove('modal-open');
+        document.body.classList.remove('modal');
     }
 
     verifyChange(event) {

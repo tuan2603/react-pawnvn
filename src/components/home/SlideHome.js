@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Button, Carousel, div,  CarouselInner, CarouselItem, CarouselIndicators, CarouselIndicator, View, Mask } from 'mdbreact';
+import { Button, Carousel, CarouselControl,  CarouselInner, CarouselItem, CarouselIndicators, CarouselIndicator, View, Mask } from 'mdbreact';
 import './SlideHome.css'
 class CarouselPage extends Component {
 
@@ -97,8 +97,8 @@ class CarouselPage extends Component {
               </div>
             </CarouselItem>
           </CarouselInner>
-          {/*<CarouselControl direction="prev" role="button" onClick={() => { this.prev(); }} />*/}
-          {/*<CarouselControl direction="next" role="button" onClick={() => { this.next(); }} />*/}
+          <CarouselControl direction="prev" role="button" onClick={() => { this.prev(); }} />
+          <CarouselControl direction="next" role="button" onClick={() => { this.next(); }} />
           <CarouselIndicators>
             <CarouselIndicator active={activeItem === 1 ? true : false} onClick={() => { this.goToIndex(1); }}></CarouselIndicator>
             <CarouselIndicator active={activeItem === 2 ? true : false} onClick={() => { this.goToIndex(2); }}></CarouselIndicator>

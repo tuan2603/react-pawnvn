@@ -38,7 +38,7 @@ class Architecture extends React.Component {
                                                 <img src="/images/approval.png" alt="icon"/>
                                             </figure>
                                             <div className="post-body">
-                                                <h4 className="dark-color"> 3. Xuyết duyệt</h4>
+                                                <h4 className="dark-color"> 3. Xét duyệt</h4>
                                                 <p>Nhận kết quả nhanh chóng sau khi gửi hồ sơ</p>
                                             </div>
                                         </article>
