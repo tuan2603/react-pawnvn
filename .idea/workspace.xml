@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4da06e7-c020-40c3-b57b-dfb566f60854" name="Default" comment="dd">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/appy/Architecture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Architecture.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/appy/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/appy/HeaderHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/HeaderHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/SlideHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/SlideHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/verify/Verify.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/verify/Verify.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="c4da06e7-c020-40c3-b57b-dfb566f60854" name="Default" comment="dd" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -23,7 +15,7 @@
     <session id="-1793414696">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="1" />
@@ -581,16 +573,15 @@
       <workItem from="1534729114732" duration="6919000" />
       <workItem from="1534814866397" duration="4698000" />
       <workItem from="1534901121202" duration="4531000" />
-      <workItem from="1534909466047" duration="3648000" />
+      <workItem from="1534909466047" duration="3717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459569000" />
+    <option name="totallyTimeSpent" value="459638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49643704" visible="true" weight="0.16008462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
