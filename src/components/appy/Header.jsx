@@ -1,5 +1,4 @@
 import React from 'react';
-import {SlideHome} from '../home';
 import "./HeaderHome.css";
 
 class HeaderHomeArea extends React.Component {
@@ -7,7 +6,6 @@ class HeaderHomeArea extends React.Component {
         return (
             <div>
                 <header className="home-area overlay">
-                    < SlideHome />
                     <div className="container">
                         <div className="row">
                             <div className="col-xs-12">

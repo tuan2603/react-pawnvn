@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4da06e7-c020-40c3-b57b-dfb566f60854" name="Default" comment="dd" />
+    <list default="true" id="c4da06e7-c020-40c3-b57b-dfb566f60854" name="Default" comment="dd">
+      <change afterPath="$PROJECT_DIR$/public/images/v8TniL3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/home/Hotline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/home/Hotline.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.6e645189.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.6e645189.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.14814a69.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.14814a69.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Architecture.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Architecture.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Architecture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Architecture.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/appy/Testimonial.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/appy/Testimonial.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/SlideHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/SlideHome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/SlideHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/SlideHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,28 +38,30 @@
     <session id="-1793414696">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.41" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="37" />
+          <entry key="css" value="53" />
           <entry key="gif" value="1" />
           <entry key="html" value="7" />
           <entry key="jpeg" value="1" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="36" />
+          <entry key="js" value="38" />
           <entry key="json" value="3" />
-          <entry key="jsx" value="77" />
+          <entry key="jsx" value="88" />
           <entry key="map" value="1" />
           <entry key="png" value="21" />
           <entry key="url" value="1" />
@@ -44,32 +69,34 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="37" />
+          <entry key="CSS" value="47" />
           <entry key="HTML" value="7" />
           <entry key="Image" value="25" />
           <entry key="JSON" value="3" />
-          <entry key="JSX Harmony" value="77" />
-          <entry key="JavaScript" value="36" />
+          <entry key="JSX Harmony" value="88" />
+          <entry key="JavaScript" value="38" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SourceMap" value="1" />
+          <entry key="Vue.js" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="492" />
+          <entry key="css" value="712" />
           <entry key="html" value="35" />
-          <entry key="js" value="341" />
+          <entry key="js" value="449" />
           <entry key="json" value="2" />
-          <entry key="jsx" value="3602" />
+          <entry key="jsx" value="3935" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="492" />
+          <entry key="CSS" value="681" />
           <entry key="HTML" value="35" />
           <entry key="JSON" value="2" />
-          <entry key="JSX Harmony" value="3602" />
-          <entry key="JavaScript" value="341" />
+          <entry key="JSX Harmony" value="3935" />
+          <entry key="JavaScript" value="449" />
+          <entry key="Vue.js" value="31" />
         </counts>
       </usages-collector>
     </session>
@@ -131,32 +158,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/home/SlideHome.js">
+        <entry file="file://$PROJECT_DIR$/src/components/home/SlideHome.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+            <state relative-caret-position="56">
+              <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -164,53 +170,74 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="442">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.jsx">
+        <entry file="file://$PROJECT_DIR$/public/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="40" column="82" selection-start-line="40" selection-start-column="82" selection-end-line="40" selection-end-column="82" />
+            <state relative-caret-position="7650">
+              <caret line="450" column="11" selection-start-line="450" selection-start-column="11" selection-end-line="450" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/Header.jsx">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+            <state relative-caret-position="680">
+              <caret line="40" selection-start-line="40" selection-end-line="86" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/HeaderHome.css">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="323">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/home/index.js">
+        <entry file="file://$PROJECT_DIR$/src/components/navbar2/MainMenuArea.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="29" />
+            <state relative-caret-position="459">
+              <caret line="27" column="2" selection-start-line="22" selection-start-column="3" selection-end-line="27" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial.jsx">
+        <entry file="file://$PROJECT_DIR$/src/components/home/SlideHome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-221">
-              <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="31" />
+            <state relative-caret-position="697">
+              <caret line="41" column="51" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/home/Hotline.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -218,18 +245,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial2.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="57" column="73" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="73" />
+            <state relative-caret-position="782">
+              <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1751">
+              <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getDefaultProps</find>
-      <find>owl-prev</find>
       <find>Gallery-Area</find>
       <find>rgb(72, 44, 191)</find>
       <find>rgba(72, 44, 191, 1)</find>
@@ -258,6 +302,8 @@
       <find>key</find>
       <find>mobi</find>
       <find>mobile</find>
+      <find>dot</find>
+      <find>owl-dots</find>
     </findStrings>
     <replaceStrings>
       <replace>h1</replace>
@@ -299,12 +345,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/logins/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/App.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/Testimonial.css" />
-        <option value="$PROJECT_DIR$/src/components/notification/Notification.jsx" />
-        <option value="$PROJECT_DIR$/src/components/layout/MainLayout.jsx" />
-        <option value="$PROJECT_DIR$/src/components/layout/MainLayoutLogined.jsx" />
         <option value="$PROJECT_DIR$/src/components/navbar2/MainMenuArea.css" />
         <option value="$PROJECT_DIR$/src/components/appy/DownloadArea.jsx" />
         <option value="$PROJECT_DIR$/src/index.js" />
@@ -334,22 +374,28 @@
         <option value="$PROJECT_DIR$/src/components/appy/CategoryArea.css" />
         <option value="$PROJECT_DIR$/src/components/appy/CategoryArea.jsx" />
         <option value="$PROJECT_DIR$/src/components/appy/index.js" />
-        <option value="$PROJECT_DIR$/src/components/home/Home.jsx" />
         <option value="$PROJECT_DIR$/src/components/appy/Disbursement.jsx" />
         <option value="$PROJECT_DIR$/src/components/appy/Disbursement.css" />
-        <option value="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" />
         <option value="$PROJECT_DIR$/src/components/footer/Footer.jsx" />
-        <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/src/components/appy/DownloadAreaOwner.jsx" />
         <option value="$PROJECT_DIR$/node_modules/font-awesome/css/font-awesome.min.css" />
         <option value="$PROJECT_DIR$/src/components/logins/ModalLogin.css" />
         <option value="$PROJECT_DIR$/src/components/logins/ModalLoginPage.js" />
         <option value="$PROJECT_DIR$/src/components/verify/Verify.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/HeaderHome.css" />
+        <option value="$PROJECT_DIR$/src/components/appy/Architecture.css" />
+        <option value="$PROJECT_DIR$/src/components/appy/Architecture.jsx" />
+        <option value="$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx" />
         <option value="$PROJECT_DIR$/src/components/home/index.js" />
         <option value="$PROJECT_DIR$/src/components/appy/Header.jsx" />
-        <option value="$PROJECT_DIR$/src/components/appy/HeaderHome.css" />
-        <option value="$PROJECT_DIR$/src/components/appy/Architecture.jsx" />
+        <option value="$PROJECT_DIR$/src/components/home/Hotline.css" />
+        <option value="$PROJECT_DIR$/src/components/appy/Testimonial2.jsx" />
+        <option value="$PROJECT_DIR$/src/components/appy/Testimonial.css" />
+        <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/src/components/home/SlideHome.js" />
+        <option value="$PROJECT_DIR$/src/components/home/Home.jsx" />
+        <option value="$PROJECT_DIR$/src/components/home/Hotline.jsx" />
+        <option value="$PROJECT_DIR$/src/components/home/SlideHome.css" />
       </list>
     </option>
   </component>
@@ -404,20 +450,6 @@
               <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="appy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-pawnvn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="footer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-pawnvn" type="b2602c69:ProjectViewProjectNode" />
@@ -483,6 +515,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-tutrial" />
+    <property name="list.type.of.created.stylesheet" value="Vue.js" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -493,19 +526,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\nodeproject\react-pawnvn\public\images" />
+      <recent name="D:\nodeproject\react-pawnvn\src\components\home" />
+      <recent name="D:\GITHUP\react-pawnvn\src\components\appy" />
+      <recent name="D:\GITHUP\react-pawnvn\public\images" />
+      <recent name="D:\GITHUP\react-pawnvn\src\assets\img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GITHUP\react-pawnvn\src\components\logins" />
       <recent name="D:\nodeproject\react-pawnvn\public\css" />
       <recent name="D:\nodeproject\react-pawnvn\public\js" />
       <recent name="D:\GITHUP\react-pawnvn\public" />
       <recent name="D:\nodeproject\react-pawnvn\src\components\signup" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GITHUP\react-pawnvn\src\components\appy" />
-      <recent name="D:\GITHUP\react-pawnvn\public\images" />
-      <recent name="D:\GITHUP\react-pawnvn\src\assets\img" />
-      <recent name="D:\GITHUP\react-pawnvn\src\appy\images" />
-      <recent name="D:\GITHUP\react-pawnvn\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -574,18 +607,22 @@
       <workItem from="1534814866397" duration="4698000" />
       <workItem from="1534901121202" duration="4531000" />
       <workItem from="1534909466047" duration="3717000" />
+      <workItem from="1534987349508" duration="17002000" />
+      <workItem from="1535069513683" duration="3863000" />
+      <workItem from="1535102513655" duration="1928000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="459638000" />
+    <option name="totallyTimeSpent" value="482431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49643704" visible="true" weight="0.16008462" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49118942" visible="true" weight="0.14527504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.5035629" side_tool="true" weight="0.27574047" />
+      <window_info id="npm" order="2" sideWeight="0.5088106" side_tool="true" visible="true" weight="0.14527504" />
       <window_info id="Favorites" order="3" sideWeight="0.5008518" side_tool="true" weight="0.27433005" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.4333782" />
@@ -596,7 +633,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.5679677" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.38896367" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -667,48 +704,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/appy/Header.jsx</url>
-          <line>23</line>
+          <line>21</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/appy/Architecture.jsx</url>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/signup/SignUp.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/contact/Avatar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="50" lean-forward="true" selection-start-line="5" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/contact/Profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="234" column="19" selection-start-line="234" selection-start-column="16" selection-end-line="244" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/contact/InfoUser.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/contact/Contact.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/privacy/About.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -791,13 +797,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/contact/Categories.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/appy/CategoryArea.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -807,13 +806,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/images/team-1.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/appy/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -829,23 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="1064" column="11" lean-forward="true" selection-start-line="1063" selection-start-column="1" selection-end-line="1070" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/linearicons.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3553">
@@ -857,13 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="55" column="80" selection-start-line="54" selection-start-column="92" selection-end-line="55" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="58" column="57" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -916,79 +884,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/appy/DownloadArea.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/verify/Verify.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/contact/Avatar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/contact/BusinessRegistration.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3400">
           <caret line="219" column="76" selection-start-line="219" selection-start-column="76" selection-end-line="219" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial2.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="57" column="73" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -999,38 +904,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/Header.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/appy/HeaderHome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Disbursement.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="52" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/verify/Verify.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="54" column="10" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="40" column="82" selection-start-line="40" selection-start-column="82" selection-end-line="40" selection-end-column="82" />
+        <state relative-caret-position="51">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/HeaderHome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" selection-start-line="4" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Architecture.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navbar2/MainMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="16" selection-start-line="15" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/HomePage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Header.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/Hotline.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/SlideHome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7650">
+          <caret line="450" column="11" selection-start-line="450" selection-start-column="11" selection-end-line="450" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" selection-start-line="40" selection-end-line="86" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Gallery.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navbar2/MainMenuArea.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="2" selection-start-line="22" selection-start-column="3" selection-end-line="27" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home/SlideHome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        <state relative-caret-position="697">
+          <caret line="41" column="51" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/Hotline.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial2.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/appy/Testimonial.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
         </state>
       </provider>
     </entry>

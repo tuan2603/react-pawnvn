@@ -1,0 +1,8 @@
+.architecture-area .page-title  .title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8790af;
+    font-weight: 600;
+}

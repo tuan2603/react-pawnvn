@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
 import mainLogo from '../../assets/img/logo.png';
 import tinyLogo from '../../assets/img/tinylogo.png';
 import {connect} from "react-redux";
@@ -15,11 +15,15 @@ import $ from 'jquery';
 class MainMenu extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            redirectHome: false
+        }
         autoBind(this);
     }
 
     handleLogout(){
         this.props.actions.alogout();
+        this.setState({redirectHome: true})
     }
 
     componentDidMount(){
@@ -30,6 +34,10 @@ class MainMenu extends Component {
     }
 
     render() {
+        let {redirectHome} = this.state;
+        if (redirectHome) {
+            return (<Redirect to={"/"} />);
+        }
         let {username} = this.props;
         let $htmldk = (<li ><NavLink to="/signup" exact>Đăng Ký</NavLink></li>);
         let $htmldnxs =  (<li ><a className="dangnhapxs" data-target="#modallogin" data-toggle="modal">Đăng nhập</a></li>);

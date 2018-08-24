@@ -8,9 +8,10 @@ import {Gallery,
     DownloadArea,
     DownloadAreaOwner,
     Architecture,
-    HeaderHomeArea,
     Disbursement,
     CategoryArea} from '../appy';
+import SlideHome from './SlideHome';
+import Hotline from './Hotline';
 
 
 
@@ -22,7 +23,7 @@ class HomePageMain extends React.Component {
     render() {
         return (
             <div>
-                <HeaderHomeArea />
+                <SlideHome />
                 <Architecture />
                 <Disbursement />
                 <CategoryArea />
@@ -30,6 +31,7 @@ class HomePageMain extends React.Component {
                 <DownloadArea />
                 <Gallery />
                 <DownloadAreaOwner />
+                <Hotline />
             </div>
         );
     }

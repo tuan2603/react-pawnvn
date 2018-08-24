@@ -9,7 +9,14 @@ class Architecture extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-xs-12">
-                                <div className="team-slide">
+                                <div className="page-title text-center">
+                                    <h2 className="title">Mô Hình Hoạt Động Sàn ORi</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            {/*<div className="col-xs-12">*/}
+                                {/*<div className="team-slide">*/}
                                     <div className="col-xs-12 col-sm-6 col-md-3">
                                         <article className="post-single">
                                             <figure className="post-media">
@@ -54,8 +61,8 @@ class Architecture extends React.Component {
                                             </div>
                                         </article>
                                     </div>
-                                </div>
-                            </div>
+                                {/*</div>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </header>

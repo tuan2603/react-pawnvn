@@ -6,7 +6,7 @@
     padding-bottom: 120px;
 }
 
-.team-box {
+.testimonial-area .team-box {
     position: relative;
     padding: 55px 30px 30px 30px;
     -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.1);
@@ -21,12 +21,12 @@
     margin-right: 15px;
 }
 
-.team-box:hover {
+.testimonial-area .team-box:hover {
     -webkit-box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
 }
 
-.team-box .team-image {
+.testimonial-area .team-box .team-image {
     position: absolute;
     top: -40px;
     width: 80px;
@@ -40,19 +40,19 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1)
 }
 
-.team-box h4 {
+.testimonial-area .team-box h4 {
     color: #5e88fc;
     font-weight: 600;
     font-size: 20px;
 }
 
-.team-box h6.position {
+.testimonial-area .team-box h6.position {
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
 }
 
-.team-slide  .owl-nav > div {
+.testimonial-area .team-slide  .owl-nav > div {
     position: absolute;
     top: 50%;
     left: auto;
@@ -62,7 +62,7 @@
     transform: translateY(-50%)
 }
 
-.team-slide  .owl-nav > div.owl-next {
+.testimonial-area .team-slide  .owl-nav > div.owl-next {
     right: auto;
     left: 100%;
 }
@@ -70,7 +70,7 @@
 
 @media only screen and (max-width: 767px) {
     /* For tablets: */
-    .team-slide  .owl-nav > div {
+    .testimonial-area .team-slide  .owl-nav > div {
         position: absolute;
         top: 110%;
         left: auto;
@@ -80,7 +80,7 @@
         transform: translateY(-50%)
     }
 
-    .team-slide  .owl-nav > div.owl-next {
+    .testimonial-area .team-slide  .owl-nav > div.owl-next {
         right: auto;
         left: 25%;
     }
@@ -88,7 +88,7 @@
 
 @media only screen and (max-width: 320px) {
     /* For tablets: */
-    .team-slide  .owl-nav > div {
+    .testimonial-area .team-slide  .owl-nav > div {
         position: absolute;
         top: 110%;
         left: auto;
@@ -98,7 +98,7 @@
         transform: translateY(-50%)
     }
 
-    .team-slide  .owl-nav > div.owl-next {
+    .testimonial-area .team-slide  .owl-nav > div.owl-next {
         display: none;
     }
 }
