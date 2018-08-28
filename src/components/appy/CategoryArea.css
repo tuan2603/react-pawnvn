@@ -36,3 +36,8 @@
 .category-main .page-title h3 {
    color: #fff;
 }
+
+.category-main h3{
+    font-size: 36px;
+    font-weight: 600;
+}

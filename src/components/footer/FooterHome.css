@@ -6,3 +6,9 @@
     background-color: #042c66; /* For browsers that do not support gradients */
     background-image: linear-gradient(to right, #042c66, #272c33); /* Standard */
 }
+
+.btn-floating.btn-sm i, .btn-floating.wishlist i, .btn-floating.btn-small i {
+    font-size: 0.96154rem;
+    line-height: 36.15385px;
+    margin-right: 12px;
+}

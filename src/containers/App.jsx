@@ -11,7 +11,6 @@ import '../assets/css/slick-theme.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 import './App.css';
 import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";
 import {setupTimeOut} from '../utils';

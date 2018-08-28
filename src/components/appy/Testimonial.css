@@ -3,7 +3,7 @@
 
 .testimonial-area {
     padding-top: 60px;
-    padding-bottom: 120px;
+    padding-bottom: 16px;
 }
 
 .testimonial-area .team-box {
@@ -101,4 +101,9 @@
     .testimonial-area .team-slide  .owl-nav > div.owl-next {
         display: none;
     }
+}
+
+.testimonial-area h3{
+    font-size: 36px;
+    font-weight: 600;
 }

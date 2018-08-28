@@ -6,6 +6,7 @@
     top: 0;
     width: 100%;
     z-index: 9999;
+    text-align: center;
     padding: 20px 140px  15px 0;
     background: transparent;
     -webkit-transition: 0.3s;
@@ -33,6 +34,8 @@
 }
 
 
+
+
 .mainmenu-area.affix {
     position: fixed;
     top: 0;
@@ -50,7 +53,7 @@
 
 .mainmenu-area .right-button a {
     color: #ffffff;
-    padding: 10px 40px;
+    padding: 10px 25px;
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.3);
     display: inline-block;
@@ -105,8 +108,9 @@
     body {
         font-size: 14px;
     }
-
-
+    .navbar-toggle {
+        margin-right: 32px;
+    }
 }
 
 @media (max-width: 320px){
@@ -122,8 +126,14 @@
 
 @media only screen and (max-width: 767px){
     .mainmenu-area {
-        padding: 20px 16px  15px 0;
+        padding: 20px 0px  0px 0;
+        background: rgb(4, 46, 117);
+        background: -webkit-linear-gradient(45deg, rgb(4, 46, 117) 0%, rgb(11, 39, 64) 100%);
+        background: -o-linear-gradient(45deg, rgba(4, 46, 117, 1) 0%, rgba(11, 39, 64, 1) 100%);
+        background: linear-gradient(45deg, rgba(4, 46, 117 1) 0%, rgba(11, 39, 64, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#042E75', endColorstr='#0B2740', GradientType=1);
     }
+
 
     .mainmenu-area #primary_menu {
         overflow-y: hidden;

@@ -1,0 +1,13 @@
+.download-area .section-padding {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.download-area .mobile-image {
+    margin-top: -64px;
+    margin-bottom: -64px;
+}
+
+.download-area h3{
+    font-size: 36px;
+    font-weight: 600;
+}

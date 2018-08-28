@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink, Redirect} from 'react-router-dom';
 import mainLogo from '../../assets/img/logo.png';
-import tinyLogo from '../../assets/img/tinylogo.png';
+import tinylogo from '../../assets/img/tinylogo.png';
 import {connect} from "react-redux";
 import "./MainMenuArea.css";
 import autoBind from "react-autobind";
@@ -59,8 +59,8 @@ class MainMenu extends Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <NavLink className="navbar-brand mainlogo" to="/"><img src={mainLogo} height={32} alt="Logo"/></NavLink>
-                            <NavLink className="navbar-brand tinylogo" to="/"><img src={tinyLogo} height={32} alt="Logo"/></NavLink>
+                            <NavLink className="navbar-brand mainlogo" to="/"><img src={mainLogo} height={40} alt="Logo"/></NavLink>
+                            <NavLink className="navbar-brand tinylogo" to="/"><img src={tinylogo} height={56} alt="Logo"/></NavLink>
                         </div>
                         <div className="collapse navbar-collapse" id="primary_menu">
                             <ul className="nav navbar-nav mainmenu">

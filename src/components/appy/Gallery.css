@@ -85,3 +85,8 @@
     -ms-transform: scale(2);
     transform: scale(2);
 }
+
+.gallery-slide h3{
+    font-size: 36px;
+    font-weight: 600;
+}
