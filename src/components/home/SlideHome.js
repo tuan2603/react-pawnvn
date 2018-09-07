@@ -2,23 +2,24 @@ import React, {Component} from 'react';
 import OwlCarousel from 'react-owl-carousel2';
 
 import './SlideHome.css';
+import * as config from "../../utils";
 
 class CarouselPage extends Component {
     render() {
 
         let rows = [];
-        for (var i = 1; i < 7; i++) {
+        for (let i = 0; i < 4; i++) {
             rows.push(
                 <div className="team-box" key={i}>
                     <div className="view">
                         <img className="d-block w-100"
-                             src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+                             src={`${config.apiUrl}/uploads/advertises/33f12be2ca532b0d7242.jpg`}
                              alt="First slide"/>
                     </div>
-                    <div className="carousel-caption-custom">
-                        <h1>Light mask</h1>
-                        <p>First text</p>
-                    </div>
+                    {/*<div className="carousel-caption-custom">*/}
+                        {/*<h1>Light mask</h1>*/}
+                        {/*<p>First text</p>*/}
+                    {/*</div>*/}
                 </div>
             );
         }
@@ -41,50 +42,7 @@ class CarouselPage extends Component {
                         <div className="col-xs-12">
                             <div className="team-slide">
                                 <OwlCarousel ref="car" options={options2}>
-                                    <div className="team-box" >
-                                        <div className="view">
-                                            <img className="d-block w-100"
-                                                 src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-                                                 alt="First slide"/>
-                                        </div>
-                                        <div className="carousel-caption-custom">
-                                            <h1>Light mask</h1>
-                                            <p>First text</p>
-                                        </div>
-                                    </div>
-                                    <div className="team-box" >
-                                        <div className="view">
-                                            <img className="d-block w-100"
-                                                 src="https://mdbootstrap.com/img/Photos/Slides/img%20(99).jpg"
-                                                 alt="First slide"/>
-                                        </div>
-                                        <div className="carousel-caption-custom">
-                                            <h1>Light mask</h1>
-                                            <p>First text</p>
-                                        </div>
-                                    </div>
-                                    <div className="team-box" >
-                                        <div className="view">
-                                            <img className="d-block w-100"
-                                                 src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg"
-                                                 alt="First slide"/>
-                                        </div>
-                                        <div className="carousel-caption-custom">
-                                            <h1>Light mask</h1>
-                                            <p>First text</p>
-                                        </div>
-                                    </div>
-                                    <div className="team-box" >
-                                        <div className="view">
-                                            <img className="d-block w-100"
-                                                 src="https://mdbootstrap.com/img/Photos/Slides/img%20%28143%29.jpg"
-                                                 alt="First slide"/>
-                                        </div>
-                                        <div className="carousel-caption-custom">
-                                            <h1>Light mask</h1>
-                                            <p>First text</p>
-                                        </div>
-                                    </div>
+                                    {rows}
                                 </OwlCarousel>
                             </div>
                         </div>
