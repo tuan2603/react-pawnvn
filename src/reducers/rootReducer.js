@@ -4,12 +4,14 @@ import notifyReducers from './notifyReducers';
 import termReducer from './termReducer';
 import aboutReducer from './aboutReducer';
 import cats from './catReducers';
+import advers from './advertiseReducers';
 const rootReducer = combineReducers({
     userReducers,
     notifyReducers,
     termReducer,
     aboutReducer,
     cats,
+    advers
 });
 
 export default rootReducer;

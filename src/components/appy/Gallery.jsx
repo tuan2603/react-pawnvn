@@ -16,6 +16,7 @@ class Testimonial extends React.Component {
                 rewind: true,
                 margin: 0,
                 loop: true,
+                autoplayHoverPause: true,
                 nav: false,
                 navText: ['<i class="lnr lnr-chevron-left"></i>', '<i class="lnr lnr-chevron-right"></i>'],
                 autoplay: true,
