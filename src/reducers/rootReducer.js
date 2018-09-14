@@ -5,13 +5,16 @@ import termReducer from './termReducer';
 import aboutReducer from './aboutReducer';
 import cats from './catReducers';
 import advers from './advertiseReducers';
+import questions from './questionReducers';
+
 const rootReducer = combineReducers({
     userReducers,
     notifyReducers,
     termReducer,
     aboutReducer,
     cats,
-    advers
+    advers,
+    questions,
 });
 
 export default rootReducer;

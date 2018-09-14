@@ -67,7 +67,7 @@ class MainMenu extends Component {
                                 <li><NavLink to="/" exact>Trang Chủ</NavLink></li>
                                 <li><Link to="gallery_page">Gallery</Link></li>
                                 <li><NavLink to="/gioi-thieu.html" exact>Giới thiệu</NavLink></li>
-                                <li><NavLink to="/#">Hỏi đáp</NavLink></li>
+                                <li><NavLink to="/cau-hoi-thuong-gap.html">Hỏi đáp</NavLink></li>
                                 {$htmldk}
                                 {$htmldnxs}
                             </ul>

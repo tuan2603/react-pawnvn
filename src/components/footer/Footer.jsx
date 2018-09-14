@@ -20,7 +20,7 @@ class Footers extends React.Component {
                             <Row className="text-center text-md-left mt-3 pb-3">
                                 <Col md="3" lg="2" xl="2" className="mx-auto mt-3">
                                     <p><NavLink to="/dieu-khoan-su-dung.html">Điều khoản</NavLink></p>
-                                    <p><NavLink to="/hoi-dap.html">Hỏi đáp</NavLink></p>
+                                    <p><NavLink to="/cau-hoi-thuong-gap.html">Hỏi đáp</NavLink></p>
                                     <p><NavLink to="/signup" exact>Đăng ký</NavLink></p>
                                     <p><NavLink to="/gioi-thieu.html">Giới thiệu</NavLink></p>
                                 </Col>

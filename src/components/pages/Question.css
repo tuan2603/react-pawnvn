@@ -1,0 +1,65 @@
+.questions-main .page-title h3 {
+    font-weight: bold;
+}
+
+.questions-main  ol {
+    list-style-type: none;
+    padding-left: 12px;
+}
+
+.questions-main  ul {
+    padding-left: 84px;
+}
+
+.questions-main ol li {
+    position: relative;
+    font: bold italic 18px/1.5 Helvetica, Verdana, sans-serif;
+    margin-bottom:12px;
+}
+
+.questions-main ol li p {
+    font: bold italic 18px/1.5 Helvetica, Verdana, sans-serif;
+    padding-left: 84px;
+    position: relative;
+}
+
+.questions-main ol span {
+    position: absolute;
+    padding-left: 58px;
+}
+
+.questions-main  ul li {
+    position: relative;
+    font: italic 16px/1.5 Helvetica, Verdana, sans-serif;
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+
+.questions-main ul li p {
+    font: italic 16px/1.5 Helvetica, Verdana, sans-serif;
+    padding-left: 16px;
+    position: relative;
+}
+
+.questions-main .list1 {
+    display: flex;
+    margin: 1em 0;
+    padding-left: 24px;
+    align-items: center;
+}
+
+.questions-main .list1 .icon-four-point {
+    background: url("../../assets/img/css/four_points_square.png") no-repeat;
+    background-size: 24px;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.questions-main .list1 .list-item {
+    height: 32px;
+    font-weight: bold;
+    font-size: 24px;
+    align-items: center;
+}

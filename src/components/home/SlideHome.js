@@ -7,6 +7,20 @@ import * as adverActions from "../../actions/adverActions";
 import {connect} from "react-redux";
 import './SlideHome.css';
 import * as config from "../../utils";
+class ItemSlide extends Component {
+    render() {
+      let   {advertise, index} = this.props;
+      return (
+          <div className="team-box" >
+              <div className="view">
+                  <img className="d-block w-100"
+                       src={`${config.apiUrl}/uploads/advertises/${advertise.url_image}`}
+                       alt={`${index}`} />
+              </div>
+          </div>
+      )
+    }
+}
 
 class CarouselPage extends Component {
     constructor(props) {
@@ -40,16 +54,7 @@ class CarouselPage extends Component {
                 autoplayTimeout: 4000,
                 navText: ['<i class="lnr lnr-chevron-right"></i>', '<i class="lnr lnr-chevron-left"></i>'],
             };
-            let row = [];
-            advertises.map((adv, i) => {
-                row.push(<div className="team-box" key={i}>
-                    <div className="view">
-                        <img className="d-block w-100"
-                             src={`${config.apiUrl}/uploads/advertises/${adv.url_image}`}
-                             alt={`${i}`} />
-                    </div>
-                </div>)
-            })
+            let row = advertises.map((adv, i) => <ItemSlide advertise={adv} index = {i} key={adv._id}/>);
             return (
                 <div>
                     <header className="slide-area">

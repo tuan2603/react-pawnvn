@@ -10,12 +10,6 @@ import '../assets/css/slick.min.css';
 import '../assets/css/slick-theme.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-toastify/dist/ReactToastify.css';
-// import "../appy/css/linearicons.css";
-// import "../appy/css/magnific-popup.css";
-// import "../appy/css/owl.carousel.min.css";
-// import "../appy/css/responsive.css";
-// import "../appy/css/normalize.css";
-// import "../appy/style.css";
 
 import './App.css';
 import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";
@@ -28,6 +22,7 @@ import {SignUp} from '../components/signup';
 import {Contact, Avatar, IndentilyCard, InfoUser, Map, BusinessRegistration, Categories} from '../components/contact';
 import {Verify} from '../components/verify';
 import {Privacy,About} from '../components/privacy';
+import {Questions} from '../components/pages';
 
 class App extends Component {
     componentWillMount() {
@@ -125,6 +120,12 @@ class App extends Component {
                             path='/gioi-thieu.html'
                             layout={MainLayout}
                             component={About} />
+
+                        <LayoutRoute
+                            exact
+                            path='/cau-hoi-thuong-gap.html'
+                            layout={MainLayout}
+                            component={Questions} />
 
                         <Redirect to="/"/>
                     </Switch>
