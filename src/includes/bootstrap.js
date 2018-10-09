@@ -12,7 +12,6 @@ import '../assets/css/themify-icons.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import '../appy/css/bootstrap.min.css';
-
 import '../appy/css/responsive.css';
 import '../appy/style.css';
 

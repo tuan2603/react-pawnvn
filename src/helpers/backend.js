@@ -142,3 +142,13 @@ export function getAllCats() {
         .then((responseJson) => responseJson);
 }
 
+export function get_total_amount_disbursed() {
+    const requestOptions = {
+        method: 'GET'
+    };
+
+    return fetch(`${config.apiUrl}/api/contract/total_amount_disbursed`, requestOptions)
+        .then((response) => response.json())
+        .then((responseJson) => responseJson);
+}
+

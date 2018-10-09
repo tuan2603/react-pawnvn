@@ -9,6 +9,7 @@
     "moment": "^2.22.2",
     "owl.carousel": "^2.3.4",
     "password-validator": "^4.1.1",
+    "peer": "^0.2.10",
     "popper.js": "^1.14.4",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter, Switch, Redirect} from 'react-router-dom';
-import '../includes/bootstrap';
 import './App.css';
 
 import {LayoutRoute, MainLayout, MainLayoutLogined} from "../components/layout";

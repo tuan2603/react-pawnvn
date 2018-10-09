@@ -529,10 +529,10 @@ input:-webkit-autofill:focus {
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
 }
 
-.team-slide .owl-controls .owl-nav > div:hover,
-.service-box:hover .box-icon {
-    color: #ffffff;
-}
+    .team-slide .owl-controls .owl-nav > div:hover,
+    .service-box:hover .box-icon {
+        color: #ffffff;
+    }
 
 .team-slide .owl-controls .owl-nav > div:before,
 .service-box .box-icon:before {
@@ -550,10 +550,10 @@ input:-webkit-autofill:focus {
     opacity: 1;
 }
 
-.team-slide .owl-controls .owl-nav > div:hover:before,
-.service-box:hover .box-icon:before {
-    opacity: 0;
-}
+    .team-slide .owl-controls .owl-nav > div:hover:before,
+    .service-box:hover .box-icon:before {
+        opacity: 0;
+    }
 
 .service-box h4 {
     margin-bottom: 10px;

@@ -1,5 +1,7 @@
 .slide-area {
+    position: relative;
     width: 100%;
+    min-height: 16vh;
     padding-top: 0vh;
     color: #ffffff;
     margin-bottom: 20px;
@@ -12,88 +14,139 @@
 
 
 
-body {
-    margin: 0;
-    padding: 0;
-}
-h1 {
-    margin: 0;
-    padding: 0;
-}
-.banner-item {
-    position: relative;
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-}
-.banner-item:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,.5);
-    top: 0;
-    left: 0;
-}
-.banner-data {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: auto;
+.slider-image .item {
     text-align: center;
-}
-.banner-data h1 {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 70px;
-    font-family: 'Oswald', sans-serif;
-}
-.banner-data p {
-    color: #fff;
-    background-color: #3498db;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    padding: 0px 10px;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    background: rgb(4, 46, 117);
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }
 
-.owl-carousel .owl-controls .owl-nav .owl-prev,
-.owl-carousel .owl-controls .owl-nav .owl-next {
+.slider-image .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.slider-image  .owl-dots{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 95%;
+    left: auto;
+    -webkit-transform: translateY(-95%);
+    -ms-transform: translateY(-95%);
+    transform: translateY(-95%)
+}
+
+.slider-image  .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 3px;
+}
+
+.slider-image  .owl-dots .owl-dot span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.9;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.slider-image .owl-dots .owl-dot.active span {
+    opacity: 1;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}
+
+.slider-image  .owl-nav > button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 72px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgb(23, 81, 152);
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(13, 78, 132, 1) 0%, rgba(12, 113, 196, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(45deg, rgba(13, 78, 132, 1) 0%, rgba(12, 113, 196, 1) 100%);
+    background: linear-gradient(45deg, rgba(13, 78, 132, 1) 0%, rgba(12, 113, 196, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    overflow: hidden;
+    z-index: 1;
+    color: #5e88fc;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.slider-image .owl-nav > button:hover {
+    color: #ffffff;
+}
+
+.slider-image .owl-nav > button:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.slider-image .owl-nav > button:hover:before{
+    opacity: 0.9;
+}
+
+.slider-image .owl-nav > button {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 15px;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
+    left: auto;
+    right: 5vh;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
 }
-.owl-carousel .owl-controls .owl-nav .owl-prev{
-    left: 0;
+
+.slider-image .owl-nav > button.owl-next {
+    right: auto;
+    left: 5vh;
 }
-.owl-carousel .owl-controls .owl-nav .owl-next {
-    right: 0;
-}
-.owl-carousel .owl-controls .owl-dots {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.owl-carousel .owl-controls .owl-dot {
-    display: inline-block;
-    margin: 0px 2.5px;
-    height: 15px;
-    width: 15px;
-    background: #fff;
-}
-.owl-carousel .owl-controls .owl-dot.active {
-    background-color: #3498db;
-    height: 20px;
-    width: 20px;
-    transition: .4s;
-}
+
+
+
+
 
