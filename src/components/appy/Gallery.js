@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
 import autoBind from "react-autobind";
-
 import "./Gallery.css";
 import { Element } from 'react-scroll';
+const $ = window.jQuery;
 
 class Testimonial extends React.Component {
 
@@ -14,6 +13,36 @@ class Testimonial extends React.Component {
 
     }
 
+    componentDidMount(){
+        setTimeout(()=>{
+            $('.gallery-slide').owlCarousel({
+                loop: true,
+                margin: 0,
+                responsiveClass: true,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                smartSpeed: 1000,
+                navText: ['<i class="lnr lnr-chevron-left"></i>', '<i class="lnr lnr-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1280: {
+                        items: 3
+                    },
+                    1500: {
+                        items: 4
+                    }
+                }
+            });
+        },3000)
+    }
+
+
     render() {
 
         return (
@@ -22,8 +51,7 @@ class Testimonial extends React.Component {
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-xs-12 col-sm-6 gallery-slider">
-                                <div className="gallery-slide">
-
+                                <div className="gallery-slide owl-carousel owl-theme">
                                         <div className="item"><img src="/images/ios_08020.png" alt=""/></div>
                                         <div className="item"><img src="/images/ios_08021.png" alt=""/></div>
                                         <div className="item"><img src="/images/ios_08022.png" alt=""/></div>

@@ -43,12 +43,12 @@ class Disbursement extends React.Component {
                         <div className="row">
                             <div className="col-xs-12">
                                 <div className="text-center">
-                                    <h3 className="title white-color">Tổng đơn giải ngân: < {num_contract}</h3>
+                                    <h3 className="title white-color">Tổng đơn giải ngân: <span style={{color:"red"}}> {num_contract} </span> </h3>
                                 </div>
                             </div>
                             <div className="col-xs-12">
                                 <div className="text-center">
-                                    <h3 className="title white-color">Tổng số tiền đã được giải ngân: {billion} tỉ {million} đồng</h3>
+                                    <h3 className="title white-color">Tổng số tiền đã được giải ngân:  <span style={{color:"red"}}> {billion} </span> tỉ  <span style={{color:"red"}}> {million} </span> triệu đồng</h3>
                                 </div>
                             </div>
                         </div>

@@ -8,13 +8,15 @@ import {loadTerm} from './actions/termActions';
 import {loadAbout} from './actions/aboutActions';
 import {loadUser} from './actions/userActions';
 import {loadAdvertise} from './actions/adverActions';
+import {loadTestimonial} from './actions/testimonialActions';
 
 store.dispatch(loadTerm());
 store.dispatch(loadAbout());
 store.dispatch(loadUser());
 store.dispatch(loadUser());
 store.dispatch(loadAdvertise());
-// store.subscribe(()=>console.log(store.getState()));
+store.dispatch(loadTestimonial());
+store.subscribe(()=>console.log(store.getState()));
 render((
         <Provider store={store}>
             <App/>

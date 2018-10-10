@@ -69,7 +69,7 @@ class CategoryArea extends React.Component {
                         <div className="col-xs-12">
                             <div className="page-title text-center">
                                 <h5 className="title">Pawnvietnam</h5>
-                                <h3 className="dark-color">Chấp Nhận Các Gói Tài SảnVay</h3>
+                                <h3 className="dark-color">Chấp Nhận Các Gói Tài Sản Vay</h3>
                                 <div className="space-60"> </div>
                             </div>
                         </div>

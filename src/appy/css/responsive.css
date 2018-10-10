@@ -62,10 +62,10 @@
     .testimonial-area {
         padding: 100px 0;
     }
-    .team-slide .owl-controls .owl-nav {
+    .team-slide .owl-nav {
         text-align: center;
     }
-    .team-slide .owl-controls .owl-nav > div {
+    .team-slide .owl-nav > button {
         position: static;
         display: inline-block;
         margin: 30px 15px 15px 15px;
@@ -110,10 +110,10 @@
     .video-photo {
         margin-bottom: 60px;
     }
-    .team-slide .owl-controls .owl-nav {
+    .team-slide  .owl-nav {
         text-align: center;
     }
-    .team-slide .owl-controls .owl-nav > div {
+    .team-slide .owl-nav > button {
         position: static;
         display: inline-block;
         margin: 30px 15px 15px 15px;
@@ -200,10 +200,10 @@
     .testimonial-area {
         padding: 60px 0;
     }
-    .team-slide .owl-controls .owl-nav {
+    .team-slide .owl-nav {
         text-align: center;
     }
-    .team-slide .owl-controls .owl-nav > div {
+    .team-slide  .owl-nav > button {
         position: static;
         display: inline-block;
         margin: 30px 15px 15px 15px;
@@ -214,7 +214,7 @@
     .gallery-slide .item {
         margin: 85px 25px 90px 30px;
     }
-    .gallery-slide .owl-controls {
+    .gallery-slide .owl-nav, .gallery-slide .owl-dots {
         position: static;
         margin-top: 30px;
         width: 100%;

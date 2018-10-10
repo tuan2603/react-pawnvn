@@ -1,7 +1,7 @@
 .slide-area {
     position: relative;
     width: 100%;
-    min-height: 16vh;
+    min-height: 24vh;
     padding-top: 0vh;
     color: #ffffff;
     margin-bottom: 20px;
@@ -146,7 +146,16 @@
     left: 5vh;
 }
 
+/* Mobile Layout: 320px. */
 
+@media only screen and (max-width: 767px) {
+    .slide-area {
+        position: relative;
+        width: 100%;
+        min-height: 16vh;
+        padding-top: 9vh;
+    }
+}
 
 
 
