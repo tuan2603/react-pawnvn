@@ -25,60 +25,114 @@ class Questions extends Component {
             this.props.actions.loadQuestion();
             setTimeout(() => {
                 this.setState({questions: [...this.props.questions]});
-            }, 3000)
+            }, 500)
         }
 
-        $('.nav-tabs-dropdown').each(function(i, elm) {
+        setTimeout(() => {
+            $('.nav-tabs-dropdown').each(function (i, elm) {
 
-            $(elm).text($(elm).next('ul').find('li.active a').text());
+                $(elm).text($(elm).next('ul').find('li.active a').text());
 
-        });
+            });
 
-        $('.nav-tabs-dropdown').on('click', function(e) {
+            $('.nav-tabs-dropdown').on('click', function (e) {
 
-            e.preventDefault();
+                e.preventDefault();
 
-            $(e.target).toggleClass('open').next('ul').slideToggle();
+                $(e.target).toggleClass('open').next('ul').slideToggle();
 
-        });
+            });
 
-        $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
+            $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function (e) {
 
-            e.preventDefault();
+                e.preventDefault();
 
-            $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
+                $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
 
-        });
+            });
+        }, 3000)
+
+
     }
 
     render() {
+        let {questions} = this.state;
+        let stt =  0, stt2 = 0;
         return (
             <div className="questions-main">
-                <header className="site-header">
-                </header><div className="section-padding">
+                <header className="questions-header">
+                </header>
+                <div className="section-padding">
                     <div className="container">
                         <div className="row">
-                            <div id="aside-nav-left" className="aside-nav col-sm-3">
-                                <a href="#" className="nav-tabs-dropdown btn btn-block btn-primary">Tabs</a>
+                            <div id="aside-nav-left" className="aside-nav col-md-3">
+                                {/*<div className="title-question">Câu hỏi thường gặp</div>*/}
+                                <a href="#" className="nav-tabs-dropdown">Câu hỏi thường gặp</a>
                                 <ul id="nav-tabs-wrapper" className="nav nav-tabs nav-pills nav-stacked well">
-                                    <li className="active nav-item" ><a className="nav-link active" href="#vtab1" data-toggle="tab">Tab 1</a></li>
-                                    <li className="nav-item"><a className="nav-link"  href="#vtab2" data-toggle="tab">Tab 2</a></li>
-                                    <li className="nav-item"><a className="nav-link"  href="#vtab3" data-toggle="tab">Tab 3</a></li>
+                                    {questions.map((question) => {
+                                        if (question.no === 1){
+                                            stt++;
+                                            if (stt === 1){
+                                                return(<li className="active nav-item" key={question._id}><a
+                                                    className="nav-link active" href={"#vtab"+stt}
+                                                    data-toggle="tab">{question.question_group}</a></li>)
+                                            }else{
+                                                return(<li className=" nav-item" key={question._id}><a
+                                                    className="nav-link" href={"#vtab"+stt}
+                                                    data-toggle="tab">{question.question_group}</a></li>)
+                                            }
+                                        }
+                                        })
+                                    }
                                 </ul>
                             </div>
-                            <div className="col-sm-9 question-content" >
+                            <div className="col-md-9 question-content">
                                 <div className="tab-content">
-                                    <div role="tabpanel" className="tab-pane fade in active" id="vtab1">
-                                        <h3>Tab 1</h3>
-                                        <p> Mauris imperdiet dignissim ante, in efficitur mauris elementum sed.</p>
-                                    </div>
-                                    <div role="tabpanel" className="tab-pane fade" id="vtab2">
-                                        <h3>Tab 2</h3>
-                                        <p> Mauris imperdiet dignissim ante, in efficitur mauris elementum sed. </p>
-                                    </div>
-                                    <div role="tabpanel" className="tab-pane fade in" id="vtab3">
-                                        <h3>Tab 3</h3>
-                                        <p>Etiam id pharetra quam. Morbi tristique nunc vel sapien dapibus</p></div>
+                                    {questions.map((question) => {
+                                        if (question.no === 1){
+                                            stt2++;
+                                            if (stt2 === 1){
+                                                return (
+                                                    <div key={question._id} role="tabpanel" className="tab-pane fade in active" id={"vtab"+stt2}>
+                                                        {questions.map((questionc) => {
+                                                            if (question.question_group === questionc.question_group ) {
+                                                                return (
+                                                                    <div>
+                                                                    <p> {questionc.title_question} </p>
+                                                                    {
+                                                                        questionc.content_answer.map(answer => {
+                                                                            return<p key={answer._id}>{answer.answer}</p>
+                                                                        })
+                                                                    }
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        })}
+                                                    </div>
+                                                )
+                                            } else {
+                                                return (
+                                                    <div key={question._id} role="tabpanel" className="tab-pane fade" id={"vtab"+stt2}>
+                                                        {questions.map((questionc) => {
+                                                            if (question.question_group === questionc.question_group ) {
+                                                                return (
+                                                                    <div>
+                                                                        <p> {questionc.title_question} </p>
+                                                                        {
+                                                                            questionc.content_answer.map(answer => {
+                                                                                return<p key={answer._id}>{answer.answer}</p>
+                                                                            })
+                                                                        }
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        })}
+                                                    </div>
+                                                )
+                                            }
+                                        }
+                                    })
+                                    }
                                 </div>
                             </div>
                         </div>
