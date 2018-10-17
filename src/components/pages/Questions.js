@@ -56,17 +56,17 @@ class Questions extends Component {
             <div className="questions-main">
                 <header className="site-header">
                 </header><div className="section-padding">
-                    <div className="container" style={{minHeight:"600px"}}>
+                    <div className="container">
                         <div className="row">
                             <div id="aside-nav-left" className="aside-nav col-sm-3">
                                 <a href="#" className="nav-tabs-dropdown btn btn-block btn-primary">Tabs</a>
                                 <ul id="nav-tabs-wrapper" className="nav nav-tabs nav-pills nav-stacked well">
-                                    <li className="active nav-item" ><a className="nav-link py-xl-4 py-3 px-5 active" href="#vtab1" data-toggle="tab">Tab 1</a></li>
-                                    <li className="nav-item"><a className="nav-link py-xl-4 py-3 px-5"  href="#vtab2" data-toggle="tab">Tab 2</a></li>
-                                    <li className="nav-item"><a className="nav-link py-xl-4 py-3 px-5"  href="#vtab3" data-toggle="tab">Tab 3</a></li>
+                                    <li className="active nav-item" ><a className="nav-link active" href="#vtab1" data-toggle="tab">Tab 1</a></li>
+                                    <li className="nav-item"><a className="nav-link"  href="#vtab2" data-toggle="tab">Tab 2</a></li>
+                                    <li className="nav-item"><a className="nav-link"  href="#vtab3" data-toggle="tab">Tab 3</a></li>
                                 </ul>
                             </div>
-                            <div className="col-sm-9">
+                            <div className="col-sm-9 question-content" >
                                 <div className="tab-content">
                                     <div role="tabpanel" className="tab-pane fade in active" id="vtab1">
                                         <h3>Tab 1</h3>
