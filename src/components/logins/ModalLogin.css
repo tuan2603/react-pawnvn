@@ -1,24 +1,7 @@
-/*modal login*/
-.modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
+body { padding-right: 0 !important }
 
-body.modal-open {
-    padding-right: 0 !important;
-}
-
-.modal-dialog {
-    transform: translate3d(-50%, -50%, 0);
-    box-shadow: none;
-    max-width: 480px;
-    max-height: 90%;
-    -webkit-overflow-scrolling: touch;
-    padding: 30px;
-    padding-bottom: 31px;
-    z-index: 100;
-    overflow: hidden;
-    color: #6484a0;
+.modal-open {
+    padding-right: 0px !important;
 }
 
 .modal-content {

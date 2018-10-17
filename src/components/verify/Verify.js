@@ -8,8 +8,6 @@ import autoBind from "react-autobind";
 import * as userActions from "../../actions/userActions";
 import {bindActionCreators} from "redux";
 import {title} from "../../utils";
-import {Fa} from "mdbreact";
-
 
 
 class Verify extends Component {
@@ -19,14 +17,16 @@ class Verify extends Component {
             code: "",
             submitted: false,
             redirectToReferrer: false,
+            phone: ""
         };
         autoBind(this);
     }
 
     componentDidMount() {
         document.title = `${title} - Xác thực`;
-        document.body.classList.remove('modal-open');
-        document.body.classList.remove('modal');
+        if (this.props.loggingIn != null) {
+            this.setState({phone: this.props.loggingIn.phone})
+        }
     }
 
     verifyChange(event) {
@@ -36,30 +36,41 @@ class Verify extends Component {
         }
     }
 
+    phoneChange(event) {
+        let phone = event.target.value;
+        if (phone.length === 10) {
+            this.setState({phone});
+        }
+    }
+
     submitSendSMS() {
-        let {loggingIn} = this.props;
-        this.props.actions.SendSMS(loggingIn.phone);
+        let {phone} = this.state;
+        if (phone) {
+            this.props.actions.SendSMS(phone * 1);
+        }
     }
 
     handleSubmit() {
         this.setState({submitted: true});
-        let {loggingIn} = this.props;
-        let {code} = this.state;
-        this.props.actions.Verify(code, loggingIn.phone).then(res => {
-            if (res === true) {
-                this.setState({redirectToReferrer: true});
-            }
-        });
+        let {code, phone} = this.state;
+        if (code.length === 4 || phone.length === 10) {
+            this.props.actions.Verify(code, phone * 1).then(res => {
+                if (res === true) {
+                    this.setState({redirectToReferrer: true});
+                }
+            });
+        }else{
+            console.log(code, phone)
+        }
     }
 
     render() {
-        let {loggingIn} = this.props;
-        let {redirectToReferrer} = this.state;
+        let {redirectToReferrer, phone} = this.state;
         if (redirectToReferrer) {
             return <Redirect to="/"/>;
         }
         let html = null;
-        if (loggingIn == null) {
+        if (phone.length < 10) {
             return (
                 <div>
                     <header className="site-header">
@@ -71,7 +82,26 @@ class Verify extends Component {
                                     <div className="subscribe-form text-center">
                                         <div className="container-fluid text-center">
                                             <div className="">
-                                                <p><Fa icon="spinner" size="5x" spin/></p>
+                                                <form id="sign-up-form" className="text-center">
+                                                    <div className="form-label-xau">
+                                                        <p>Số điện thoại</p>
+                                                    </div>
+                                                    <div className="form-label-group">
+                                                        <input className="text-center password" type="text"
+                                                               placeholder="" name="phone"
+                                                               onChange={this.phoneChange}
+                                                        />
+                                                    </div>
+                                                    <div className="space-20"></div>
+                                                    <div className="form-label-xau">
+                                                        <button className="btn btn-lg btn-primary btn-block"
+                                                                id="mySubmit"
+                                                                type="submit"
+                                                                onClick={this.submitSendSMS}
+                                                        >Gửi yêu cầu
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -82,7 +112,7 @@ class Verify extends Component {
                 </div>);
         } else {
             html =
-                <p> {loggingIn.phone.length > 4 && " ******" + loggingIn.phone.substring(loggingIn.phone.length - 4, loggingIn.phone.length)} </p>
+                <p> {phone.length >= 10 && " ******" + phone.substring(phone.length - 4, phone.length)} </p>
         }
         return (
             <div>

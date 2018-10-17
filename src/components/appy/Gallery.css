@@ -10,3 +10,17 @@
     /* IE6-9 fallback on horizontal gradient */
     color: #ffffff;
 }
+
+
+.mainmenu-area .navbar-brand {
+    height: auto;
+    padding: 0;
+}
+@media only screen and (max-width: 767px) {
+
+    .gallery-slide .item {
+        margin: 74px 17px 82px 15px;
+        overflow: hidden;
+        border-radius: 2px;
+    }
+}

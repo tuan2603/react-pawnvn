@@ -13,11 +13,18 @@ class Notification extends React.Component {
 
     render() {
         return (
-            <div >
+            <div>
                 <ToastContainer
-                    hideProgressBar={true}
-                    newestOnTop={true}
+                    position="top-center"
                     autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={true}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnVisibilityChange
+                    draggable
+                    pauseOnHover
+                    style={{marginTop: "96px"}}
                 />
             </div>
         );
@@ -29,22 +36,22 @@ class Notification extends React.Component {
             switch (notification.type) {
                 case 'err':
                     toast.error(notification.txt, {
-                        position: toast.POSITION.BOTTOM_CENTER
+                        position: toast.POSITION.TOP_CENTER
                     });
                     break;
                 case 'war':
                     toast.warn(notification.txt, {
-                        position: toast.POSITION.BOTTOM_CENTER
+                        position: toast.POSITION.TOP_CENTER
                     });
                     break;
                 case 'suc':
                     toast.success(notification.txt, {
-                        position: toast.POSITION.BOTTOM_CENTER
+                        position: toast.POSITION.TOP_CENTER
                     });
                     break;
                 case 'inf':
                     toast.info(notification.txt, {
-                        position: toast.POSITION.BOTTOM_CENTER
+                        position: toast.POSITION.TOP_CENTER
                     });
                     break;
                 default:

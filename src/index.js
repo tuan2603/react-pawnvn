@@ -16,7 +16,7 @@ store.dispatch(loadUser());
 store.dispatch(loadUser());
 store.dispatch(loadAdvertise());
 store.dispatch(loadTestimonial());
-store.subscribe(()=>console.log(store.getState()));
+// store.subscribe(()=>console.log(store.getState()));
 render((
         <Provider store={store}>
             <App/>

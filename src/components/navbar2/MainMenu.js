@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavLink, Redirect} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import mainLogo from '../../assets/img/logo.png';
 import tinylogo from '../../assets/img/tinylogo.png';
 import {connect} from "react-redux";
@@ -8,22 +8,21 @@ import autoBind from "react-autobind";
 import { Link} from 'react-scroll';
 import {bindActionCreators} from "redux";
 import * as userActions from "../../actions/userActions";
-import $ from 'jquery';
+import {ModalLoginPage} from "../logins";
+
+const $ = window.jQuery;
 
 
 
 class MainMenu extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            redirectHome: false
-        }
         autoBind(this);
     }
 
     handleLogout(){
         this.props.actions.alogout();
-        this.setState({redirectHome: true})
+        window.location.reload()
     }
 
     componentDidMount(){
@@ -34,14 +33,10 @@ class MainMenu extends Component {
     }
 
     render() {
-        let {redirectHome} = this.state;
-        if (redirectHome) {
-            return (<Redirect to={"/"} />);
-        }
         let {username} = this.props;
         let $htmldk = (<li ><NavLink to="/signup" exact>Đăng Ký</NavLink></li>);
-        let $htmldnxs =  (<li ><a className="dangnhapxs" data-target="#modallogin" data-toggle="modal">Đăng nhập</a></li>);
-        let $htmldn = (<div className="right-button hidden-xs"><a data-target="#modallogin" data-toggle="modal">Đăng nhập</a></div>);
+        let $htmldnxs =  (<li ><a className="dangnhapxs" data-toggle="modal" data-target="#exampleModalLong">Đăng nhập</a></li>);
+        let $htmldn = (<div className="right-button hidden-xs"><a data-toggle="modal" data-target="#exampleModalLong">Đăng nhập</a></div>);
         if (username !== null) {
             $htmldk = null;
             $htmldn = (<div className="right-button hidden-xs"><a onClick={this.handleLogout}>Đăng Xuất</a></div>);
@@ -50,6 +45,7 @@ class MainMenu extends Component {
             }
         }
         return (
+
                 <nav className="mainmenu-area" data-spy="affix" data-offset-top="200">
                     <div className="container-fluid">
                         <div className="navbar-header">
@@ -73,6 +69,7 @@ class MainMenu extends Component {
                             </ul>
                             {$htmldn}
                         </div>
+                        <ModalLoginPage />
                     </div>
                 </nav>
         );

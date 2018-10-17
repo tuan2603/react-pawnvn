@@ -53,7 +53,7 @@
 
 .mainmenu-area .right-button a {
     color: #ffffff;
-    padding: 10px 25px;
+    padding: 4px 25px;
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.3);
     display: inline-block;
@@ -97,7 +97,7 @@
 
 .mainmenu-area .navbar-brand {
     height: auto;
-    padding: 0 15px;
+    padding: 0;
 }
 
 .mainmenu-area .navbar-brand img {
@@ -137,6 +137,11 @@
 
     .mainmenu-area #primary_menu {
         overflow-y: hidden;
+    }
+
+    .mainmenu-area .navbar-brand {
+        height: auto;
+        padding: 0 8px;
     }
 
 }

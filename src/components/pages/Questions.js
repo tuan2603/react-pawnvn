@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 import {title} from "../../utils";
 import * as questionActions from "../../actions/questionActions";
 import './Question.css';
-import {Fa} from "mdbreact";
+// import './bootstrap.vertical-tabs.css';
+// import './tabs.css';
+const $ = window.jQuery;
 
 class Questions extends Component {
     constructor(props) {
@@ -25,72 +27,59 @@ class Questions extends Component {
                 this.setState({questions: [...this.props.questions]});
             }, 3000)
         }
+
+        $('.nav-tabs-dropdown').each(function(i, elm) {
+
+            $(elm).text($(elm).next('ul').find('li.active a').text());
+
+        });
+
+        $('.nav-tabs-dropdown').on('click', function(e) {
+
+            e.preventDefault();
+
+            $(e.target).toggleClass('open').next('ul').slideToggle();
+
+        });
+
+        $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
+
+            e.preventDefault();
+
+            $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
+
+        });
     }
 
     render() {
-        let {questions} = this.state;
-        if (questions.length === 0) {
-            return (
-                <div className="questions-main">
-                    <header className="site-header">
-                    </header>
-                    <div className="section-padding">
-                        <div className="container">
-                            <div className="row">
-                                <div
-                                    className="col-xs-12">
-                                    <article className="post-single">
-                                        <div className="post-body">
-                                            <div className="container-fluid text-center">
-                                                <div className="">
-                                                    <p><Fa icon="spinner" size="5x" spin/></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        }
         return (
             <div className="questions-main">
                 <header className="site-header">
-                </header>
-                <div className="section-padding">
-                    <div className="container">
+                </header><div className="section-padding">
+                    <div className="container" style={{minHeight:"600px"}}>
                         <div className="row">
-                            <div
-                                className="col-xs-12">
-                                <article className="post-single">
-                                    <div className="post-body">
-                                        <ol>
-                                            {questions.map((question, i) => {
-                                                return <li key={question._id}>
-                                                    {
-                                                        question.no === 1 &&
-                                                        <div className="list1">
-                                                            <div className="icon icon-four-point"></div>
-                                                            <div className="list-item">{question.question_group}</div>
-                                                        </div>
-
-                                                    }
-                                                    <span>{question.no}.</span>
-                                                    <p> {question.title_question} </p>
-                                                    <ul>
-                                                        {
-                                                            question.content_answer.map((answer, i) => {
-                                                                return <li key={answer._id}><p>{answer.answer}</p></li>
-                                                            })
-                                                        }
-                                                    </ul>
-                                                </li>
-                                            })}
-                                        </ol>
+                            <div id="aside-nav-left" className="aside-nav col-sm-3">
+                                <a href="#" className="nav-tabs-dropdown btn btn-block btn-primary">Tabs</a>
+                                <ul id="nav-tabs-wrapper" className="nav nav-tabs nav-pills nav-stacked well">
+                                    <li className="active nav-item" ><a className="nav-link py-xl-4 py-3 px-5 active" href="#vtab1" data-toggle="tab">Tab 1</a></li>
+                                    <li className="nav-item"><a className="nav-link py-xl-4 py-3 px-5"  href="#vtab2" data-toggle="tab">Tab 2</a></li>
+                                    <li className="nav-item"><a className="nav-link py-xl-4 py-3 px-5"  href="#vtab3" data-toggle="tab">Tab 3</a></li>
+                                </ul>
+                            </div>
+                            <div className="col-sm-9">
+                                <div className="tab-content">
+                                    <div role="tabpanel" className="tab-pane fade in active" id="vtab1">
+                                        <h3>Tab 1</h3>
+                                        <p> Mauris imperdiet dignissim ante, in efficitur mauris elementum sed.</p>
                                     </div>
-                                </article>
+                                    <div role="tabpanel" className="tab-pane fade" id="vtab2">
+                                        <h3>Tab 2</h3>
+                                        <p> Mauris imperdiet dignissim ante, in efficitur mauris elementum sed. </p>
+                                    </div>
+                                    <div role="tabpanel" className="tab-pane fade in" id="vtab3">
+                                        <h3>Tab 3</h3>
+                                        <p>Etiam id pharetra quam. Morbi tristique nunc vel sapien dapibus</p></div>
+                                </div>
                             </div>
                         </div>
                     </div>
