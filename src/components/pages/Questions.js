@@ -97,7 +97,7 @@ class Questions extends Component {
                                                         {questions.map((questionc) => {
                                                             if (question.question_group === questionc.question_group ) {
                                                                 return (
-                                                                    <div>
+                                                                    <div key={questionc._id}>
                                                                     <p> {questionc.title_question} </p>
                                                                     {
                                                                         questionc.content_answer.map(answer => {
@@ -116,7 +116,7 @@ class Questions extends Component {
                                                         {questions.map((questionc) => {
                                                             if (question.question_group === questionc.question_group ) {
                                                                 return (
-                                                                    <div>
+                                                                    <div key={questionc._id}>
                                                                         <p> {questionc.title_question} </p>
                                                                         {
                                                                             questionc.content_answer.map(answer => {
