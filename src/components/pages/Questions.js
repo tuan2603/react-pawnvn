@@ -5,9 +5,19 @@ import {bindActionCreators} from "redux";
 import PropTypes from 'prop-types';
 import {title} from "../../utils";
 import * as questionActions from "../../actions/questionActions";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemTitle,
+    AccordionItemBody,
+} from 'react-accessible-accordion';
+
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/minimal-example.css';
+// import 'react-accessible-accordion/dist/fancy-example.css';
+
 import './Question.css';
-// import './bootstrap.vertical-tabs.css';
-// import './tabs.css';
+
 const $ = window.jQuery;
 
 class Questions extends Component {
@@ -50,6 +60,7 @@ class Questions extends Component {
                 $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
 
             });
+
         }, 3000)
 
 
@@ -93,40 +104,56 @@ class Questions extends Component {
                                             stt2++;
                                             if (stt2 === 1){
                                                 return (
-                                                    <div key={question._id} role="tabpanel" className="tab-pane fade in active" id={"vtab"+stt2}>
-                                                        {questions.map((questionc) => {
+                                                    <div key={question._id} role="tabpanel" className="tab-pane fade in active " id={"vtab"+stt2}>
+                                                       <Accordion>
+                                                        {questions.map((questionc, index) => {
                                                             if (question.question_group === questionc.question_group ) {
                                                                 return (
-                                                                    <div key={questionc._id}>
-                                                                    <p> {questionc.title_question} </p>
+                                                                    <AccordionItem key={questionc._id}  expanded={questionc.no === 0 ? true : false}>
+                                                                        <AccordionItemTitle >
+                                                                            <h3>{questionc.no + ". " + questionc.title_question}</h3>
+                                                                            <div className="accordion__arrow" role="presentation" />
+                                                                        </AccordionItemTitle>
+                                                                   
                                                                     {
                                                                         questionc.content_answer.map(answer => {
-                                                                            return<p key={answer._id}>{answer.answer}</p>
+                                                                            return(<AccordionItemBody key={answer._id}> 
+                                                                                <p>{answer.answer}</p>
+                                                                            </AccordionItemBody>)
                                                                         })
                                                                     }
-                                                                    </div>
+                                                                    </AccordionItem>
                                                                 )
                                                             }
                                                         })}
+                                                       </Accordion> 
                                                     </div>
                                                 )
                                             } else {
                                                 return (
                                                     <div key={question._id} role="tabpanel" className="tab-pane fade" id={"vtab"+stt2}>
-                                                        {questions.map((questionc) => {
+                                                         <Accordion>
+                                                        {questions.map((questionc, index2) => {
                                                             if (question.question_group === questionc.question_group ) {
                                                                 return (
-                                                                    <div key={questionc._id}>
-                                                                        <p> {questionc.title_question} </p>
-                                                                        {
-                                                                            questionc.content_answer.map(answer => {
-                                                                                return<p key={answer._id}>{answer.answer}</p>
-                                                                            })
-                                                                        }
-                                                                    </div>
+                                                                    <AccordionItem key={questionc._id} expanded={questionc.no === 0 ? true : false}>
+                                                                        <AccordionItemTitle>
+                                                                            <h3>{questionc.no+ ". " + questionc.title_question}</h3>
+                                                                            <div className="accordion__arrow" role="presentation" />
+                                                                        </AccordionItemTitle>
+                                                                   
+                                                                    {
+                                                                        questionc.content_answer.map(answer => {
+                                                                            return(<AccordionItemBody key={answer._id}> 
+                                                                                <p>{answer.answer}</p>
+                                                                            </AccordionItemBody>)
+                                                                        })
+                                                                    }
+                                                                    </AccordionItem>
                                                                 )
                                                             }
                                                         })}
+                                                        </Accordion>
                                                     </div>
                                                 )
                                             }
