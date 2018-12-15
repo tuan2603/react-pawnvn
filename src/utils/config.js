@@ -1,3 +1,3 @@
-export const apiUrl= 'https://pawnvietnam.vn';
-export const title= 'Pawnvietnam';
+export const apiUrl= 'https://orivietnam.vn';
+export const title= 'Orivietnam';
 // export const apiUrl= 'http://localhost:8080';
